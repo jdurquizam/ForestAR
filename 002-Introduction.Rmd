@@ -34,7 +34,7 @@ We must explicitly tell R how to read this specific format using the sep argumen
 # Import the raw data
 raw_inventory <- read.csv("data/inventory.csv", 
                           sep = ";", 
-                          dec = ".", 
+                          dec = ",", 
                           stringsAsFactors = FALSE)
 
 # Check the dimensions of our dataset (number of rows and columns)
@@ -79,4 +79,9 @@ kable(head(inventory_clean, 5),
       caption = "Table 1.1: Preview of the cleaned forest inventory dataset.")
 ```
 
+```{r}
+raw_inventory%>%
+  ggplot(aes(x=DAP,y=HT))+
+  geom_point()
+```
 
