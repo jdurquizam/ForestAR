@@ -1,0 +1,20 @@
+# About the authors{ .unnumbered}
+
+## J. David Urquiza Muñoz {-}
+
+<a href="https://www.bgc-jena.mpg.de/~jurquiza/"><img src="https://www.bgc-jena.mpg.de/~jurquiza/Pictures/David%20Urquiza2.jpg" width="250" height="275" alt="David Urquiza" align="right" style="margin: 0 1em 0 1em" /></a>
+
+**David Urquiza** (https://www.bgc-jena.mpg.de/~jurquiza/) is a Ecologist in tropical forest. Researcher at the Max Planck Institute for Biogeochemistry, and associate professor at the Forestry Science Faculty -- National University of the Peruvian Amazon. Researcher in geospatial Ecology and Remote Sensing, examining best practices for integrating field-based and remotely sensed data to understand spatio-temporal changes of forest attributes in the north western amazon.
+
+
+Dept. Biogeochemical Process
+Max Planck Institute for Biogeochemestry
+Jena 07745 
+Germany
+jurquiza@bgc-jena.mpg.de
+
+Universidad Nacional de la Amazonia Peruana
+Facultad de Ciencias Forestales
+Grupo de investigacion variaciones Espacio-Tiempo de Atributos Forestales -  VETAF
+Iquitos 16600 Peru
+david.urquiza@unapiquitos.edu.pe

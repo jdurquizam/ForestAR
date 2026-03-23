@@ -1,0 +1,72 @@
+--- 
+title: |
+    ![](fig/MPG_Logo_green.png){width=2in} 
+    
+    Forest Attributes Analysis in R - ForestAR
+author: "J. David Urquiza-Munoz"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
+cover-image: "fig/MPG_Logo_green.png"
+biblio-style: apalike
+csl: chicago-fullnote-bibliography.csl
+---
+
+# Preface {-}
+
+Are you ready to navigate the intersection of natural resources and computer science? This book is your guide to doing just that, equipping you with the essential skills to harness the power of data for forest management and conservation. More than just a collection of tools, this book provides a transparent and efficient approach to forestry informatics.
+
+Through a hands-on, project-based approach, you'll learn to use the R programming language—a leading tool in data science and statistical analysis. You won't just be clicking buttons; you'll be writing code to:
+
+    - Import and manage diverse forest inventory data.
+
+    - Clean and analyze complex datasets to reveal key insights.
+
+    - Create stunning visualizations that tell a clear story about your data.
+
+By learning to use R command lines, you'll master a workflow that is not only powerful but also reproducible. This scientific approach ensures that your work is transparent, easily shared, and builds a foundation of credibility—a vital skill for any modern forester or natural resource professional. By the end of this book, you will be prepared to tackle the complex challenges facing our forests, equipped with the computational thinking and data-driven skills demanded by the industry.
+
+
+![](fig/img1.png){width=5in }
+
+## About this book {.unnumbered}
+
+This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
+
+
+## Render book
+
+You can render the HTML version of this example book without changing anything:
+
+1. Find the **Build** pane in the RStudio IDE, and
+
+1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
+
+Or build the book from the R console:
+
+```{r, eval=FALSE}
+bookdown::render_book()
+```
+
+To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+
+## Preview book
+
+As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
+
+```{r eval=FALSE}
+bookdown::serve_book()
+```
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

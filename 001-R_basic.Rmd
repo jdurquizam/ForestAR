@@ -1,0 +1,14 @@
+#Chapter 1: Introduction to Forest Data in R
+Welcome to the foundation of our forestry visualization journey. Before we can generate beautiful maps or 3D canopy models, we must first import and prepare our field data. R is uniquely powerful for this, as it allows us to document our data-cleaning steps transparently and reproducibly.
+
+In this chapter, we will set up our R environment, import our raw forest inventory data, and perform basic cleaning to ensure it is ready for spatial and statistical analysis.
+
+#| label: setup
+#| message: false
+#| warning: false
+
+# Install packages if you haven't already: install.packages(c("tidyverse", "sf", "knitr"))
+library(tidyverse)
+library(sf)
+library(knitr) # Used for rendering neat tables in our book
+
