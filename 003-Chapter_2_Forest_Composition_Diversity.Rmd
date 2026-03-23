@@ -1,0 +1,59 @@
+# Chapter 2: Forest Composition & Structure
+
+With our inventory data cleaned and standardized, we can now explore the ecological characteristics of our forest stand. Two of the most fundamental questions in any forest inventory are: What species are growing here? and How big are they?
+
+In this chapter, we will use the ggplot2 package (which is loaded automatically with tidyverse) to create clear, publication-ready visualizations of our forest's composition and structure.
+
+## 2.1 Species Composition
+
+Tropical and Neotropical forests are incredibly diverse. Visualizing the abundance of every single species in a single chart can result in a cluttered and unreadable mess. Instead, a standard practice is to isolate and visualize the most dominant species to understand the primary makeup of the canopy.
+
+Let's calculate the top 10 most abundant species in our dataset and create a horizontal bar chart.
+```{r}
+#| label: species-composition
+#| fig-cap: "Top 10 most abundant tree species in the inventory."
+
+# Calculate species frequencies and filter for the top 10
+top_species <- inventory_clean %>%
+  count(Scientific_Name, name = "Count") %>%
+  arrange(desc(Count)) %>%
+  slice_max(order_by = Count, n = 10)
+
+# Create a horizontal bar chart
+ggplot(top_species, aes(x = reorder(Scientific_Name, Count), y = Count)) +
+  geom_col(fill = "steelblue", color = "black", alpha = 0.8) +
+  coord_flip() + # Flips the axes for easier reading of species names
+  labs(
+    title = "Dominant Species in the Forest Stand",
+    x = "Scientific Name",
+    y = "Number of Individuals"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(face = "italic") # Standard practice: italicize scientific names
+  )
+```
+## 2.2 Forest Stand Structure (DBH)
+
+The distribution of tree diameters is a key indicator of forest health, history, and successional stage. In natural, uneven-aged forests, we typically expect to see a "Reverse-J" curve. This means there are many small, young trees in the understory and progressively fewer large, older trees forming the upper canopy.
+
+We can visualize this using a histogram of our DBH_cm (Diameter at Breast Height) column.
+
+```{r}
+#| label: dbh-distribution
+#| fig-cap: "Diameter distribution showing a classic Reverse-J curve for a natural forest."
+
+ggplot(inventory_clean, aes(x = DBH_cm)) +
+  # We use a binwidth of 5 cm, which is standard for forestry DBH classes
+  geom_histogram(binwidth = 5, fill = "forestgreen", color = "black", alpha = 0.7) +
+  # Create dynamic x-axis breaks based on our actual data max
+  scale_x_continuous(breaks = seq(0, max(inventory_clean$DBH_cm, na.rm = TRUE), by = 10)) +
+  labs(
+    title = "Diameter Distribution of the Stand",
+    subtitle = "The Reverse-J shape indicates an uneven-aged, regenerating forest",
+    x = "Diameter at Breast Height (cm)",
+    y = "Frequency (Number of Trees)"
+  ) +
+  theme_minimal()
+```
+

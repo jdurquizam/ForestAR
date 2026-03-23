@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Chapter 2: Forest Composition &amp; Structure | _main.knit</title>
+  <meta name="description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Chapter 2: Forest Composition &amp; Structure | _main.knit" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/fig/MPG_Logo_green.png" />
+  <meta property="og:description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Chapter 2: Forest Composition &amp; Structure | _main.knit" />
+  
+  <meta name="twitter:description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  <meta name="twitter:image" content="/fig/MPG_Logo_green.png" />
+
+<meta name="author" content="J. David Urquiza-Munoz" />
+
+
+<meta name="date" content="2026-03-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"/>
+<link rel="next" href="chapter-3-2d-spatial-distribution-and-mapping.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About this book</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>0.1</b> Render book</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>0.2</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the authors</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html#j.-david-urquiza-mu%C3%B1oz"><i class="fa fa-check"></i>J. David Urquiza Muñoz</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="install-packages-if-you-havent-already-install.packagesctidyverse-sf-knitr.html"><a href="install-packages-if-you-havent-already-install.packagesctidyverse-sf-knitr.html"><i class="fa fa-check"></i><b>1</b> Install packages if you haven’t already: install.packages(c(“tidyverse”, “sf”, “knitr”))</a></li>
+<li class="chapter" data-level="2" data-path="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: Introduction to Forest Data in R {#Chapter 1: Introduction to Forest Data in R}</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html#setting-up-the-environment"><i class="fa fa-check"></i><b>2.1</b> 1.1 Setting up the Environment</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html#importing-the-inventory-data"><i class="fa fa-check"></i><b>2.2</b> 1.2 Importing the Inventory Data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html#data-cleaning-and-standardization"><i class="fa fa-check"></i><b>2.3</b> 1.3 Data Cleaning and Standardization</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html#exploring-the-cleaned-data"><i class="fa fa-check"></i><b>2.4</b> 1.4 Exploring the Cleaned Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html"><i class="fa fa-check"></i><b>3</b> Chapter 2: Forest Composition &amp; Structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#species-composition"><i class="fa fa-check"></i><b>3.1</b> 2.1 Species Composition</a></li>
+<li class="chapter" data-level="3.2" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#forest-stand-structure-dbh"><i class="fa fa-check"></i><b>3.2</b> 2.2 Forest Stand Structure (DBH)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-3-2d-spatial-distribution-and-mapping.html"><a href="chapter-3-2d-spatial-distribution-and-mapping.html"><i class="fa fa-check"></i><b>4</b> Chapter 3: 2D Spatial Distribution and Mapping</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-3-2d-spatial-distribution-and-mapping.html"><a href="chapter-3-2d-spatial-distribution-and-mapping.html#creating-spatial-data"><i class="fa fa-check"></i><b>4.1</b> 3.1 Creating Spatial Data</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-3-2d-spatial-distribution-and-mapping.html"><a href="chapter-3-2d-spatial-distribution-and-mapping.html#mapping-forest-structure"><i class="fa fa-check"></i><b>4.2</b> 3.2 Mapping Forest Structure</a></li>
+<li class="chapter" data-level="4.3" data-path="chapter-3-2d-spatial-distribution-and-mapping.html"><a href="chapter-3-2d-spatial-distribution-and-mapping.html#visualizing-species-distribution"><i class="fa fa-check"></i><b>4.3</b> 3.3 Visualizing Species Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="chapter-3-2d-spatial-distribution-and-mapping.html"><a href="chapter-3-2d-spatial-distribution-and-mapping.html#analyzing-spatial-clustering-with-the-morisita-index"><i class="fa fa-check"></i><b>4.4</b> 3.4 Analyzing Spatial Clustering with the Morisita Index</a></li>
+<li class="chapter" data-level="4.5" data-path="chapter-3-2d-spatial-distribution-and-mapping.html"><a href="chapter-3-2d-spatial-distribution-and-mapping.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>4.5</b> 3.5 Spatial Visualization of DBH and Tree Height</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>5</b> Parts</a></li>
+<li class="chapter" data-level="6" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>6</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>6.1</b> Footnotes</a></li>
+<li class="chapter" data-level="6.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>6.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>7</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>7.1</b> Equations</a></li>
+<li class="chapter" data-level="7.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>7.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="7.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>7.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>8</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>8.1</b> Publishing</a></li>
+<li class="chapter" data-level="8.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>8.2</b> 404 pages</a></li>
+<li class="chapter" data-level="8.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>8.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="9" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>9</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>9.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="9.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>9.2</b> Captioned figures and tables</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="fig/MPG_Logo_green.png" style="width:2in" /></p>
+<p>Forest Attributes Analysis in R - ForestAR</p></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-2-forest-composition-structure" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Chapter 2: Forest Composition &amp; Structure<a href="chapter-2-forest-composition-structure.html#chapter-2-forest-composition-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>With our inventory data cleaned and standardized, we can now explore the ecological characteristics of our forest stand. Two of the most fundamental questions in any forest inventory are: What species are growing here? and How big are they?</p>
+<p>In this chapter, we will use the ggplot2 package (which is loaded automatically with tidyverse) to create clear, publication-ready visualizations of our forest’s composition and structure.</p>
+<div id="species-composition" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> 2.1 Species Composition<a href="chapter-2-forest-composition-structure.html#species-composition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tropical and Neotropical forests are incredibly diverse. Visualizing the abundance of every single species in a single chart can result in a cluttered and unreadable mess. Instead, a standard practice is to isolate and visualize the most dominant species to understand the primary makeup of the canopy.</p>
+<p>Let’s calculate the top 10 most abundant species in our dataset and create a horizontal bar chart.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chapter-2-forest-composition-structure.html#cb9-1" tabindex="-1"></a><span class="co"># Calculate species frequencies and filter for the top 10</span></span>
+<span id="cb9-2"><a href="chapter-2-forest-composition-structure.html#cb9-2" tabindex="-1"></a>top_species <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="chapter-2-forest-composition-structure.html#cb9-3" tabindex="-1"></a>  <span class="fu">count</span>(Scientific_Name, <span class="at">name =</span> <span class="st">&quot;Count&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="chapter-2-forest-composition-structure.html#cb9-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Count)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="chapter-2-forest-composition-structure.html#cb9-5" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> Count, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb9-6"><a href="chapter-2-forest-composition-structure.html#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="chapter-2-forest-composition-structure.html#cb9-7" tabindex="-1"></a><span class="co"># Create a horizontal bar chart</span></span>
+<span id="cb9-8"><a href="chapter-2-forest-composition-structure.html#cb9-8" tabindex="-1"></a><span class="fu">ggplot</span>(top_species, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Scientific_Name, Count), <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="chapter-2-forest-composition-structure.html#cb9-9" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="chapter-2-forest-composition-structure.html#cb9-10" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co"># Flips the axes for easier reading of species names</span></span>
+<span id="cb9-11"><a href="chapter-2-forest-composition-structure.html#cb9-11" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-12"><a href="chapter-2-forest-composition-structure.html#cb9-12" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Dominant Species in the Forest Stand&quot;</span>,</span>
+<span id="cb9-13"><a href="chapter-2-forest-composition-structure.html#cb9-13" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Scientific Name&quot;</span>,</span>
+<span id="cb9-14"><a href="chapter-2-forest-composition-structure.html#cb9-14" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Individuals&quot;</span></span>
+<span id="cb9-15"><a href="chapter-2-forest-composition-structure.html#cb9-15" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-16"><a href="chapter-2-forest-composition-structure.html#cb9-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-17"><a href="chapter-2-forest-composition-structure.html#cb9-17" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb9-18"><a href="chapter-2-forest-composition-structure.html#cb9-18" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;italic&quot;</span>) <span class="co"># Standard practice: italicize scientific names</span></span>
+<span id="cb9-19"><a href="chapter-2-forest-composition-structure.html#cb9-19" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:species-composition"></span>
+<img src="_main_files/figure-html/species-composition-1.png" alt="Top 10 most abundant tree species in the inventory." width="672" />
+<p class="caption">
+Figure 3.1: Top 10 most abundant tree species in the inventory.
+</p>
+</div>
+</div>
+<div id="forest-stand-structure-dbh" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 2.2 Forest Stand Structure (DBH)<a href="chapter-2-forest-composition-structure.html#forest-stand-structure-dbh" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The distribution of tree diameters is a key indicator of forest health, history, and successional stage. In natural, uneven-aged forests, we typically expect to see a “Reverse-J” curve. This means there are many small, young trees in the understory and progressively fewer large, older trees forming the upper canopy.</p>
+<p>We can visualize this using a histogram of our DBH_cm (Diameter at Breast Height) column.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="chapter-2-forest-composition-structure.html#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(inventory_clean, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="chapter-2-forest-composition-structure.html#cb10-2" tabindex="-1"></a>  <span class="co"># We use a binwidth of 5 cm, which is standard for forestry DBH classes</span></span>
+<span id="cb10-3"><a href="chapter-2-forest-composition-structure.html#cb10-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="st">&quot;forestgreen&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="chapter-2-forest-composition-structure.html#cb10-4" tabindex="-1"></a>  <span class="co"># Create dynamic x-axis breaks based on our actual data max</span></span>
+<span id="cb10-5"><a href="chapter-2-forest-composition-structure.html#cb10-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fu">max</span>(inventory_clean<span class="sc">$</span>DBH_cm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="chapter-2-forest-composition-structure.html#cb10-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-7"><a href="chapter-2-forest-composition-structure.html#cb10-7" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Diameter Distribution of the Stand&quot;</span>,</span>
+<span id="cb10-8"><a href="chapter-2-forest-composition-structure.html#cb10-8" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;The Reverse-J shape indicates an uneven-aged, regenerating forest&quot;</span>,</span>
+<span id="cb10-9"><a href="chapter-2-forest-composition-structure.html#cb10-9" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Diameter at Breast Height (cm)&quot;</span>,</span>
+<span id="cb10-10"><a href="chapter-2-forest-composition-structure.html#cb10-10" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frequency (Number of Trees)&quot;</span></span>
+<span id="cb10-11"><a href="chapter-2-forest-composition-structure.html#cb10-11" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="chapter-2-forest-composition-structure.html#cb10-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:dbh-distribution"></span>
+<img src="_main_files/figure-html/dbh-distribution-1.png" alt="Diameter distribution showing a classic Reverse-J curve for a natural forest." width="672" />
+<p class="caption">
+Figure 3.2: Diameter distribution showing a classic Reverse-J curve for a natural forest.
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-1-introduction-to-forest-data-in-r-chapter-1-introduction-to-forest-data-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-3-2d-spatial-distribution-and-mapping.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

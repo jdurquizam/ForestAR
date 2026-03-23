@@ -40,4 +40,43 @@ raw_inventory <- read.csv("data/inventory.csv",
 # Check the dimensions of our dataset (number of rows and columns)
 dim(raw_inventory)
 ```
+## 1.3 Data Cleaning and Standardization
+
+Raw field data rarely comes perfectly formatted for analysis. Column names might include spaces, special characters, or abbreviations that are hard to remember.
+
+Let's clean our dataset by renaming the most critical columns to standard English forestry terms and selecting only the variables we need for our upcoming visualizations.
+
+```{r}
+#| label: clean-data
+
+inventory_clean <- raw_inventory %>%
+  # Rename columns for easier coding later
+  rename(
+    Plot_ID = SP,
+    Tree_ID = Nro.Arb,
+    Common_Name = NOMBRE.VULGAR,
+    Scientific_Name = NOMBRE.CIENTIFICO,
+    DBH_cm = DAP,
+    Height_m =HT,
+    Easting = ESTE,
+    Northing = NORTE
+  ) %>%
+  # Keep only the columns relevant for our visual analysis
+  select(Plot_ID, Tree_ID, Common_Name, Scientific_Name, DBH_cm, Height_m,Easting, Northing) %>%
+  # Filter out any rows that might be missing critical spatial or size data
+  filter(!is.na(DBH_cm), !is.na(Easting), !is.na(Northing))
+```
+
+## 1.4 Exploring the Cleaned Data
+
+Before moving on to complex visualizations, it is good practice to visually inspect the first few rows of our cleaned dataset to ensure our import and manipulation steps worked correctly.
+
+```{r}
+#| label: preview-data
+
+# Display the first 5 rows as a polished table
+kable(head(inventory_clean, 5), 
+      caption = "Table 1.1: Preview of the cleaned forest inventory dataset.")
+```
+
 
