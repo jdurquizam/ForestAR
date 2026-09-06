@@ -1,3 +1,77 @@
+--- 
+title: |
+    ![](fig/MPG_Logo_green.png){width=2in} 
+    
+    Forest Attributes Analysis in R - ForestAR
+author: "J. David Urquiza-Munoz"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
+cover-image: "fig/MPG_Logo_green.png"
+biblio-style: apalike
+csl: chicago-fullnote-bibliography.csl
+---
+
+# url: your book url like https://bookdown.org/yihui/bookdown
+
+Placeholder
+
+
+## About this book {.unnumbered}
+
+<!--chapter:end:index.Rmd-->
+
+# About the author { .unnumbered}
+
+## J. David Urquiza Muñoz {-}
+
+<a href="https://www.bgc-jena.mpg.de/~jurquiza/"><img src="https://www.bgc-jena.mpg.de/~jurquiza/Pictures/David%20Urquiza2.jpg" width="250" height="275" alt="David Urquiza" align="right" style="margin: 0 1em 0 1em" /></a>
+
+**David Urquiza** (https://www.bgc-jena.mpg.de/~jurquiza/) is a Ecologist in tropical forest. Researcher at the Max Planck Institute for Biogeochemistry, and associate professor at the Forestry Science Faculty -- National University of the Peruvian Amazon. Researcher in geospatial Ecology and Remote Sensing, examining best practices for integrating field-based and remotely sensed data to understand spatio-temporal changes of forest attributes in the north western amazon.
+
+
+Dept. Biogeochemical Process
+Max Planck Institute for Biogeochemestry
+Jena 07745 
+Germany
+jurquiza@bgc-jena.mpg.de
+
+Universidad Nacional de la Amazonia Peruana
+Facultad de Ciencias Forestales
+Grupo de investigacion variaciones Espacio-Tiempo de Atributos Forestales -  VETAF
+Iquitos 16600 Peru
+david.urquiza@unapiquitos.edu.pe
+
+<!--chapter:end:00-Author.Rmd-->
+
+
+# Chapter 1: Introduction to Forest Data in R 
+
+Placeholder
+
+
+## Setting up the Environment
+## Importing the Inventory Data
+## Data Cleaning and Standardization
+## Exploring the Cleaned Data
+
+<!--chapter:end:002-Introduction.Rmd-->
+
+
+# Chapter 2: Forest Composition & Structure
+
+Placeholder
+
+
+## 2.1 Species Composition
+
+<!--chapter:end:003-Chapter_2_Forest_Composition_Diversity.Rmd-->
+
 ---
 output:
   pdf_document: default
@@ -212,4 +286,98 @@ ggplot(inventory_clean, aes(x = DBH_cm)) +
   theme_minimal()
 ```
 
+
+
+<!--chapter:end:004-Chapter_3_Forest_Stand_Structure.Rmd-->
+
+
+# Chapter 4: Allometric Relationships and Statistical Correlation
+
+Placeholder
+
+
+
+<!--chapter:end:004-Chapter_4_Allometric.Rmd-->
+
+# Footnotes and citations 
+
+## Footnotes
+
+Footnotes are put inside the square brackets after a caret `^[]`. Like this one ^[This is a footnote.]. 
+
+## Citations
+
+Reference items in your bibliography file(s) using `@key`.
+
+For example, we are using the **bookdown** package [@R-bookdown] (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and **knitr** [@xie2015] (this citation was added manually in an external file book.bib). 
+Note that the `.bib` files need to be listed in the index.Rmd with the YAML `bibliography` key.
+
+
+The `bs4_book` theme makes footnotes appear inline when you click on them. In this example book, we added `csl: chicago-fullnote-bibliography.csl` to the `index.Rmd` YAML, and include the `.csl` file. To download a new style, we recommend: https://www.zotero.org/styles/
+
+
+The RStudio Visual Markdown Editor can also make it easier to insert citations: <https://rstudio.github.io/visual-markdown-editing/#/citations>
+
+<!--chapter:end:04-citations.Rmd-->
+
+
+# Blocks
+
+Placeholder
+
+
+## Equations
+## Theorems and proofs
+## Callout blocks
+
+<!--chapter:end:05-blocks.Rmd-->
+
+# Sharing your book
+
+## Publishing
+
+HTML books can be published online, see: https://bookdown.org/yihui/bookdown/publishing.html
+
+## 404 pages
+
+By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a `_404.Rmd` or `_404.md` file to your project root and use code and/or Markdown syntax.
+
+## Metadata for sharing
+
+Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the `index.Rmd` YAML. To setup, set the `url` for your book and the path to your `cover-image` file. Your book's `title` and `description` are also used.
+
+
+This `bs4_book` provides enhanced metadata for social sharing, so that each chapter shared will have a unique description, auto-generated based on the content.
+
+Specify your book's source repository on GitHub as the `repo` in the `_output.yml` file, which allows users to view each chapter's source file or suggest an edit. Read more about the features of this output format here:
+
+https://pkgs.rstudio.com/bookdown/reference/bs4_book.html
+
+Or use:
+
+```{r eval=FALSE}
+?bookdown::bs4_book
+```
+
+
+
+
+<!--chapter:end:06-share.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:07-references.Rmd-->
+
+
+# Cross-references {#cross}
+
+Placeholder
+
+
+## Chapters and sub-chapters
+## Captioned figures and tables
+
+<!--chapter:end:099-cross-refs.Rmd-->
 
