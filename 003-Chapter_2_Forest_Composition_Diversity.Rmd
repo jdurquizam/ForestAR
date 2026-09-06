@@ -33,27 +33,3 @@ ggplot(top_species, aes(x = reorder(Scientific_Name, Count), y = Count)) +
     axis.text.y = element_text(face = "italic") # Standard practice: italicize scientific names
   )
 ```
-## 2.2 Forest Stand Structure (DBH)
-
-The distribution of tree diameters is a key indicator of forest health, history, and successional stage. In natural, uneven-aged forests, we typically expect to see a "Reverse-J" curve. This means there are many small, young trees in the understory and progressively fewer large, older trees forming the upper canopy.
-
-We can visualize this using a histogram of our DBH_cm (Diameter at Breast Height) column.
-
-```{r}
-#| label: dbh-distribution
-#| fig-cap: "Diameter distribution showing a classic Reverse-J curve for a natural forest."
-
-ggplot(inventory_clean, aes(x = DBH_cm)) +
-  # We use a binwidth of 5 cm, which is standard for forestry DBH classes
-  geom_histogram(binwidth = 5, fill = "forestgreen", color = "black", alpha = 0.7) +
-  # Create dynamic x-axis breaks based on our actual data max
-  scale_x_continuous(breaks = seq(0, max(inventory_clean$DBH_cm, na.rm = TRUE), by = 10)) +
-  labs(
-    title = "Diameter Distribution of the Stand",
-    subtitle = "The Reverse-J shape indicates an uneven-aged, regenerating forest",
-    x = "Diameter at Breast Height (cm)",
-    y = "Frequency (Number of Trees)"
-  ) +
-  theme_minimal()
-```
-
