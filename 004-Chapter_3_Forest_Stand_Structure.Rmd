@@ -1,8 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
 # Chapter 3: 2D Spatial Distribution and Mapping
 
 Forestry is inherently spatial. Knowing what is in the forest and how big it is only tells half the story; we also need to know exactly where the trees are.
