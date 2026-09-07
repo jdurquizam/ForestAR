@@ -20,6 +20,7 @@ url: "https://doi.org/10.5281/zenodo.22606690"
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.22606690)
 
+
 # Preface {-}
 
 Are you ready to navigate the intersection of natural resources and computer science? This book is your guide to doing just that, equipping you with the essential skills to harness the power of data for forest management and conservation. More than just a collection of tools, this book provides a transparent and efficient approach to forestry informatics.
@@ -35,9 +36,9 @@ Through a hands-on, project-based approach, you'll learn to use the R programmin
 By learning to use R command lines, you'll master a workflow that is not only powerful but also reproducible. This scientific approach ensures that your work is transparent, easily shared, and builds a foundation of credibility—a vital skill for any modern forester or natural resource professional. By the end of this book, you will be prepared to tackle the complex challenges facing our forests, equipped with the computational thinking and data-driven skills demanded by the industry.
 
 
-![](fig/ForestAR_logo.jpg){width=5in }
 
 ## About this book {.unnumbered}
 
 This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
 
+![](fig/ForestAR_logo.jpg){width=5in }
