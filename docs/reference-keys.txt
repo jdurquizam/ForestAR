@@ -11,7 +11,6 @@ fig:map-dbh-height
 tab:calc-biomass-structure
 fig:map-carbon-structure
 fig:dbh-height-correlation
-section
 chapter-1-introduction-to-forest-data-in-r
 setting-up-the-environment
 importing-the-inventory-data
