@@ -38,4 +38,22 @@ By learning to use R command lines, you'll master a workflow that is not only po
 
 This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
 
+## How to Cite this Book {-}
+
+If you use this resource in your research, teaching, or workflow, please cite it using the official Zenodo DOI:
+
+> Urquiza-Munoz, J. D. (2026). *Forest Attributes Analysis in R - ForestAR*. Zenodo. https://doi.org/10.5281/zenodo.22606690
+
+**BibTeX:**
+```bibtex
+@book{urquiza_munoz_forestar_2026,
+  author       = {Urquiza-Munoz, J. David},
+  title        = {Forest Attributes Analysis in R - ForestAR},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.22606690},
+  url          = {[https://doi.org/10.5281/zenodo.22606690](https://doi.org/10.5281/zenodo.22606690)}
+}
+```
+
 ![](fig/MPG_Logo_green.png){width=2in}
