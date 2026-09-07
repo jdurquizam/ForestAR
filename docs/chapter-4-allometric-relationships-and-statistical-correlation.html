@@ -236,11 +236,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="google_translate_element" style="padding: 10px; text-align: center;"></div>
+<div id="google_translate_element" style="padding: 10px; text-align: right;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en', 
+    includedLanguages: 'es,pt',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
@@ -280,50 +281,50 @@ function googleTranslateElementInit() {
 <p>##4.1 Plotting DBH vs. Height</p>
 <p>To create publication-ready correlation plots that include mathematical equations and p-values, we will introduce a new package called ggpubr. It is an extension of ggplot2 designed specifically for adding statistical indicators to charts.</p>
 <p>Note: If you haven’t installed it yet, run install.packages(“ggpubr”) in your R console.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb43-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-2" tabindex="-1"></a><span class="fu">library</span>(ggpubr) <span class="co"># For adding equations and p-values</span></span>
-<span id="cb43-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-3" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-4" tabindex="-1"></a><span class="co"># First, ensure our columns are clean numeric values and remove missing data</span></span>
-<span id="cb43-5"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-5" tabindex="-1"></a>inventory_cor <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
-<span id="cb43-6"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-6" tabindex="-1"></a>  <span class="co"># Force height and DBH to numeric just in case they imported as text</span></span>
-<span id="cb43-7"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb43-8"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-8" tabindex="-1"></a>    <span class="at">DBH_cm =</span> <span class="fu">as.numeric</span>(DBH_cm),</span>
-<span id="cb43-9"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-9" tabindex="-1"></a>    <span class="at">Height_m =</span> <span class="fu">as.numeric</span>(Height_m)</span>
-<span id="cb43-10"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb43-11"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(DBH_cm), <span class="sc">!</span><span class="fu">is.na</span>(Height_m))</span>
-<span id="cb43-12"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-12" tabindex="-1"></a></span>
-<span id="cb43-13"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-13" tabindex="-1"></a><span class="co"># Create the scatter plot</span></span>
-<span id="cb43-14"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-14" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(inventory_cor, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm, <span class="at">y =</span> Height_m)) <span class="sc">+</span></span>
-<span id="cb43-15"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-15" tabindex="-1"></a>  <span class="co"># Add the raw data points</span></span>
-<span id="cb43-16"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-16" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb43-17"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-17" tabindex="-1"></a>  </span>
-<span id="cb43-18"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-18" tabindex="-1"></a>  <span class="co"># Fit a linear model (lm) and draw the regression line with a confidence interval ribbon</span></span>
-<span id="cb43-19"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-19" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;lightcoral&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb43-20"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-20" tabindex="-1"></a>  </span>
-<span id="cb43-21"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-21" tabindex="-1"></a>  <span class="co"># Add the regression equation to the plot (placed dynamically near the top)</span></span>
-<span id="cb43-22"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-22" tabindex="-1"></a>  <span class="fu">stat_regline_equation</span>(<span class="at">label.y =</span> <span class="fu">max</span>(inventory_cor<span class="sc">$</span>Height_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.95</span>, </span>
-<span id="cb43-23"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-23" tabindex="-1"></a>                        <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb43-24"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-24" tabindex="-1"></a>  </span>
-<span id="cb43-25"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-25" tabindex="-1"></a>  <span class="co"># Add the R-squared and p-value</span></span>
-<span id="cb43-26"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-26" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(<span class="fu">paste</span>(r.label, p.label, <span class="at">sep =</span> <span class="st">&quot;~`,`~&quot;</span>))), </span>
-<span id="cb43-27"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-27" tabindex="-1"></a>           <span class="at">label.y =</span> <span class="fu">max</span>(inventory_cor<span class="sc">$</span>Height_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.88</span>, </span>
-<span id="cb43-28"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-28" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb43-29"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-29" tabindex="-1"></a>  </span>
-<span id="cb43-30"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-30" tabindex="-1"></a>  <span class="co"># Format the labels and theme</span></span>
-<span id="cb43-31"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-31" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb43-32"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-32" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tree Allometry: DBH vs. Total Height&quot;</span>,</span>
-<span id="cb43-33"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-33" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Establishing a predictive linear model for canopy structure&quot;</span>,</span>
-<span id="cb43-34"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-34" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Diameter at Breast Height (cm)&quot;</span>,</span>
-<span id="cb43-35"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-35" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Total Height (m)&quot;</span></span>
-<span id="cb43-36"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-36" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb43-37"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-37" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb43-38"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-38" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb43-39"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-39" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb43-40"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-40" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb43-41"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-41" tabindex="-1"></a>  )</span>
-<span id="cb43-42"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-42" tabindex="-1"></a></span>
-<span id="cb43-43"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-43" tabindex="-1"></a><span class="co"># Display the plot</span></span>
-<span id="cb43-44"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb43-44" tabindex="-1"></a><span class="fu">print</span>(p)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb46-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-2" tabindex="-1"></a><span class="fu">library</span>(ggpubr) <span class="co"># For adding equations and p-values</span></span>
+<span id="cb46-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-3" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-4" tabindex="-1"></a><span class="co"># First, ensure our columns are clean numeric values and remove missing data</span></span>
+<span id="cb46-5"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-5" tabindex="-1"></a>inventory_cor <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb46-6"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-6" tabindex="-1"></a>  <span class="co"># Force height and DBH to numeric just in case they imported as text</span></span>
+<span id="cb46-7"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb46-8"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-8" tabindex="-1"></a>    <span class="at">DBH_cm =</span> <span class="fu">as.numeric</span>(DBH_cm),</span>
+<span id="cb46-9"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-9" tabindex="-1"></a>    <span class="at">Height_m =</span> <span class="fu">as.numeric</span>(Height_m)</span>
+<span id="cb46-10"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb46-11"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(DBH_cm), <span class="sc">!</span><span class="fu">is.na</span>(Height_m))</span>
+<span id="cb46-12"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-12" tabindex="-1"></a></span>
+<span id="cb46-13"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-13" tabindex="-1"></a><span class="co"># Create the scatter plot</span></span>
+<span id="cb46-14"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-14" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(inventory_cor, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm, <span class="at">y =</span> Height_m)) <span class="sc">+</span></span>
+<span id="cb46-15"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-15" tabindex="-1"></a>  <span class="co"># Add the raw data points</span></span>
+<span id="cb46-16"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-16" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb46-17"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-17" tabindex="-1"></a>  </span>
+<span id="cb46-18"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-18" tabindex="-1"></a>  <span class="co"># Fit a linear model (lm) and draw the regression line with a confidence interval ribbon</span></span>
+<span id="cb46-19"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-19" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;lightcoral&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb46-20"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-20" tabindex="-1"></a>  </span>
+<span id="cb46-21"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-21" tabindex="-1"></a>  <span class="co"># Add the regression equation to the plot (placed dynamically near the top)</span></span>
+<span id="cb46-22"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-22" tabindex="-1"></a>  <span class="fu">stat_regline_equation</span>(<span class="at">label.y =</span> <span class="fu">max</span>(inventory_cor<span class="sc">$</span>Height_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.95</span>, </span>
+<span id="cb46-23"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-23" tabindex="-1"></a>                        <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb46-24"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-24" tabindex="-1"></a>  </span>
+<span id="cb46-25"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-25" tabindex="-1"></a>  <span class="co"># Add the R-squared and p-value</span></span>
+<span id="cb46-26"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-26" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(<span class="fu">paste</span>(r.label, p.label, <span class="at">sep =</span> <span class="st">&quot;~`,`~&quot;</span>))), </span>
+<span id="cb46-27"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-27" tabindex="-1"></a>           <span class="at">label.y =</span> <span class="fu">max</span>(inventory_cor<span class="sc">$</span>Height_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.88</span>, </span>
+<span id="cb46-28"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-28" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb46-29"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-29" tabindex="-1"></a>  </span>
+<span id="cb46-30"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-30" tabindex="-1"></a>  <span class="co"># Format the labels and theme</span></span>
+<span id="cb46-31"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-31" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb46-32"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-32" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tree Allometry: DBH vs. Total Height&quot;</span>,</span>
+<span id="cb46-33"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-33" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Establishing a predictive linear model for canopy structure&quot;</span>,</span>
+<span id="cb46-34"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-34" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Diameter at Breast Height (cm)&quot;</span>,</span>
+<span id="cb46-35"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-35" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Total Height (m)&quot;</span></span>
+<span id="cb46-36"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-36" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb46-37"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-37" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb46-38"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-38" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb46-39"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-39" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb46-40"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-40" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb46-41"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-41" tabindex="-1"></a>  )</span>
+<span id="cb46-42"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-42" tabindex="-1"></a></span>
+<span id="cb46-43"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-43" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb46-44"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb46-44" tabindex="-1"></a><span class="fu">print</span>(p)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:dbh-height-correlation"></span>
 <img src="_main_files/figure-html/dbh-height-correlation-1.png" alt="Linear regression model of DBH versus Total Height." width="672" />
 <p class="caption">
@@ -339,19 +340,19 @@ Figure 4.1: Linear regression model of DBH versus Total Height.
 <h2><span class="header-section-number">4.4</span> Estimating Missing Heights<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#estimating-missing-heights" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In dense tropical canopies, measuring the total height of every tree using a laser hypsometer is often impossible. Consequently, field crews usually only measure the diameter (DBH) for all trees and take height subsamples.</p>
 <p>To map canopy structure across our entire plot, we can estimate the missing tree heights using established allometric equations. The BIOMASS package in R provides a seamless way to do this. We will use the regional Weibull allometric model developed by Feldpausch et al. (2012)<span class="citation"><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></span> specifically calibrated for South American (Amazonian) forests.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-1" tabindex="-1"></a><span class="co"># Install the BIOMASS package if you haven&#39;t already: install.packages(&quot;BIOMASS&quot;)</span></span>
-<span id="cb44-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-2" tabindex="-1"></a><span class="fu">library</span>(BIOMASS)</span>
-<span id="cb44-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-3" tabindex="-1"></a></span>
-<span id="cb44-4"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-4" tabindex="-1"></a><span class="co"># Estimate height using the Feldpausch et al. (2012) model for South America</span></span>
-<span id="cb44-5"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-5" tabindex="-1"></a><span class="co"># retrieveH returns a list, and we extract the &#39;H&#39; (Height) vector from it</span></span>
-<span id="cb44-6"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-6" tabindex="-1"></a>estimated_heights <span class="ot">&lt;-</span> <span class="fu">retrieveH</span>(<span class="at">D =</span> inventory_sf<span class="sc">$</span>DBH_cm, <span class="at">region =</span> <span class="st">&quot;SAmerica&quot;</span>)</span>
-<span id="cb44-7"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-7" tabindex="-1"></a></span>
-<span id="cb44-8"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-8" tabindex="-1"></a><span class="co"># Add the newly estimated heights back into our spatial dataset</span></span>
-<span id="cb44-9"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-9" tabindex="-1"></a>inventory_sf <span class="ot">&lt;-</span> inventory_sf <span class="sc">%&gt;%</span></span>
-<span id="cb44-10"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Height_m_allo =</span> estimated_heights<span class="sc">$</span>H)</span>
-<span id="cb44-11"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-11" tabindex="-1"></a></span>
-<span id="cb44-12"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-12" tabindex="-1"></a><span class="co"># Check the summary of our new heights</span></span>
-<span id="cb44-13"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb44-13" tabindex="-1"></a><span class="fu">summary</span>(inventory_sf<span class="sc">$</span>Height_m_allo)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-1" tabindex="-1"></a><span class="co"># Install the BIOMASS package if you haven&#39;t already: install.packages(&quot;BIOMASS&quot;)</span></span>
+<span id="cb47-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-2" tabindex="-1"></a><span class="fu">library</span>(BIOMASS)</span>
+<span id="cb47-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-3" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-4" tabindex="-1"></a><span class="co"># Estimate height using the Feldpausch et al. (2012) model for South America</span></span>
+<span id="cb47-5"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-5" tabindex="-1"></a><span class="co"># retrieveH returns a list, and we extract the &#39;H&#39; (Height) vector from it</span></span>
+<span id="cb47-6"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-6" tabindex="-1"></a>estimated_heights <span class="ot">&lt;-</span> <span class="fu">retrieveH</span>(<span class="at">D =</span> inventory_sf<span class="sc">$</span>DBH_cm, <span class="at">region =</span> <span class="st">&quot;SAmerica&quot;</span>)</span>
+<span id="cb47-7"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-7" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-8" tabindex="-1"></a><span class="co"># Add the newly estimated heights back into our spatial dataset</span></span>
+<span id="cb47-9"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-9" tabindex="-1"></a>inventory_sf <span class="ot">&lt;-</span> inventory_sf <span class="sc">%&gt;%</span></span>
+<span id="cb47-10"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Height_m_allo =</span> estimated_heights<span class="sc">$</span>H)</span>
+<span id="cb47-11"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-11" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-12" tabindex="-1"></a><span class="co"># Check the summary of our new heights</span></span>
+<span id="cb47-13"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb47-13" tabindex="-1"></a><span class="fu">summary</span>(inventory_sf<span class="sc">$</span>Height_m_allo)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   7.138  12.759  15.414  16.763  19.645  34.440</code></pre>
 <p>Now that every tree has an estimated height based on Amazonian allometry, we can visualize the spatial distribution of canopy structure and biomass hotspots.</p>
