@@ -17,6 +17,7 @@ biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 url: "https://doi.org/10.5281/zenodo.22606690"
 ---
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.22606690)
 
 # Preface {-}
@@ -34,7 +35,7 @@ Through a hands-on, project-based approach, you'll learn to use the R programmin
 By learning to use R command lines, you'll master a workflow that is not only powerful but also reproducible. This scientific approach ensures that your work is transparent, easily shared, and builds a foundation of credibility—a vital skill for any modern forester or natural resource professional. By the end of this book, you will be prepared to tackle the complex challenges facing our forests, equipped with the computational thinking and data-driven skills demanded by the industry.
 
 
-![](fig/img1.png){width=5in }
+![](fig/ForestAR.png){width=5in }
 
 ## About this book {.unnumbered}
 
