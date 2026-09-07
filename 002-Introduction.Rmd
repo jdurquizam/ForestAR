@@ -4,6 +4,34 @@ Welcome to the foundation of our forestry visualization journey. Before we can g
 
 In this chapter, we will set up our R environment, import our raw forest inventory data, and perform basic cleaning to ensure it is ready for spatial and statistical analysis.
 
+### Download Project Files
+
+If you prefer to follow along locally by running the scripts yourself, you can download the complete project directory:
+
+* **[Download Complete ForestAR Repository (.zip)](https://github.com/jdurquizam/ForestAR/archive/refs/heads/main.zip)**
+* Or view the source code and development history directly on the [ForestAR GitHub Repository](https://github.com/jdurquizam/ForestAR).
+
+## Setting Your Working Directory {-}
+
+To ensure your scripts and book renders execute without path errors, follow these file management practices:
+
+### Using RStudio Projects
+* **The Root Folder:** Opening your project via the `.Rproj` file automatically defines your working directory as the main project folder. You never need to use `setwd()` manually.
+* **Relative Paths:** Always reference data and scripts relative to the project root (e.g., `data/inventory.csv` instead of absolute paths like `C:/Users/Name/Documents/...`).
+
+### Using the `here` Package
+For robust file referencing across different operating systems, use the `here` package to build file paths dynamically:
+
+```{r}
+#| eval: false
+library(here)
+
+# Automatically finds your project root and builds the correct path
+data_path <- here("data", "forest_inventory.csv")
+inventory <- read.csv(data_path)
+
+```
+
 ## Setting up the Environment
 
 To work effectively with forestry data, we need a specific set of tools. The tidyverse is a collection of R packages designed for data science (providing tools for reading, manipulating, and visualizing data), while sf (Simple Features) is the modern standard for handling spatial data in R.
@@ -20,6 +48,7 @@ library(tidyverse)
 library(sf)
 library(knitr) # Used for rendering neat tables in our book
 ```
+
 
 
 ## Importing the Inventory Data

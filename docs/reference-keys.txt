@@ -12,6 +12,9 @@ tab:calc-biomass-structure
 fig:map-carbon-structure
 fig:dbh-height-correlation
 chapter-1-introduction-to-forest-data-in-r
+download-project-files
+using-rstudio-projects
+using-the-here-package
 setting-up-the-environment
 importing-the-inventory-data
 data-cleaning-and-standardization
