@@ -360,3 +360,83 @@ ggplot(data = inventory_sf) +
   )
 ```
 
+## Biomass and Carbon as Structural Attributes
+
+While DBH and height give us the geometric structure of the forest, Aboveground Biomass (AGB) represents the true physical weight and 3D occupation of the stand. 
+
+To calculate AGB without destructively harvesting trees, we use the pantropical allometric model by Chave et al. (2014). This requires our DBH, our estimated Height, and the Wood Specific Gravity ($\rho$) of each species. 
+
+### Extracting Wood Density and Calculating AGB
+
+We can retrieve the regional wood density for our species using the Global Wood Density Database (Zanne et al., 2009) via the `BIOMASS` package. Once we have all three variables, we calculate AGB (in kg) using the formula:
+
+$$AGB = 0.0673 \times (\rho \times DBH^2 \times H)^{0.976}$$
+
+```{r}
+#| label: calc-biomass-structure
+#| message: false
+#| warning: false
+
+library(BIOMASS)
+library(tidyverse)
+
+# 1. Split Scientific Name to get Genus and Species
+inventory_sf <- inventory_sf %>%
+  separate(Scientific_Name, into = c("Genus", "Species"), 
+           sep = " ", extra = "drop", remove = FALSE)
+
+# 2. Retrieve Wood Density for South America (Tropical)
+wd_data <- getWoodDensity(genus = inventory_sf$Genus,
+                          species = inventory_sf$Species,
+                          region = "SouthAmericaTrop") # <-- Fixed region name here
+
+# 3. Calculate AGB and Carbon (Mg)
+inventory_sf <- inventory_sf %>%
+  mutate(
+    WoodDensity_g_cm3 = wd_data$meanWD,
+    # Calculate AGB in kg
+    AGB_kg = 0.0673 * (WoodDensity_g_cm3 * DBH_cm^2 * Height_m)^0.976,
+    # Convert to metric tonnes (Mg)
+    AGB_Mg = AGB_kg / 1000,
+    # Estimate Carbon (47.1% of AGB)
+    Carbon_Mg = AGB_Mg * 0.471
+  )
+
+# Summarize the stand totals
+stand_carbon <- inventory_sf %>%
+  st_drop_geometry() %>%
+  summarise(
+    Total_AGB_Mg_ha = sum(AGB_Mg, na.rm = TRUE),
+    Total_Carbon_Mg_ha = sum(Carbon_Mg, na.rm = TRUE)
+  )
+
+kable(stand_carbon, digits = 2, caption = "Total Stand AGB and Carbon Storage.")
+
+
+```
+## Spatial Distribution of Carbon
+
+Forest biomass is rarely distributed evenly. In old-growth Amazonian stands, massive emergent trees dictate the canopy structure and can store up to 50% of the total carbon. By mapping our carbon estimates, we can identify these structural "hotspots."
+
+```{r}
+#| label: map-carbon-structure
+#| fig-cap: "Spatial distribution of structural carbon. Bright yellow circles indicate massive trees dominating the canopy structure and carbon pool."
+#| warning: false
+
+ggplot(data = inventory_sf) +
+  # Map size and color to the Carbon variable
+  geom_sf(aes(size = Carbon_Mg, color = Carbon_Mg), alpha = 0.8) +
+  scale_color_viridis_c(option = "inferno", name = "Carbon (Mg)") +
+  scale_size_continuous(range = c(1.5, 8), guide = "none") +
+  labs(
+    title = "Structural Carbon Hotspots",
+    x = "Easting (UTM m)",
+    y = "Northing (UTM m)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "right"
+  )
+```
+
