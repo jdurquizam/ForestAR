@@ -40,3 +40,9 @@ a:hover, .book .book-body .page-wrapper .page-inner section.normal a:hover {
   color: #A0522D !important; /* A lighter Sienna brown */
   text-decoration: underline;
 }
+
+/* Disable Bookdown's chapter preview popups on hover */
+.tooltip, .popover {
+  display: none !important;
+  opacity: 0 !important;
+}
