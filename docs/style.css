@@ -1,0 +1,42 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+/* Reduce line spacing for all text */
+body {
+  line-height: 1.4 !important; 
+}
+
+/* Reduce the gap between paragraphs */
+p {
+  margin-bottom: 0.8em !important;
+}
+
+/* Reduce the gap around headings */
+h1, h2, h3 {
+  margin-top: 1.2em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Customize link colors to match the sepia theme */
+a, .book .book-body .page-wrapper .page-inner section.normal a {
+  color: #8B4513 !important; /* A warm SaddleBrown color */
+  text-decoration: none;
+}
+
+/* Change color slightly when hovering over the link */
+a:hover, .book .book-body .page-wrapper .page-inner section.normal a:hover {
+  color: #A0522D !important; /* A lighter Sienna brown */
+  text-decoration: underline;
+}

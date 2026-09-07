@@ -38,7 +38,7 @@ By learning to use R command lines, you'll master a workflow that is not only po
 
 This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
 
-## How to Cite this Book {-}
+### How to Cite this Book {-}
 
 If you use this resource in your research, teaching, or workflow, please cite it using the official Zenodo DOI:
 

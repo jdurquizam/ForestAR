@@ -146,6 +146,7 @@ div.csl-indent {
 }
 </style>
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -160,8 +161,10 @@ div.csl-indent {
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About this book</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-cite-this-book"><i class="fa fa-check"></i>How to Cite this Book</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a>
 <ul>
@@ -233,6 +236,23 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<div id="google_translate_element" style="padding: 10px; text-align: center;"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', 
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div style="padding: 10px; text-align: center; font-size: 0.85em; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 10px;">
+  <strong>Connect:</strong><br>
+  <a href="https://www.researchgate.net/profile/J-David-Urquiza-Munoz?ev=hdr_xprf" target="_blank" style="margin: 0 3px;">ResearchGate</a> | 
+  <a href="https://www.linkedin.com/in/j-david-urquiza-munoz-446bb223/" target="_blank" style="margin: 0 3px;">LinkedIn</a> | 
+  <a href="https://x.com/JoDaUrMu1" target="_blank" style="margin: 0 3px;">X</a>
+</div>
 <div id="chapter-2-forest-composition-structure" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Chapter 2: Forest Composition &amp; Structure<a href="chapter-2-forest-composition-structure.html#chapter-2-forest-composition-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>With our inventory data cleaned and standardized, we can now explore the ecological characteristics of our forest stand. Two of the most fundamental questions in any forest inventory are: What species are growing here? and How big are they?</p>
@@ -275,82 +295,81 @@ Figure 2.1: Top 10 most abundant tree species in the inventory.
 where <span class="math inline">\(p_i\)</span> is the proportion of individuals belonging to the <span class="math inline">\(i\)</span>th species.</p>
 <p>Simpson Index (<span class="math inline">\(D\)</span>):<span class="citation"><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></span> Measures the probability that two individuals randomly selected from a sample will belong to the same species.Let’s use the vegan package to calculate these metrics for our plot.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chapter-2-forest-composition-structure.html#cb9-1" tabindex="-1"></a><span class="co"># Install vegan if needed: install.packages(&quot;vegan&quot;)</span></span>
-<span id="cb9-2"><a href="chapter-2-forest-composition-structure.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(vegan)</span></code></pre></div>
-<pre><code>## Warning: package &#39;vegan&#39; was built under R version 4.4.3</code></pre>
-<pre><code>## Warning: package &#39;permute&#39; was built under R version 4.4.3</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="chapter-2-forest-composition-structure.html#cb12-1" tabindex="-1"></a><span class="co"># First, we need a table of species counts (a community matrix)</span></span>
-<span id="cb12-2"><a href="chapter-2-forest-composition-structure.html#cb12-2" tabindex="-1"></a>species_counts <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="chapter-2-forest-composition-structure.html#cb12-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Scientific_Name =</span> <span class="fu">ifelse</span>(Scientific_Name <span class="sc">==</span> <span class="st">&quot;&quot;</span>, <span class="st">&quot;Unknown&quot;</span>, Scientific_Name)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="chapter-2-forest-composition-structure.html#cb12-4" tabindex="-1"></a>  <span class="fu">count</span>(Scientific_Name) <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="chapter-2-forest-composition-structure.html#cb12-5" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific_Name, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
-<span id="cb12-6"><a href="chapter-2-forest-composition-structure.html#cb12-6" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="chapter-2-forest-composition-structure.html#cb12-7" tabindex="-1"></a><span class="co"># Calculate Shannon Index</span></span>
-<span id="cb12-8"><a href="chapter-2-forest-composition-structure.html#cb12-8" tabindex="-1"></a>shannon_index <span class="ot">&lt;-</span> <span class="fu">diversity</span>(species_counts, <span class="at">index =</span> <span class="st">&quot;shannon&quot;</span>)</span>
-<span id="cb12-9"><a href="chapter-2-forest-composition-structure.html#cb12-9" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="chapter-2-forest-composition-structure.html#cb12-10" tabindex="-1"></a><span class="co"># Calculate Simpson Index</span></span>
-<span id="cb12-11"><a href="chapter-2-forest-composition-structure.html#cb12-11" tabindex="-1"></a>simpson_index <span class="ot">&lt;-</span> <span class="fu">diversity</span>(species_counts, <span class="at">index =</span> <span class="st">&quot;simpson&quot;</span>)</span>
-<span id="cb12-12"><a href="chapter-2-forest-composition-structure.html#cb12-12" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="chapter-2-forest-composition-structure.html#cb12-13" tabindex="-1"></a><span class="co"># Calculate Species Richness (Total number of unique species)</span></span>
-<span id="cb12-14"><a href="chapter-2-forest-composition-structure.html#cb12-14" tabindex="-1"></a>richness <span class="ot">&lt;-</span> <span class="fu">specnumber</span>(species_counts)</span>
-<span id="cb12-15"><a href="chapter-2-forest-composition-structure.html#cb12-15" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="chapter-2-forest-composition-structure.html#cb12-16" tabindex="-1"></a><span class="co"># Print the results</span></span>
-<span id="cb12-17"><a href="chapter-2-forest-composition-structure.html#cb12-17" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Species Richness (S):&quot;</span>, richness, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<span id="cb9-2"><a href="chapter-2-forest-composition-structure.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(vegan)</span>
+<span id="cb9-3"><a href="chapter-2-forest-composition-structure.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="chapter-2-forest-composition-structure.html#cb9-4" tabindex="-1"></a><span class="co"># First, we need a table of species counts (a community matrix)</span></span>
+<span id="cb9-5"><a href="chapter-2-forest-composition-structure.html#cb9-5" tabindex="-1"></a>species_counts <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="chapter-2-forest-composition-structure.html#cb9-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Scientific_Name =</span> <span class="fu">ifelse</span>(Scientific_Name <span class="sc">==</span> <span class="st">&quot;&quot;</span>, <span class="st">&quot;Unknown&quot;</span>, Scientific_Name)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="chapter-2-forest-composition-structure.html#cb9-7" tabindex="-1"></a>  <span class="fu">count</span>(Scientific_Name) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="chapter-2-forest-composition-structure.html#cb9-8" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific_Name, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
+<span id="cb9-9"><a href="chapter-2-forest-composition-structure.html#cb9-9" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="chapter-2-forest-composition-structure.html#cb9-10" tabindex="-1"></a><span class="co"># Calculate Shannon Index</span></span>
+<span id="cb9-11"><a href="chapter-2-forest-composition-structure.html#cb9-11" tabindex="-1"></a>shannon_index <span class="ot">&lt;-</span> <span class="fu">diversity</span>(species_counts, <span class="at">index =</span> <span class="st">&quot;shannon&quot;</span>)</span>
+<span id="cb9-12"><a href="chapter-2-forest-composition-structure.html#cb9-12" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="chapter-2-forest-composition-structure.html#cb9-13" tabindex="-1"></a><span class="co"># Calculate Simpson Index</span></span>
+<span id="cb9-14"><a href="chapter-2-forest-composition-structure.html#cb9-14" tabindex="-1"></a>simpson_index <span class="ot">&lt;-</span> <span class="fu">diversity</span>(species_counts, <span class="at">index =</span> <span class="st">&quot;simpson&quot;</span>)</span>
+<span id="cb9-15"><a href="chapter-2-forest-composition-structure.html#cb9-15" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="chapter-2-forest-composition-structure.html#cb9-16" tabindex="-1"></a><span class="co"># Calculate Species Richness (Total number of unique species)</span></span>
+<span id="cb9-17"><a href="chapter-2-forest-composition-structure.html#cb9-17" tabindex="-1"></a>richness <span class="ot">&lt;-</span> <span class="fu">specnumber</span>(species_counts)</span>
+<span id="cb9-18"><a href="chapter-2-forest-composition-structure.html#cb9-18" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="chapter-2-forest-composition-structure.html#cb9-19" tabindex="-1"></a><span class="co"># Print the results</span></span>
+<span id="cb9-20"><a href="chapter-2-forest-composition-structure.html#cb9-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Species Richness (S):&quot;</span>, richness, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Species Richness (S): 207</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="chapter-2-forest-composition-structure.html#cb14-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Shannon Index (H&#39;):&quot;</span>, <span class="fu">round</span>(shannon_index, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chapter-2-forest-composition-structure.html#cb11-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Shannon Index (H&#39;):&quot;</span>, <span class="fu">round</span>(shannon_index, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Shannon Index (H&#39;): 4.639</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="chapter-2-forest-composition-structure.html#cb16-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Simpson Index (D):&quot;</span>, <span class="fu">round</span>(simpson_index, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chapter-2-forest-composition-structure.html#cb13-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Simpson Index (D):&quot;</span>, <span class="fu">round</span>(simpson_index, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Simpson Index (D): 0.982</code></pre>
 </div>
 <div id="species-accumulation-curves" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Species Accumulation Curves<a href="chapter-2-forest-composition-structure.html#species-accumulation-curves" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In dense tropical canopies, a critical question is: Did we sample a large enough area to capture the true diversity of the forest?</p>
 <p>A Species Accumulation Curve plots the number of new species discovered as the sampling effort (number of trees or plots) increases. If the curve flattens out (reaches an asymptote), our sampling effort was sufficient. If it is still climbing steeply, many rare species remain undiscovered.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="chapter-2-forest-composition-structure.html#cb18-1" tabindex="-1"></a>presence_matrix <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="chapter-2-forest-composition-structure.html#cb18-2" tabindex="-1"></a>  <span class="co"># 1. Add this filter to remove empty strings first!</span></span>
-<span id="cb18-3"><a href="chapter-2-forest-composition-structure.html#cb18-3" tabindex="-1"></a>  <span class="fu">filter</span>(Scientific_Name <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, <span class="sc">!</span><span class="fu">is.na</span>(Scientific_Name)) <span class="sc">%&gt;%</span></span>
-<span id="cb18-4"><a href="chapter-2-forest-composition-structure.html#cb18-4" tabindex="-1"></a>  <span class="co"># 2. Proceed with the rest of the code</span></span>
-<span id="cb18-5"><a href="chapter-2-forest-composition-structure.html#cb18-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Presence =</span> <span class="dv">1</span>, <span class="at">Tree_Index =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb18-6"><a href="chapter-2-forest-composition-structure.html#cb18-6" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific_Name, <span class="at">values_from =</span> Presence, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-7"><a href="chapter-2-forest-composition-structure.html#cb18-7" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Plot_ID, <span class="sc">-</span>Tree_ID, <span class="sc">-</span>Common_Name, <span class="sc">-</span>DBH_cm, <span class="sc">-</span>Easting, <span class="sc">-</span>Northing, <span class="sc">-</span>Tree_Index)</span>
-<span id="cb18-8"><a href="chapter-2-forest-composition-structure.html#cb18-8" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="chapter-2-forest-composition-structure.html#cb18-9" tabindex="-1"></a>accum_curve <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(presence_matrix, <span class="at">method =</span> <span class="st">&quot;exact&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chapter-2-forest-composition-structure.html#cb15-1" tabindex="-1"></a>presence_matrix <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="chapter-2-forest-composition-structure.html#cb15-2" tabindex="-1"></a>  <span class="co"># 1. Add this filter to remove empty strings first!</span></span>
+<span id="cb15-3"><a href="chapter-2-forest-composition-structure.html#cb15-3" tabindex="-1"></a>  <span class="fu">filter</span>(Scientific_Name <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, <span class="sc">!</span><span class="fu">is.na</span>(Scientific_Name)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="chapter-2-forest-composition-structure.html#cb15-4" tabindex="-1"></a>  <span class="co"># 2. Proceed with the rest of the code</span></span>
+<span id="cb15-5"><a href="chapter-2-forest-composition-structure.html#cb15-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Presence =</span> <span class="dv">1</span>, <span class="at">Tree_Index =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="chapter-2-forest-composition-structure.html#cb15-6" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific_Name, <span class="at">values_from =</span> Presence, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="chapter-2-forest-composition-structure.html#cb15-7" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Plot_ID, <span class="sc">-</span>Tree_ID, <span class="sc">-</span>Common_Name, <span class="sc">-</span>DBH_cm, <span class="sc">-</span>Easting, <span class="sc">-</span>Northing, <span class="sc">-</span>Tree_Index)</span>
+<span id="cb15-8"><a href="chapter-2-forest-composition-structure.html#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="chapter-2-forest-composition-structure.html#cb15-9" tabindex="-1"></a>accum_curve <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(presence_matrix, <span class="at">method =</span> <span class="st">&quot;exact&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in cor(x &gt; 0): the standard deviation is zero</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="chapter-2-forest-composition-structure.html#cb20-1" tabindex="-1"></a><span class="fu">plot</span>(accum_curve, <span class="at">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ci.lty =</span> <span class="dv">0</span>, <span class="at">ci.col =</span> <span class="st">&quot;lightblue&quot;</span>,</span>
-<span id="cb20-2"><a href="chapter-2-forest-composition-structure.html#cb20-2" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Number of Trees Sampled&quot;</span>,</span>
-<span id="cb20-3"><a href="chapter-2-forest-composition-structure.html#cb20-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cumulative Number of Species&quot;</span>,</span>
-<span id="cb20-4"><a href="chapter-2-forest-composition-structure.html#cb20-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Species Accumulation Curve&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chapter-2-forest-composition-structure.html#cb17-1" tabindex="-1"></a><span class="fu">plot</span>(accum_curve, <span class="at">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ci.lty =</span> <span class="dv">0</span>, <span class="at">ci.col =</span> <span class="st">&quot;lightblue&quot;</span>,</span>
+<span id="cb17-2"><a href="chapter-2-forest-composition-structure.html#cb17-2" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Number of Trees Sampled&quot;</span>,</span>
+<span id="cb17-3"><a href="chapter-2-forest-composition-structure.html#cb17-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cumulative Number of Species&quot;</span>,</span>
+<span id="cb17-4"><a href="chapter-2-forest-composition-structure.html#cb17-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Species Accumulation Curve&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:species-accumulation"></span>
 <img src="_main_files/figure-html/species-accumulation-1.png" alt="Species accumulation curve showing the rate at which new species are encountered as sampling effort increases." width="672" />
 <p class="caption">
 Figure 2.2: Species accumulation curve showing the rate at which new species are encountered as sampling effort increases.
 </p>
 </div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chapter-2-forest-composition-structure.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(vegan)</span>
-<span id="cb21-2"><a href="chapter-2-forest-composition-structure.html#cb21-2" tabindex="-1"></a><span class="fu">library</span>(tibble) <span class="co"># Needed to convert the Plot_ID column into row names</span></span>
-<span id="cb21-3"><a href="chapter-2-forest-composition-structure.html#cb21-3" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="chapter-2-forest-composition-structure.html#cb21-4" tabindex="-1"></a><span class="co"># 1. Create a community matrix grouped by Subplot (Plot_ID)</span></span>
-<span id="cb21-5"><a href="chapter-2-forest-composition-structure.html#cb21-5" tabindex="-1"></a>subplot_matrix <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
-<span id="cb21-6"><a href="chapter-2-forest-composition-structure.html#cb21-6" tabindex="-1"></a>  <span class="co"># Ensure we have no blank species names</span></span>
-<span id="cb21-7"><a href="chapter-2-forest-composition-structure.html#cb21-7" tabindex="-1"></a>  <span class="fu">filter</span>(Scientific_Name <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, <span class="sc">!</span><span class="fu">is.na</span>(Scientific_Name)) <span class="sc">%&gt;%</span></span>
-<span id="cb21-8"><a href="chapter-2-forest-composition-structure.html#cb21-8" tabindex="-1"></a>  <span class="co"># Count the number of each species PER subplot</span></span>
-<span id="cb21-9"><a href="chapter-2-forest-composition-structure.html#cb21-9" tabindex="-1"></a>  <span class="fu">count</span>(Plot_ID, Scientific_Name) <span class="sc">%&gt;%</span></span>
-<span id="cb21-10"><a href="chapter-2-forest-composition-structure.html#cb21-10" tabindex="-1"></a>  <span class="co"># Pivot into a wide matrix (Rows = Plot_ID, Columns = Species)</span></span>
-<span id="cb21-11"><a href="chapter-2-forest-composition-structure.html#cb21-11" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific_Name, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb21-12"><a href="chapter-2-forest-composition-structure.html#cb21-12" tabindex="-1"></a>  <span class="co"># &#39;vegan&#39; requires the matrix to be purely numeric, so we move Plot_ID to the row names</span></span>
-<span id="cb21-13"><a href="chapter-2-forest-composition-structure.html#cb21-13" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">&quot;Plot_ID&quot;</span>)</span>
-<span id="cb21-14"><a href="chapter-2-forest-composition-structure.html#cb21-14" tabindex="-1"></a></span>
-<span id="cb21-15"><a href="chapter-2-forest-composition-structure.html#cb21-15" tabindex="-1"></a><span class="co"># 2. Calculate the accumulation curve using the subplots</span></span>
-<span id="cb21-16"><a href="chapter-2-forest-composition-structure.html#cb21-16" tabindex="-1"></a>accum_curve_subplot <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(subplot_matrix, <span class="at">method =</span> <span class="st">&quot;exact&quot;</span>)</span>
-<span id="cb21-17"><a href="chapter-2-forest-composition-structure.html#cb21-17" tabindex="-1"></a></span>
-<span id="cb21-18"><a href="chapter-2-forest-composition-structure.html#cb21-18" tabindex="-1"></a><span class="co"># 3. Plot the results</span></span>
-<span id="cb21-19"><a href="chapter-2-forest-composition-structure.html#cb21-19" tabindex="-1"></a><span class="fu">plot</span>(accum_curve_subplot, </span>
-<span id="cb21-20"><a href="chapter-2-forest-composition-structure.html#cb21-20" tabindex="-1"></a>     <span class="at">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ci.lty =</span> <span class="dv">0</span>, <span class="at">ci.col =</span> <span class="st">&quot;lightgreen&quot;</span>,</span>
-<span id="cb21-21"><a href="chapter-2-forest-composition-structure.html#cb21-21" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Number of Subplots Sampled&quot;</span>,</span>
-<span id="cb21-22"><a href="chapter-2-forest-composition-structure.html#cb21-22" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cumulative Number of Species&quot;</span>,</span>
-<span id="cb21-23"><a href="chapter-2-forest-composition-structure.html#cb21-23" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Species Accumulation Rate by Subplot&quot;</span>)</span>
-<span id="cb21-24"><a href="chapter-2-forest-composition-structure.html#cb21-24" tabindex="-1"></a></span>
-<span id="cb21-25"><a href="chapter-2-forest-composition-structure.html#cb21-25" tabindex="-1"></a><span class="co"># Add a grid for easier reading of the asymptote </span></span>
-<span id="cb21-26"><a href="chapter-2-forest-composition-structure.html#cb21-26" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="chapter-2-forest-composition-structure.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(vegan)</span>
+<span id="cb18-2"><a href="chapter-2-forest-composition-structure.html#cb18-2" tabindex="-1"></a><span class="fu">library</span>(tibble) <span class="co"># Needed to convert the Plot_ID column into row names</span></span>
+<span id="cb18-3"><a href="chapter-2-forest-composition-structure.html#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="chapter-2-forest-composition-structure.html#cb18-4" tabindex="-1"></a><span class="co"># 1. Create a community matrix grouped by Subplot (Plot_ID)</span></span>
+<span id="cb18-5"><a href="chapter-2-forest-composition-structure.html#cb18-5" tabindex="-1"></a>subplot_matrix <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb18-6"><a href="chapter-2-forest-composition-structure.html#cb18-6" tabindex="-1"></a>  <span class="co"># Ensure we have no blank species names</span></span>
+<span id="cb18-7"><a href="chapter-2-forest-composition-structure.html#cb18-7" tabindex="-1"></a>  <span class="fu">filter</span>(Scientific_Name <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, <span class="sc">!</span><span class="fu">is.na</span>(Scientific_Name)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-8"><a href="chapter-2-forest-composition-structure.html#cb18-8" tabindex="-1"></a>  <span class="co"># Count the number of each species PER subplot</span></span>
+<span id="cb18-9"><a href="chapter-2-forest-composition-structure.html#cb18-9" tabindex="-1"></a>  <span class="fu">count</span>(Plot_ID, Scientific_Name) <span class="sc">%&gt;%</span></span>
+<span id="cb18-10"><a href="chapter-2-forest-composition-structure.html#cb18-10" tabindex="-1"></a>  <span class="co"># Pivot into a wide matrix (Rows = Plot_ID, Columns = Species)</span></span>
+<span id="cb18-11"><a href="chapter-2-forest-composition-structure.html#cb18-11" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Scientific_Name, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-12"><a href="chapter-2-forest-composition-structure.html#cb18-12" tabindex="-1"></a>  <span class="co"># &#39;vegan&#39; requires the matrix to be purely numeric, so we move Plot_ID to the row names</span></span>
+<span id="cb18-13"><a href="chapter-2-forest-composition-structure.html#cb18-13" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">&quot;Plot_ID&quot;</span>)</span>
+<span id="cb18-14"><a href="chapter-2-forest-composition-structure.html#cb18-14" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="chapter-2-forest-composition-structure.html#cb18-15" tabindex="-1"></a><span class="co"># 2. Calculate the accumulation curve using the subplots</span></span>
+<span id="cb18-16"><a href="chapter-2-forest-composition-structure.html#cb18-16" tabindex="-1"></a>accum_curve_subplot <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(subplot_matrix, <span class="at">method =</span> <span class="st">&quot;exact&quot;</span>)</span>
+<span id="cb18-17"><a href="chapter-2-forest-composition-structure.html#cb18-17" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="chapter-2-forest-composition-structure.html#cb18-18" tabindex="-1"></a><span class="co"># 3. Plot the results</span></span>
+<span id="cb18-19"><a href="chapter-2-forest-composition-structure.html#cb18-19" tabindex="-1"></a><span class="fu">plot</span>(accum_curve_subplot, </span>
+<span id="cb18-20"><a href="chapter-2-forest-composition-structure.html#cb18-20" tabindex="-1"></a>     <span class="at">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ci.lty =</span> <span class="dv">0</span>, <span class="at">ci.col =</span> <span class="st">&quot;lightgreen&quot;</span>,</span>
+<span id="cb18-21"><a href="chapter-2-forest-composition-structure.html#cb18-21" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Number of Subplots Sampled&quot;</span>,</span>
+<span id="cb18-22"><a href="chapter-2-forest-composition-structure.html#cb18-22" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cumulative Number of Species&quot;</span>,</span>
+<span id="cb18-23"><a href="chapter-2-forest-composition-structure.html#cb18-23" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Species Accumulation Rate by Subplot&quot;</span>)</span>
+<span id="cb18-24"><a href="chapter-2-forest-composition-structure.html#cb18-24" tabindex="-1"></a></span>
+<span id="cb18-25"><a href="chapter-2-forest-composition-structure.html#cb18-25" tabindex="-1"></a><span class="co"># Add a grid for easier reading of the asymptote </span></span>
+<span id="cb18-26"><a href="chapter-2-forest-composition-structure.html#cb18-26" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:species-accumulation-subplot"></span>
 <img src="_main_files/figure-html/species-accumulation-subplot-1.png" alt="Species accumulation curve showing the cumulative discovery of species as the number of sampled subplots increases." width="672" />
 <p class="caption">
