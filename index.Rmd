@@ -1,6 +1,6 @@
 --- 
 title: |
-    ![](fig/MPG_Logo_green.png){width=2in} 
+    ![](fig/ForestAR_logo.jpg){width=5in } 
     
     Forest Attributes Analysis in R - ForestAR
 author: "J. David Urquiza-Munoz"
@@ -43,4 +43,4 @@ By learning to use R command lines, you'll master a workflow that is not only po
 
 This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose.
 
-![](fig/ForestAR_logo.jpg){width=5in }
+![](fig/MPG_Logo_green.png){width=2in}
