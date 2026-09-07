@@ -46,3 +46,21 @@ a:hover, .book .book-body .page-wrapper .page-inner section.normal a:hover {
   display: none !important;
   opacity: 0 !important;
 }
+
+
+/* Completely disable and remove Bookdown preview popups */
+[class*="popover"], [class*="tooltip"], .bookdown-popover {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  max-width: 0px !important;
+  max-height: 0px !important;
+  pointer-events: none !important; /* Lets your mouse click right through it */
+  z-index: -9999 !important;
+}
+
+/* Stop the top header title from triggering the popup in the first place */
+.book-header h1 a, .book-header h1 {
+  pointer-events: none !important;
+  text-decoration: none !important;
+}
