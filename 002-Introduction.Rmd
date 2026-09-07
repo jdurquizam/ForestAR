@@ -33,9 +33,9 @@ We must explicitly tell R how to read this specific format using the sep argumen
 
 # Import the raw data
 raw_inventory <- read.csv("data/inventory.csv", 
-                          sep = ";", 
-                          dec = ",", 
-                          stringsAsFactors = FALSE)
+                          #sep = ";", 
+                          dec = ".", 
+                          stringsAsFactors = F)
 
 # Check the dimensions of our dataset (number of rows and columns)
 dim(raw_inventory)
@@ -62,7 +62,7 @@ inventory_clean <- raw_inventory %>%
     Northing = NORTE
   ) %>%
   # Keep only the columns relevant for our visual analysis
-  select(Plot_ID, Tree_ID, Common_Name, Scientific_Name, DBH_cm, Height_m,Easting, Northing) %>%
+  select(Plot_ID, Tree_ID, Common_Name, Scientific_Name, Height_m, DBH_cm,Easting, Northing) %>%
   # Filter out any rows that might be missing critical spatial or size data
   filter(!is.na(DBH_cm), !is.na(Easting), !is.na(Northing))
 ```
@@ -79,9 +79,5 @@ kable(head(inventory_clean, 5),
       caption = "Table 1.1: Preview of the cleaned forest inventory dataset.")
 ```
 
-```{r}
-raw_inventory%>%
-  ggplot(aes(x=DAP,y=HT))+
-  geom_point()
-```
+
 

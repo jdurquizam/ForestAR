@@ -1,5 +1,104 @@
 
-# Chapter 3: 2D Spatial Distribution and Mapping
+# Chapter 3: Forest Stand Structure
+
+
+## Diameter at Breast Height (DBH)
+
+The distribution of tree diameters is a key indicator of forest health, history, and successional stage. In natural, uneven-aged forests, we typically expect to see a "Reverse-J" curve. This means there are many small, young trees in the understory and progressively fewer large, older trees forming the upper canopy.
+
+We can visualize this using a histogram of our DBH_cm column.
+
+```{r}
+#| label: dbh-distribution
+#| fig-cap: "Diameter distribution showing a classic Reverse-J curve for a natural forest."
+
+ggplot(inventory_clean, aes(x = DBH_cm)) +
+  # We use a binwidth of 5 cm, which is standard for forestry DBH classes
+  geom_histogram(binwidth = 5, fill = "forestgreen", color = "black", alpha = 0.7) +
+  # Create dynamic x-axis breaks based on our actual data max
+  scale_x_continuous(breaks = seq(0, max(inventory_clean$DBH_cm, na.rm = TRUE), by = 10)) +
+  labs(
+    title = "Diameter Distribution of the Stand",
+    subtitle = "The Reverse-J shape indicates an uneven-aged, regenerating forest",
+    x = "Diameter at Breast Height (cm)",
+    y = "Frequency (Number of Trees)"
+  ) +
+  theme_minimal()
+```
+
+## Stand-Level Metrics: Density and Basal Area (Per Hectare)
+
+Visualizing the trees is helpful, but foresters need hard numbers to compare this stand to others across the Amazon. We need to calculate Stand Density (stems per hectare, $N$) and Total Basal Area ($G$).If we assume your inventory data represents a standard 1-hectare plot (or if you know the exact area, you can divide by it), we can easily summarize these metrics.
+
+### Quantitative Stand Metrics
+
+Beyond visualizing the distribution of tree sizes, it is critical to quantify the overall physical occupation of the forest. The two most fundamental stand-level metrics are Stand Density (total number of trees) and Total Basal Area (the total cross-sectional area of all tree trunks).
+
+Basal Area ($BA$) is the cross-sectional area of a tree trunk measured at breast height. It is a fundamental metric for understanding structural dominance and forest volume [@avery2015]. To convert Diameter at Breast Height ($DBH$) measured in centimeters to Basal Area in square meters ($m^2$), we use the following geometric equation:
+
+$$BA = \frac{\pi \times DBH^2}{40000}$$
+Let's calculate the total stand metrics for our plot.
+
+```{r}
+#| label: stand-metrics
+
+# Calculate individual Basal Area and summarize the stand
+stand_summary <- inventory_clean %>%
+  mutate(BA_m2 = (pi * DBH_cm^2) / 40000) %>%
+  summarise(
+    Total_Stems = n(),
+    Total_Basal_Area_m2 = sum(BA_m2, na.rm = TRUE),
+    Mean_DBH_cm = mean(DBH_cm, na.rm = TRUE),
+    Max_DBH_cm = max(DBH_cm, na.rm = TRUE)
+  )
+
+# Display as a neat table
+kable(stand_summary, 
+      caption = "Summary of stand-level structural metrics.",
+      col.names = c("Total Stems (N)", "Basal Area (m²)", "Mean DBH (cm)", "Max DBH (cm)"),
+      digits = 2)
+```
+## Structural Composition: DBH by Dominant Species
+
+The overall "Reverse-J" curve is useful, but it hides the fact that different species occupy different structural niches. Some species are restricted to the understory (small DBH), while others consistently emerge into the upper canopy (large DBH).
+
+### Structural Roles of Dominant Species
+
+The overall forest might follow a Reverse-J curve, but individual species often have distinct structural roles. Some are understory specialists that rarely exceed a small DBH, while others are canopy emergents.
+
+We can visualize this by isolating our most abundant species and plotting their specific diameter distributions using density curves.
+
+```{r}
+#| label: dbh-by-species
+#| fig-cap: "Diameter distributions of the top 4 most abundant species, showing their different structural roles."
+#| warning: false
+
+# Identify the top 4 species by abundance
+top_4_species <- inventory_clean %>%
+  count(Scientific_Name) %>%
+  slice_max(n, n = 4) %>%
+  pull(Scientific_Name)
+
+# Filter the data and plot density curves
+inventory_clean %>%
+  filter(Scientific_Name %in% top_4_species) %>%
+  ggplot(aes(x = DBH_cm, fill = Scientific_Name)) +
+  geom_density(alpha = 0.6) +
+  scale_x_continuous(limits = c(0, 100)) + # Adjust based on your max DBH
+  facet_wrap(~ Scientific_Name, ncol = 2) +
+  labs(
+    title = "Diameter Distribution by Species",
+    x = "DBH (cm)",
+    y = "Density"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    strip.text = element_text(face = "italic", size = 10)
+  )
+```
+
+## 2D Spatial Distribution and Mapping
 
 Forestry is inherently spatial. Knowing what is in the forest and how big it is only tells half the story; we also need to know exactly where the trees are.
 
@@ -24,7 +123,85 @@ inventory_sf <- inventory_clean %>%
 # Verify it is now a spatial object
 class(inventory_sf)
 ```
-## Mapping Forest Structure
+## Advanced Spatial Structure: Point Pattern Analysis by Species
+
+Analyzing the spatial pattern of all trees combined can mask underlying ecological processes. To truly understand forest dynamics—such as seed dispersal limitations or micro-habitat preferences—we should analyze the spatial distribution of individual species.
+
+We will test whether our most dominant species, Copal (Protium amazonicum), is spatially clustered, randomly distributed, or uniformly spaced. We calculate the Clark-Evans Nearest Neighbor Index ($R$):$R = 1$: Random distribution.$R < 1$: Clustered distribution (e.g., limited seed dispersal, canopy gaps).$R > 1$: Uniform distribution (e.g., intense competition for resources).We will use the spatstat package to run the statistical test and ggplot2 to visualize the clustering via a 2D density heatmap.
+
+```{r message=FALSE, warning=FALSE}
+# Install spatstat if needed: install.packages("spatstat")
+library(spatstat)
+library(ggplot2)
+
+# 1. Filter the spatial dataset for a specific species
+copal_sf <- inventory_sf %>%
+  filter(Common_Name == "Copal")
+
+# 2. Extract coordinates for Copal
+coords_copal <- st_coordinates(copal_sf)
+
+# IMPORTANT: We must define the observation window using the boundaries 
+# of the ENTIRE plot, not just the Copal trees, to avoid edge-effect errors.
+all_coords <- st_coordinates(inventory_sf)
+win <- owin(xrange = range(all_coords[,1]), yrange = range(all_coords[,2]))
+
+# Create the spatstat point pattern (ppp) object for Copal
+copal_ppp <- ppp(x = coords_copal[,1], y = coords_copal[,2], window = win)
+
+# 3. Calculate the Clark-Evans test
+ce_test <- clarkevans.test(copal_ppp)
+
+# Print the statistical results
+cat("Clark-Evans Index (R) for Copal:", round(ce_test$statistic, 3), "\n")
+cat("p-value:", format.pval(ce_test$p.value), "\n")
+
+# 4. Visualize the clustering using ggplot2
+
+# Ensure the spatial object is strictly projected in UTM meters
+copal_sf_utm <- st_transform(copal_sf, crs = 32718)
+coords_copal_utm <- st_coordinates(copal_sf_utm)
+copal_df <- as.data.frame(coords_copal_utm)
+
+
+ggplot() +
+  # Use geom_density_2d_filled for a much cleaner, smoother heatmap
+  geom_density_2d_filled(data = copal_df, aes(x = X, y = Y), alpha = 0.6, bins = 6) +
+  
+  # Add the individual trees on top so we can see the exact locations
+  geom_sf(data = copal_sf_utm, color = "darkred", size = 2) +
+  
+  # Use a discrete viridis scale since the filled contours create categories
+  scale_fill_viridis_d(option = "mako", name = "Density Level") +
+  
+  # Force ggplot to use the UTM projection for the axes
+  coord_sf(datum = st_crs(32718)) + 
+  
+  labs(
+    title = "Spatial Clustering of Copal Trees",
+    subtitle = paste0("Clark-Evans R = ", round(ce_test$statistic, 2)),
+    x = "Easting (m)",
+    y = "Northing (m)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "right"
+  )
+```
+The combination of the Clark-Evans test and the 2D density heatmap provides powerful insights into the biology of our forest stand.
+
+First, our Clark-Evans index is $R = 0.92$. Because $R < 1$, this indicates that Copal (Protium amazonicum) trees are not randomly scattered; they exhibit a spatially clustered (aggregated) distribution.
+
+This mathematical clustering is visually confirmed by our density heatmap. We can clearly see two distinct "hotspots" of high Copal density (the lightest colored areas) forming a corridor on the eastern side of the plot, while the northwestern corner is almost entirely devoid of this species.
+
+Ecologically, this clustering is usually driven by two primary factors in tropical forests:
+
+  - Seed Dispersal Limitation: Copal seeds are often heavy and drop near the parent tree, or they are dispersed by specific animals (like primates or birds) that deposit seeds in concentrated areas beneath resting or feeding sites.
+
+  - Micro-habitat Preferences: The "empty" northwestern corner might possess slightly different soil drainage, a different topography, or could be dominated by a highly competitive canopy species that restricts Copal regeneration. The eastern hotspots might represent an area where a historical canopy gap (a tree fall) occurred decades ago, providing the sudden influx of light necessary for a cluster of Copal saplings to successfully establish and grow together.
+
+### Mapping Forest Structure
 
 Now that R knows these are spatial points, plotting them is as easy as adding geom_sf() to our standard ggplot2 workflow.
 
@@ -52,7 +229,7 @@ ggplot(data = inventory_sf) +
   )
 ```
 
-## 3.3 Visualizing Species Distribution
+### Visualizing Species Distribution
 
 Some tree species grow in clusters due to seed dispersal mechanisms or soil micro-conditions, while others are randomly scattered. We can visualize this by highlighting specific species on our map.
 
@@ -84,15 +261,14 @@ Visualizing points on a map is incredibly helpful, but our eyes can sometimes de
 
 The interpretation of the index is straightforward:
 
-```{}
+
   $$Id​>1: Clustered (Aggregated) distribution.$$
 
-    $$Id​=1: Random distribution.$$
+  $$Id​=1: Random distribution.$$
 
-    $$Id​<1: Uniform (Regular) distribution.$$
+  $$Id​<1: Uniform (Regular) distribution.$$
 
-```
-  
+
 To calculate this, we need to divide our forest stand into equal-sized quadrats (a grid), count the number of individuals in each quadrat, and apply the Morisita formula. We will use the sf package to create our grid and base R to calculate the math for our most abundant species, Copal (Protium amazonicum).
 
 ```{r}
@@ -147,6 +323,7 @@ if(morisita_index > 1) {
   cat("Result: The distribution is RANDOM.")
 }
 ```
+
 ## Spatial Visualization of DBH and Tree Height
 
 While mapping species presence is crucial, foresters also need to understand the spatial distribution of biomass and canopy structure. Are the tallest trees clustered in a specific valley? Are the widest trees evenly distributed?
@@ -182,30 +359,4 @@ ggplot(data = inventory_sf) +
     legend.position = "right"
   )
 ```
-
-
-## Forest Stand Structure (DBH)
-
-The distribution of tree diameters is a key indicator of forest health, history, and successional stage. In natural, uneven-aged forests, we typically expect to see a "Reverse-J" curve. This means there are many small, young trees in the understory and progressively fewer large, older trees forming the upper canopy.
-
-We can visualize this using a histogram of our DBH_cm (Diameter at Breast Height) column.
-
-```{r}
-#| label: dbh-distribution
-#| fig-cap: "Diameter distribution showing a classic Reverse-J curve for a natural forest."
-
-ggplot(inventory_clean, aes(x = DBH_cm)) +
-  # We use a binwidth of 5 cm, which is standard for forestry DBH classes
-  geom_histogram(binwidth = 5, fill = "forestgreen", color = "black", alpha = 0.7) +
-  # Create dynamic x-axis breaks based on our actual data max
-  scale_x_continuous(breaks = seq(0, max(inventory_clean$DBH_cm, na.rm = TRUE), by = 10)) +
-  labs(
-    title = "Diameter Distribution of the Stand",
-    subtitle = "The Reverse-J shape indicates an uneven-aged, regenerating forest",
-    x = "Diameter at Breast Height (cm)",
-    y = "Frequency (Number of Trees)"
-  ) +
-  theme_minimal()
-```
-
 

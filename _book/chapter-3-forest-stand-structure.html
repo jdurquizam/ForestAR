@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Chapter 3: Forest Stand Structure | _main.knit</title>
+  <meta name="description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Chapter 3: Forest Stand Structure | _main.knit" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/fig/MPG_Logo_green.png" />
+  <meta property="og:description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Chapter 3: Forest Stand Structure | _main.knit" />
+  
+  <meta name="twitter:description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  <meta name="twitter:image" content="/fig/MPG_Logo_green.png" />
+
+<meta name="author" content="J. David Urquiza-Munoz" />
+
+
+<meta name="date" content="2026-09-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-2-forest-composition-structure.html"/>
+<link rel="next" href="chapter-4-allometric-relationships-and-statistical-correlation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About this book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html#j.-david-urquiza-mu%C3%B1oz"><i class="fa fa-check"></i>J. David Urquiza Muñoz</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Introduction to Forest Data in R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#setting-up-the-environment"><i class="fa fa-check"></i><b>1.1</b> Setting up the Environment</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#importing-the-inventory-data"><i class="fa fa-check"></i><b>1.2</b> Importing the Inventory Data</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#data-cleaning-and-standardization"><i class="fa fa-check"></i><b>1.3</b> Data Cleaning and Standardization</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#exploring-the-cleaned-data"><i class="fa fa-check"></i><b>1.4</b> Exploring the Cleaned Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: Forest Composition &amp; Structure</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#species-composition"><i class="fa fa-check"></i><b>2.1</b> Species Composition</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#quantifying-biodiversity-diversity-indices"><i class="fa fa-check"></i><b>2.2</b> Quantifying biodiversity: diversity indices</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#species-accumulation-curves"><i class="fa fa-check"></i><b>2.3</b> Species Accumulation Curves</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html"><i class="fa fa-check"></i><b>3</b> Chapter 3: Forest Stand Structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#diameter-at-breast-height-dbh"><i class="fa fa-check"></i><b>3.1</b> Diameter at Breast Height (DBH)</a></li>
+<li class="chapter" data-level="3.2" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#stand-level-metrics-density-and-basal-area-per-hectare"><i class="fa fa-check"></i><b>3.2</b> Stand-Level Metrics: Density and Basal Area (Per Hectare)</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#quantitative-stand-metrics"><i class="fa fa-check"></i><b>3.2.1</b> Quantitative Stand Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#structural-composition-dbh-by-dominant-species"><i class="fa fa-check"></i><b>3.3</b> Structural Composition: DBH by Dominant Species</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#structural-roles-of-dominant-species"><i class="fa fa-check"></i><b>3.3.1</b> Structural Roles of Dominant Species</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#d-spatial-distribution-and-mapping"><i class="fa fa-check"></i><b>3.4</b> 2D Spatial Distribution and Mapping</a></li>
+<li class="chapter" data-level="3.5" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#creating-spatial-data"><i class="fa fa-check"></i><b>3.5</b> Creating Spatial Data</a></li>
+<li class="chapter" data-level="3.6" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#advanced-spatial-structure-point-pattern-analysis-by-species"><i class="fa fa-check"></i><b>3.6</b> Advanced Spatial Structure: Point Pattern Analysis by Species</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#mapping-forest-structure"><i class="fa fa-check"></i><b>3.6.1</b> Mapping Forest Structure</a></li>
+<li class="chapter" data-level="3.6.2" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#visualizing-species-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Visualizing Species Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#analyzing-spatial-clustering-with-the-morisita-index"><i class="fa fa-check"></i><b>3.7</b> Analyzing Spatial Clustering with the Morisita Index</a></li>
+<li class="chapter" data-level="3.8" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>3.8</b> Spatial Visualization of DBH and Tree Height</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html"><i class="fa fa-check"></i><b>4</b> Chapter 4: Allometric Relationships and Statistical Correlation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#allometric-relationships-and-statistical-correlation"><i class="fa fa-check"></i><b>4.1</b> Allometric Relationships and Statistical Correlation</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#mathematical-models"><i class="fa fa-check"></i><b>4.2</b> Mathematical Models</a></li>
+<li class="chapter" data-level="4.3" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#visualizing-the-correlation"><i class="fa fa-check"></i><b>4.3</b> Visualizing the Correlation</a></li>
+<li class="chapter" data-level="4.4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#estimating-missing-heights"><i class="fa fa-check"></i><b>4.4</b> Estimating Missing Heights</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter-5-lidar.html"><a href="chapter-5-lidar.html"><i class="fa fa-check"></i><b>5</b> Chapter 5: LiDAR</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="fig/MPG_Logo_green.png" style="width:2in" /></p>
+<p>Forest Attributes Analysis in R - ForestAR</p></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-3-forest-stand-structure" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Chapter 3: Forest Stand Structure<a href="chapter-3-forest-stand-structure.html#chapter-3-forest-stand-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="diameter-at-breast-height-dbh" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Diameter at Breast Height (DBH)<a href="chapter-3-forest-stand-structure.html#diameter-at-breast-height-dbh" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The distribution of tree diameters is a key indicator of forest health, history, and successional stage. In natural, uneven-aged forests, we typically expect to see a “Reverse-J” curve. This means there are many small, young trees in the understory and progressively fewer large, older trees forming the upper canopy.</p>
+<p>We can visualize this using a histogram of our DBH_cm column.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chapter-3-forest-stand-structure.html#cb21-1" tabindex="-1"></a><span class="fu">ggplot</span>(inventory_clean, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="chapter-3-forest-stand-structure.html#cb21-2" tabindex="-1"></a>  <span class="co"># We use a binwidth of 5 cm, which is standard for forestry DBH classes</span></span>
+<span id="cb21-3"><a href="chapter-3-forest-stand-structure.html#cb21-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="st">&quot;forestgreen&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="chapter-3-forest-stand-structure.html#cb21-4" tabindex="-1"></a>  <span class="co"># Create dynamic x-axis breaks based on our actual data max</span></span>
+<span id="cb21-5"><a href="chapter-3-forest-stand-structure.html#cb21-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fu">max</span>(inventory_clean<span class="sc">$</span>DBH_cm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="chapter-3-forest-stand-structure.html#cb21-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb21-7"><a href="chapter-3-forest-stand-structure.html#cb21-7" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Diameter Distribution of the Stand&quot;</span>,</span>
+<span id="cb21-8"><a href="chapter-3-forest-stand-structure.html#cb21-8" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;The Reverse-J shape indicates an uneven-aged, regenerating forest&quot;</span>,</span>
+<span id="cb21-9"><a href="chapter-3-forest-stand-structure.html#cb21-9" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Diameter at Breast Height (cm)&quot;</span>,</span>
+<span id="cb21-10"><a href="chapter-3-forest-stand-structure.html#cb21-10" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frequency (Number of Trees)&quot;</span></span>
+<span id="cb21-11"><a href="chapter-3-forest-stand-structure.html#cb21-11" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="chapter-3-forest-stand-structure.html#cb21-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:dbh-distribution"></span>
+<img src="_main_files/figure-html/dbh-distribution-1.png" alt="Diameter distribution showing a classic Reverse-J curve for a natural forest." width="672" />
+<p class="caption">
+Figure 3.1: Diameter distribution showing a classic Reverse-J curve for a natural forest.
+</p>
+</div>
+</div>
+<div id="stand-level-metrics-density-and-basal-area-per-hectare" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Stand-Level Metrics: Density and Basal Area (Per Hectare)<a href="chapter-3-forest-stand-structure.html#stand-level-metrics-density-and-basal-area-per-hectare" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualizing the trees is helpful, but foresters need hard numbers to compare this stand to others across the Amazon. We need to calculate Stand Density (stems per hectare, <span class="math inline">\(N\)</span>) and Total Basal Area (<span class="math inline">\(G\)</span>).If we assume your inventory data represents a standard 1-hectare plot (or if you know the exact area, you can divide by it), we can easily summarize these metrics.</p>
+<div id="quantitative-stand-metrics" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Quantitative Stand Metrics<a href="chapter-3-forest-stand-structure.html#quantitative-stand-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Beyond visualizing the distribution of tree sizes, it is critical to quantify the overall physical occupation of the forest. The two most fundamental stand-level metrics are Stand Density (total number of trees) and Total Basal Area (the total cross-sectional area of all tree trunks).</p>
+<p>Basal Area (<span class="math inline">\(BA\)</span>) is the cross-sectional area of a tree trunk measured at breast height. It is a fundamental metric for understanding structural dominance and forest volume.<span class="citation"><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></span> To convert Diameter at Breast Height (<span class="math inline">\(DBH\)</span>) measured in centimeters to Basal Area in square meters (<span class="math inline">\(m^2\)</span>), we use the following geometric equation:</p>
+<p><span class="math display">\[BA = \frac{\pi \times DBH^2}{40000}\]</span>
+Let’s calculate the total stand metrics for our plot.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="chapter-3-forest-stand-structure.html#cb22-1" tabindex="-1"></a><span class="co"># Calculate individual Basal Area and summarize the stand</span></span>
+<span id="cb22-2"><a href="chapter-3-forest-stand-structure.html#cb22-2" tabindex="-1"></a>stand_summary <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="chapter-3-forest-stand-structure.html#cb22-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BA_m2 =</span> (pi <span class="sc">*</span> DBH_cm<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">40000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-4"><a href="chapter-3-forest-stand-structure.html#cb22-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb22-5"><a href="chapter-3-forest-stand-structure.html#cb22-5" tabindex="-1"></a>    <span class="at">Total_Stems =</span> <span class="fu">n</span>(),</span>
+<span id="cb22-6"><a href="chapter-3-forest-stand-structure.html#cb22-6" tabindex="-1"></a>    <span class="at">Total_Basal_Area_m2 =</span> <span class="fu">sum</span>(BA_m2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-7"><a href="chapter-3-forest-stand-structure.html#cb22-7" tabindex="-1"></a>    <span class="at">Mean_DBH_cm =</span> <span class="fu">mean</span>(DBH_cm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-8"><a href="chapter-3-forest-stand-structure.html#cb22-8" tabindex="-1"></a>    <span class="at">Max_DBH_cm =</span> <span class="fu">max</span>(DBH_cm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-9"><a href="chapter-3-forest-stand-structure.html#cb22-9" tabindex="-1"></a>  )</span>
+<span id="cb22-10"><a href="chapter-3-forest-stand-structure.html#cb22-10" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="chapter-3-forest-stand-structure.html#cb22-11" tabindex="-1"></a><span class="co"># Display as a neat table</span></span>
+<span id="cb22-12"><a href="chapter-3-forest-stand-structure.html#cb22-12" tabindex="-1"></a><span class="fu">kable</span>(stand_summary, </span>
+<span id="cb22-13"><a href="chapter-3-forest-stand-structure.html#cb22-13" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Summary of stand-level structural metrics.&quot;</span>,</span>
+<span id="cb22-14"><a href="chapter-3-forest-stand-structure.html#cb22-14" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Total Stems (N)&quot;</span>, <span class="st">&quot;Basal Area (m²)&quot;</span>, <span class="st">&quot;Mean DBH (cm)&quot;</span>, <span class="st">&quot;Max DBH (cm)&quot;</span>),</span>
+<span id="cb22-15"><a href="chapter-3-forest-stand-structure.html#cb22-15" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<caption><span id="tab:stand-metrics">Table 3.1: </span>Summary of stand-level structural metrics.</caption>
+<thead>
+<tr class="header">
+<th align="right">Total Stems (N)</th>
+<th align="right">Basal Area (m²)</th>
+<th align="right">Mean DBH (cm)</th>
+<th align="right">Max DBH (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">681</td>
+<td align="right">25.74</td>
+<td align="right">18.54</td>
+<td align="right">70.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="structural-composition-dbh-by-dominant-species" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Structural Composition: DBH by Dominant Species<a href="chapter-3-forest-stand-structure.html#structural-composition-dbh-by-dominant-species" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The overall “Reverse-J” curve is useful, but it hides the fact that different species occupy different structural niches. Some species are restricted to the understory (small DBH), while others consistently emerge into the upper canopy (large DBH).</p>
+<div id="structural-roles-of-dominant-species" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Structural Roles of Dominant Species<a href="chapter-3-forest-stand-structure.html#structural-roles-of-dominant-species" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The overall forest might follow a Reverse-J curve, but individual species often have distinct structural roles. Some are understory specialists that rarely exceed a small DBH, while others are canopy emergents.</p>
+<p>We can visualize this by isolating our most abundant species and plotting their specific diameter distributions using density curves.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="chapter-3-forest-stand-structure.html#cb23-1" tabindex="-1"></a><span class="co"># Identify the top 4 species by abundance</span></span>
+<span id="cb23-2"><a href="chapter-3-forest-stand-structure.html#cb23-2" tabindex="-1"></a>top_4_species <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="chapter-3-forest-stand-structure.html#cb23-3" tabindex="-1"></a>  <span class="fu">count</span>(Scientific_Name) <span class="sc">%&gt;%</span></span>
+<span id="cb23-4"><a href="chapter-3-forest-stand-structure.html#cb23-4" tabindex="-1"></a>  <span class="fu">slice_max</span>(n, <span class="at">n =</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="chapter-3-forest-stand-structure.html#cb23-5" tabindex="-1"></a>  <span class="fu">pull</span>(Scientific_Name)</span>
+<span id="cb23-6"><a href="chapter-3-forest-stand-structure.html#cb23-6" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="chapter-3-forest-stand-structure.html#cb23-7" tabindex="-1"></a><span class="co"># Filter the data and plot density curves</span></span>
+<span id="cb23-8"><a href="chapter-3-forest-stand-structure.html#cb23-8" tabindex="-1"></a>inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb23-9"><a href="chapter-3-forest-stand-structure.html#cb23-9" tabindex="-1"></a>  <span class="fu">filter</span>(Scientific_Name <span class="sc">%in%</span> top_4_species) <span class="sc">%&gt;%</span></span>
+<span id="cb23-10"><a href="chapter-3-forest-stand-structure.html#cb23-10" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DBH_cm, <span class="at">fill =</span> Scientific_Name)) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="chapter-3-forest-stand-structure.html#cb23-11" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="chapter-3-forest-stand-structure.html#cb23-12" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> <span class="co"># Adjust based on your max DBH</span></span>
+<span id="cb23-13"><a href="chapter-3-forest-stand-structure.html#cb23-13" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Scientific_Name, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb23-14"><a href="chapter-3-forest-stand-structure.html#cb23-14" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-15"><a href="chapter-3-forest-stand-structure.html#cb23-15" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Diameter Distribution by Species&quot;</span>,</span>
+<span id="cb23-16"><a href="chapter-3-forest-stand-structure.html#cb23-16" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;DBH (cm)&quot;</span>,</span>
+<span id="cb23-17"><a href="chapter-3-forest-stand-structure.html#cb23-17" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Density&quot;</span></span>
+<span id="cb23-18"><a href="chapter-3-forest-stand-structure.html#cb23-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-19"><a href="chapter-3-forest-stand-structure.html#cb23-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-20"><a href="chapter-3-forest-stand-structure.html#cb23-20" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb23-21"><a href="chapter-3-forest-stand-structure.html#cb23-21" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb23-22"><a href="chapter-3-forest-stand-structure.html#cb23-22" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;italic&quot;</span>, <span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb23-23"><a href="chapter-3-forest-stand-structure.html#cb23-23" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:dbh-by-species"></span>
+<img src="_main_files/figure-html/dbh-by-species-1.png" alt="Diameter distributions of the top 4 most abundant species, showing their different structural roles." width="672" />
+<p class="caption">
+Figure 3.2: Diameter distributions of the top 4 most abundant species, showing their different structural roles.
+</p>
+</div>
+</div>
+</div>
+<div id="d-spatial-distribution-and-mapping" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> 2D Spatial Distribution and Mapping<a href="chapter-3-forest-stand-structure.html#d-spatial-distribution-and-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Forestry is inherently spatial. Knowing what is in the forest and how big it is only tells half the story; we also need to know exactly where the trees are.</p>
+<p>Thanks to the Easting (ESTE) and Northing (NORTE) coordinates collected in the field, we can map our forest stand. In this chapter, we will use the sf (Simple Features) package to convert our standard data table into a spatial object and ggplot2 to map it.</p>
+</div>
+<div id="creating-spatial-data" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Creating Spatial Data<a href="chapter-3-forest-stand-structure.html#creating-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Currently, our dataset is just a data frame (a table). To map it, R needs to understand that the Easting and Northing columns represent physical locations on the Earth.</p>
+<p>We do this using the st_as_sf() function. We must also define the Coordinate Reference System (CRS). Since these are UTM coordinates (commonly used in South American forest inventories), we will assign an EPSG code. Note: You may need to adjust the EPSG code (e.g., 32718 for UTM Zone 18S) depending on the exact location of your study area.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="chapter-3-forest-stand-structure.html#cb24-1" tabindex="-1"></a><span class="co"># Convert the cleaned data frame into an &#39;sf&#39; spatial object</span></span>
+<span id="cb24-2"><a href="chapter-3-forest-stand-structure.html#cb24-2" tabindex="-1"></a>inventory_sf <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="chapter-3-forest-stand-structure.html#cb24-3" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;Easting&quot;</span>, <span class="st">&quot;Northing&quot;</span>), </span>
+<span id="cb24-4"><a href="chapter-3-forest-stand-structure.html#cb24-4" tabindex="-1"></a>           <span class="at">crs =</span> <span class="dv">32718</span>, <span class="co"># Replace with your specific UTM EPSG code if different</span></span>
+<span id="cb24-5"><a href="chapter-3-forest-stand-structure.html#cb24-5" tabindex="-1"></a>           <span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="co"># Keep original coordinate columns just in case</span></span>
+<span id="cb24-6"><a href="chapter-3-forest-stand-structure.html#cb24-6" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="chapter-3-forest-stand-structure.html#cb24-7" tabindex="-1"></a><span class="co"># Verify it is now a spatial object</span></span>
+<span id="cb24-8"><a href="chapter-3-forest-stand-structure.html#cb24-8" tabindex="-1"></a><span class="fu">class</span>(inventory_sf)</span></code></pre></div>
+<pre><code>## [1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
+</div>
+<div id="advanced-spatial-structure-point-pattern-analysis-by-species" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Advanced Spatial Structure: Point Pattern Analysis by Species<a href="chapter-3-forest-stand-structure.html#advanced-spatial-structure-point-pattern-analysis-by-species" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Analyzing the spatial pattern of all trees combined can mask underlying ecological processes. To truly understand forest dynamics—such as seed dispersal limitations or micro-habitat preferences—we should analyze the spatial distribution of individual species.</p>
+<p>We will test whether our most dominant species, Copal (Protium amazonicum), is spatially clustered, randomly distributed, or uniformly spaced. We calculate the Clark-Evans Nearest Neighbor Index (<span class="math inline">\(R\)</span>):<span class="math inline">\(R = 1\)</span>: Random distribution.<span class="math inline">\(R &lt; 1\)</span>: Clustered distribution (e.g., limited seed dispersal, canopy gaps).<span class="math inline">\(R &gt; 1\)</span>: Uniform distribution (e.g., intense competition for resources).We will use the spatstat package to run the statistical test and ggplot2 to visualize the clustering via a 2D density heatmap.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="chapter-3-forest-stand-structure.html#cb26-1" tabindex="-1"></a><span class="co"># Install spatstat if needed: install.packages(&quot;spatstat&quot;)</span></span>
+<span id="cb26-2"><a href="chapter-3-forest-stand-structure.html#cb26-2" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb26-3"><a href="chapter-3-forest-stand-structure.html#cb26-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb26-4"><a href="chapter-3-forest-stand-structure.html#cb26-4" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="chapter-3-forest-stand-structure.html#cb26-5" tabindex="-1"></a><span class="co"># 1. Filter the spatial dataset for a specific species</span></span>
+<span id="cb26-6"><a href="chapter-3-forest-stand-structure.html#cb26-6" tabindex="-1"></a>copal_sf <span class="ot">&lt;-</span> inventory_sf <span class="sc">%&gt;%</span></span>
+<span id="cb26-7"><a href="chapter-3-forest-stand-structure.html#cb26-7" tabindex="-1"></a>  <span class="fu">filter</span>(Common_Name <span class="sc">==</span> <span class="st">&quot;Copal&quot;</span>)</span>
+<span id="cb26-8"><a href="chapter-3-forest-stand-structure.html#cb26-8" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="chapter-3-forest-stand-structure.html#cb26-9" tabindex="-1"></a><span class="co"># 2. Extract coordinates for Copal</span></span>
+<span id="cb26-10"><a href="chapter-3-forest-stand-structure.html#cb26-10" tabindex="-1"></a>coords_copal <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(copal_sf)</span>
+<span id="cb26-11"><a href="chapter-3-forest-stand-structure.html#cb26-11" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="chapter-3-forest-stand-structure.html#cb26-12" tabindex="-1"></a><span class="co"># IMPORTANT: We must define the observation window using the boundaries </span></span>
+<span id="cb26-13"><a href="chapter-3-forest-stand-structure.html#cb26-13" tabindex="-1"></a><span class="co"># of the ENTIRE plot, not just the Copal trees, to avoid edge-effect errors.</span></span>
+<span id="cb26-14"><a href="chapter-3-forest-stand-structure.html#cb26-14" tabindex="-1"></a>all_coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(inventory_sf)</span>
+<span id="cb26-15"><a href="chapter-3-forest-stand-structure.html#cb26-15" tabindex="-1"></a>win <span class="ot">&lt;-</span> <span class="fu">owin</span>(<span class="at">xrange =</span> <span class="fu">range</span>(all_coords[,<span class="dv">1</span>]), <span class="at">yrange =</span> <span class="fu">range</span>(all_coords[,<span class="dv">2</span>]))</span>
+<span id="cb26-16"><a href="chapter-3-forest-stand-structure.html#cb26-16" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="chapter-3-forest-stand-structure.html#cb26-17" tabindex="-1"></a><span class="co"># Create the spatstat point pattern (ppp) object for Copal</span></span>
+<span id="cb26-18"><a href="chapter-3-forest-stand-structure.html#cb26-18" tabindex="-1"></a>copal_ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> coords_copal[,<span class="dv">1</span>], <span class="at">y =</span> coords_copal[,<span class="dv">2</span>], <span class="at">window =</span> win)</span>
+<span id="cb26-19"><a href="chapter-3-forest-stand-structure.html#cb26-19" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="chapter-3-forest-stand-structure.html#cb26-20" tabindex="-1"></a><span class="co"># 3. Calculate the Clark-Evans test</span></span>
+<span id="cb26-21"><a href="chapter-3-forest-stand-structure.html#cb26-21" tabindex="-1"></a>ce_test <span class="ot">&lt;-</span> <span class="fu">clarkevans.test</span>(copal_ppp)</span>
+<span id="cb26-22"><a href="chapter-3-forest-stand-structure.html#cb26-22" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="chapter-3-forest-stand-structure.html#cb26-23" tabindex="-1"></a><span class="co"># Print the statistical results</span></span>
+<span id="cb26-24"><a href="chapter-3-forest-stand-structure.html#cb26-24" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Clark-Evans Index (R) for Copal:&quot;</span>, <span class="fu">round</span>(ce_test<span class="sc">$</span>statistic, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Clark-Evans Index (R) for Copal: 0.916</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="chapter-3-forest-stand-structure.html#cb28-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;p-value:&quot;</span>, <span class="fu">format.pval</span>(ce_test<span class="sc">$</span>p.value), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## p-value: 0.31402</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="chapter-3-forest-stand-structure.html#cb30-1" tabindex="-1"></a><span class="co"># 4. Visualize the clustering using ggplot2</span></span>
+<span id="cb30-2"><a href="chapter-3-forest-stand-structure.html#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="chapter-3-forest-stand-structure.html#cb30-3" tabindex="-1"></a><span class="co"># Ensure the spatial object is strictly projected in UTM meters</span></span>
+<span id="cb30-4"><a href="chapter-3-forest-stand-structure.html#cb30-4" tabindex="-1"></a>copal_sf_utm <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(copal_sf, <span class="at">crs =</span> <span class="dv">32718</span>)</span>
+<span id="cb30-5"><a href="chapter-3-forest-stand-structure.html#cb30-5" tabindex="-1"></a>coords_copal_utm <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(copal_sf_utm)</span>
+<span id="cb30-6"><a href="chapter-3-forest-stand-structure.html#cb30-6" tabindex="-1"></a>copal_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(coords_copal_utm)</span>
+<span id="cb30-7"><a href="chapter-3-forest-stand-structure.html#cb30-7" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="chapter-3-forest-stand-structure.html#cb30-8" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="chapter-3-forest-stand-structure.html#cb30-9" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb30-10"><a href="chapter-3-forest-stand-structure.html#cb30-10" tabindex="-1"></a>  <span class="co"># Use geom_density_2d_filled for a much cleaner, smoother heatmap</span></span>
+<span id="cb30-11"><a href="chapter-3-forest-stand-structure.html#cb30-11" tabindex="-1"></a>  <span class="fu">geom_density_2d_filled</span>(<span class="at">data =</span> copal_df, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y), <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb30-12"><a href="chapter-3-forest-stand-structure.html#cb30-12" tabindex="-1"></a>  </span>
+<span id="cb30-13"><a href="chapter-3-forest-stand-structure.html#cb30-13" tabindex="-1"></a>  <span class="co"># Add the individual trees on top so we can see the exact locations</span></span>
+<span id="cb30-14"><a href="chapter-3-forest-stand-structure.html#cb30-14" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> copal_sf_utm, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb30-15"><a href="chapter-3-forest-stand-structure.html#cb30-15" tabindex="-1"></a>  </span>
+<span id="cb30-16"><a href="chapter-3-forest-stand-structure.html#cb30-16" tabindex="-1"></a>  <span class="co"># Use a discrete viridis scale since the filled contours create categories</span></span>
+<span id="cb30-17"><a href="chapter-3-forest-stand-structure.html#cb30-17" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;mako&quot;</span>, <span class="at">name =</span> <span class="st">&quot;Density Level&quot;</span>) <span class="sc">+</span></span>
+<span id="cb30-18"><a href="chapter-3-forest-stand-structure.html#cb30-18" tabindex="-1"></a>  </span>
+<span id="cb30-19"><a href="chapter-3-forest-stand-structure.html#cb30-19" tabindex="-1"></a>  <span class="co"># Force ggplot to use the UTM projection for the axes</span></span>
+<span id="cb30-20"><a href="chapter-3-forest-stand-structure.html#cb30-20" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">datum =</span> <span class="fu">st_crs</span>(<span class="dv">32718</span>)) <span class="sc">+</span> </span>
+<span id="cb30-21"><a href="chapter-3-forest-stand-structure.html#cb30-21" tabindex="-1"></a>  </span>
+<span id="cb30-22"><a href="chapter-3-forest-stand-structure.html#cb30-22" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-23"><a href="chapter-3-forest-stand-structure.html#cb30-23" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Spatial Clustering of Copal Trees&quot;</span>,</span>
+<span id="cb30-24"><a href="chapter-3-forest-stand-structure.html#cb30-24" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">&quot;Clark-Evans R = &quot;</span>, <span class="fu">round</span>(ce_test<span class="sc">$</span>statistic, <span class="dv">2</span>)),</span>
+<span id="cb30-25"><a href="chapter-3-forest-stand-structure.html#cb30-25" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Easting (m)&quot;</span>,</span>
+<span id="cb30-26"><a href="chapter-3-forest-stand-structure.html#cb30-26" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Northing (m)&quot;</span></span>
+<span id="cb30-27"><a href="chapter-3-forest-stand-structure.html#cb30-27" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb30-28"><a href="chapter-3-forest-stand-structure.html#cb30-28" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb30-29"><a href="chapter-3-forest-stand-structure.html#cb30-29" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb30-30"><a href="chapter-3-forest-stand-structure.html#cb30-30" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb30-31"><a href="chapter-3-forest-stand-structure.html#cb30-31" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
+<span id="cb30-32"><a href="chapter-3-forest-stand-structure.html#cb30-32" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" alt="" width="672" />
+The combination of the Clark-Evans test and the 2D density heatmap provides powerful insights into the biology of our forest stand.</p>
+<p>First, our Clark-Evans index is <span class="math inline">\(R = 0.92\)</span>. Because <span class="math inline">\(R &lt; 1\)</span>, this indicates that Copal (Protium amazonicum) trees are not randomly scattered; they exhibit a spatially clustered (aggregated) distribution.</p>
+<p>This mathematical clustering is visually confirmed by our density heatmap. We can clearly see two distinct “hotspots” of high Copal density (the lightest colored areas) forming a corridor on the eastern side of the plot, while the northwestern corner is almost entirely devoid of this species.</p>
+<p>Ecologically, this clustering is usually driven by two primary factors in tropical forests:</p>
+<ul>
+<li><p>Seed Dispersal Limitation: Copal seeds are often heavy and drop near the parent tree, or they are dispersed by specific animals (like primates or birds) that deposit seeds in concentrated areas beneath resting or feeding sites.</p></li>
+<li><p>Micro-habitat Preferences: The “empty” northwestern corner might possess slightly different soil drainage, a different topography, or could be dominated by a highly competitive canopy species that restricts Copal regeneration. The eastern hotspots might represent an area where a historical canopy gap (a tree fall) occurred decades ago, providing the sudden influx of light necessary for a cluster of Copal saplings to successfully establish and grow together.</p></li>
+</ul>
+<div id="mapping-forest-structure" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Mapping Forest Structure<a href="chapter-3-forest-stand-structure.html#mapping-forest-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that R knows these are spatial points, plotting them is as easy as adding geom_sf() to our standard ggplot2 workflow.</p>
+<p>Let’s start by plotting every tree in the stand. To make the map informative, we will scale the size of each point based on the tree’s diameter (DBH_cm). This allows us to instantly locate the oldest, largest trees in the canopy.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="chapter-3-forest-stand-structure.html#cb31-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> inventory_sf) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="chapter-3-forest-stand-structure.html#cb31-2" tabindex="-1"></a>  <span class="co"># Use geom_sf for spatial data, mapping size to DBH</span></span>
+<span id="cb31-3"><a href="chapter-3-forest-stand-structure.html#cb31-3" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">size =</span> DBH_cm), <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="chapter-3-forest-stand-structure.html#cb31-4" tabindex="-1"></a>  <span class="co"># Adjust the size scale so small trees are visible but large trees don&#39;t overlap too much</span></span>
+<span id="cb31-5"><a href="chapter-3-forest-stand-structure.html#cb31-5" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>), <span class="at">name =</span> <span class="st">&quot;DBH (cm)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="chapter-3-forest-stand-structure.html#cb31-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-7"><a href="chapter-3-forest-stand-structure.html#cb31-7" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Forest Stand Map: Tree Locations and Sizes&quot;</span>,</span>
+<span id="cb31-8"><a href="chapter-3-forest-stand-structure.html#cb31-8" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Larger circles represent trees with greater diameter at breast height&quot;</span>,</span>
+<span id="cb31-9"><a href="chapter-3-forest-stand-structure.html#cb31-9" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Easting &quot;</span>,</span>
+<span id="cb31-10"><a href="chapter-3-forest-stand-structure.html#cb31-10" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Northing &quot;</span></span>
+<span id="cb31-11"><a href="chapter-3-forest-stand-structure.html#cb31-11" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-12"><a href="chapter-3-forest-stand-structure.html#cb31-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-13"><a href="chapter-3-forest-stand-structure.html#cb31-13" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb31-14"><a href="chapter-3-forest-stand-structure.html#cb31-14" tabindex="-1"></a>    <span class="co"># Angle the x-axis text so the long UTM coordinates don&#39;t overlap</span></span>
+<span id="cb31-15"><a href="chapter-3-forest-stand-structure.html#cb31-15" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>) </span>
+<span id="cb31-16"><a href="chapter-3-forest-stand-structure.html#cb31-16" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:map-structure"></span>
+<img src="_main_files/figure-html/map-structure-1.png" alt="Spatial distribution of trees in the inventory plot. Point size correlates to tree diameter." width="672" />
+<p class="caption">
+Figure 3.3: Spatial distribution of trees in the inventory plot. Point size correlates to tree diameter.
+</p>
+</div>
+</div>
+<div id="visualizing-species-distribution" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Visualizing Species Distribution<a href="chapter-3-forest-stand-structure.html#visualizing-species-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some tree species grow in clusters due to seed dispersal mechanisms or soil micro-conditions, while others are randomly scattered. We can visualize this by highlighting specific species on our map.</p>
+<p>Looking at our dataset, Protium amazonicum (Copal) and species of the Eschweilera genus (like Machimango) are highly abundant. Let’s create a map that specifically highlights the “Copal” trees against the rest of the stand.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="chapter-3-forest-stand-structure.html#cb32-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> inventory_sf) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="chapter-3-forest-stand-structure.html#cb32-2" tabindex="-1"></a>  <span class="co"># Map color to whether the tree is Copal or not</span></span>
+<span id="cb32-3"><a href="chapter-3-forest-stand-structure.html#cb32-3" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">size =</span> DBH_cm, <span class="at">color =</span> Common_Name <span class="sc">==</span> <span class="st">&quot;Copal&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb32-4"><a href="chapter-3-forest-stand-structure.html#cb32-4" tabindex="-1"></a>  <span class="co"># Manually set colors: Grey for other trees, Red for Copal</span></span>
+<span id="cb32-5"><a href="chapter-3-forest-stand-structure.html#cb32-5" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey70&quot;</span>, <span class="st">&quot;firebrick&quot;</span>), </span>
+<span id="cb32-6"><a href="chapter-3-forest-stand-structure.html#cb32-6" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Other Species&quot;</span>, <span class="st">&quot;Copal&quot;</span>),</span>
+<span id="cb32-7"><a href="chapter-3-forest-stand-structure.html#cb32-7" tabindex="-1"></a>                     <span class="at">name =</span> <span class="st">&quot;Species&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="chapter-3-forest-stand-structure.html#cb32-8" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>), <span class="at">guide =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span> <span class="co"># Hide size legend to keep it clean</span></span>
+<span id="cb32-9"><a href="chapter-3-forest-stand-structure.html#cb32-9" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-10"><a href="chapter-3-forest-stand-structure.html#cb32-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Spatial Distribution of Copal (Protium amazonicum)&quot;</span>,</span>
+<span id="cb32-11"><a href="chapter-3-forest-stand-structure.html#cb32-11" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Easting&quot;</span>,</span>
+<span id="cb32-12"><a href="chapter-3-forest-stand-structure.html#cb32-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Northing&quot;</span></span>
+<span id="cb32-13"><a href="chapter-3-forest-stand-structure.html#cb32-13" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-14"><a href="chapter-3-forest-stand-structure.html#cb32-14" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb32-15"><a href="chapter-3-forest-stand-structure.html#cb32-15" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:map-species"></span>
+<img src="_main_files/figure-html/map-species-1.png" alt="Highlighting the spatial distribution of Copal (Protium amazonicum) within the stand." width="672" />
+<p class="caption">
+Figure 3.4: Highlighting the spatial distribution of Copal (Protium amazonicum) within the stand.
+</p>
+</div>
+</div>
+</div>
+<div id="analyzing-spatial-clustering-with-the-morisita-index" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Analyzing Spatial Clustering with the Morisita Index<a href="chapter-3-forest-stand-structure.html#analyzing-spatial-clustering-with-the-morisita-index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualizing points on a map is incredibly helpful, but our eyes can sometimes deceive us into seeing patterns that aren’t statistically there. To objectively determine if a species is clustered, random, or uniformly distributed, we can calculate the Morisita Index of Dispersion (Id​).</p>
+<p>The interpretation of the index is straightforward:</p>
+<p><span class="math display">\[Id​&gt;1: Clustered (Aggregated) distribution.\]</span></p>
+<p><span class="math display">\[Id​=1: Random distribution.\]</span></p>
+<p><span class="math display">\[Id​&lt;1: Uniform (Regular) distribution.\]</span></p>
+<p>To calculate this, we need to divide our forest stand into equal-sized quadrats (a grid), count the number of individuals in each quadrat, and apply the Morisita formula. We will use the sf package to create our grid and base R to calculate the math for our most abundant species, Copal (Protium amazonicum).</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chapter-3-forest-stand-structure.html#cb33-1" tabindex="-1"></a><span class="co"># 1. Filter our spatial data for just the Copal trees</span></span>
+<span id="cb33-2"><a href="chapter-3-forest-stand-structure.html#cb33-2" tabindex="-1"></a>copal_sf <span class="ot">&lt;-</span> inventory_sf <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="chapter-3-forest-stand-structure.html#cb33-3" tabindex="-1"></a>  <span class="fu">filter</span>(Common_Name <span class="sc">==</span> <span class="st">&quot;Copal&quot;</span>)</span>
+<span id="cb33-4"><a href="chapter-3-forest-stand-structure.html#cb33-4" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="chapter-3-forest-stand-structure.html#cb33-5" tabindex="-1"></a><span class="co"># 2. Create a grid (quadrats) over our forest plot</span></span>
+<span id="cb33-6"><a href="chapter-3-forest-stand-structure.html#cb33-6" tabindex="-1"></a><span class="co"># We will create a grid of roughly 20x20 meter squares based on the extent of our data</span></span>
+<span id="cb33-7"><a href="chapter-3-forest-stand-structure.html#cb33-7" tabindex="-1"></a>plot_grid <span class="ot">&lt;-</span> <span class="fu">st_make_grid</span>(inventory_sf, <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">5</span>)) <span class="co"># 5x5 grid (25 quadrats total)</span></span>
+<span id="cb33-8"><a href="chapter-3-forest-stand-structure.html#cb33-8" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="chapter-3-forest-stand-structure.html#cb33-9" tabindex="-1"></a><span class="co"># Convert the grid to an sf object so we can map and manipulate it</span></span>
+<span id="cb33-10"><a href="chapter-3-forest-stand-structure.html#cb33-10" tabindex="-1"></a>plot_grid_sf <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="at">quadrat_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(plot_grid), <span class="at">geometry =</span> plot_grid)</span>
+<span id="cb33-11"><a href="chapter-3-forest-stand-structure.html#cb33-11" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="chapter-3-forest-stand-structure.html#cb33-12" tabindex="-1"></a><span class="co"># 3. Count how many Copal trees fall into each quadrat</span></span>
+<span id="cb33-13"><a href="chapter-3-forest-stand-structure.html#cb33-13" tabindex="-1"></a><span class="co"># st_intersects finds the trees in each grid cell; lengths() counts them</span></span>
+<span id="cb33-14"><a href="chapter-3-forest-stand-structure.html#cb33-14" tabindex="-1"></a>plot_grid_sf<span class="sc">$</span>tree_count <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(plot_grid_sf, copal_sf))</span>
+<span id="cb33-15"><a href="chapter-3-forest-stand-structure.html#cb33-15" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="chapter-3-forest-stand-structure.html#cb33-16" tabindex="-1"></a><span class="co"># Let&#39;s quickly map our quadrats to see the counts!</span></span>
+<span id="cb33-17"><a href="chapter-3-forest-stand-structure.html#cb33-17" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb33-18"><a href="chapter-3-forest-stand-structure.html#cb33-18" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> plot_grid_sf, <span class="fu">aes</span>(<span class="at">fill =</span> tree_count), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-19"><a href="chapter-3-forest-stand-structure.html#cb33-19" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> copal_sf, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb33-20"><a href="chapter-3-forest-stand-structure.html#cb33-20" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">&quot;Copal Count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-21"><a href="chapter-3-forest-stand-structure.html#cb33-21" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-22"><a href="chapter-3-forest-stand-structure.html#cb33-22" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Quadrat Counts for Copal&quot;</span>,</span>
+<span id="cb33-23"><a href="chapter-3-forest-stand-structure.html#cb33-23" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Red dots are individual Copal trees&quot;</span></span>
+<span id="cb33-24"><a href="chapter-3-forest-stand-structure.html#cb33-24" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-25"><a href="chapter-3-forest-stand-structure.html#cb33-25" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/morisita-index-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="chapter-3-forest-stand-structure.html#cb34-1" tabindex="-1"></a><span class="co"># 4. Calculate the Morisita Index mathematically</span></span>
+<span id="cb34-2"><a href="chapter-3-forest-stand-structure.html#cb34-2" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">nrow</span>(plot_grid_sf)                     <span class="co"># Total number of quadrats (q)</span></span>
+<span id="cb34-3"><a href="chapter-3-forest-stand-structure.html#cb34-3" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">sum</span>(plot_grid_sf<span class="sc">$</span>tree_count)           <span class="co"># Total number of Copal trees (N)</span></span>
+<span id="cb34-4"><a href="chapter-3-forest-stand-structure.html#cb34-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> plot_grid_sf<span class="sc">$</span>tree_count                <span class="co"># Number of trees in each quadrat (n_i)</span></span>
+<span id="cb34-5"><a href="chapter-3-forest-stand-structure.html#cb34-5" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="chapter-3-forest-stand-structure.html#cb34-6" tabindex="-1"></a><span class="co"># Morisita Formula: Id = q * [ sum(n * (n - 1)) / (N * (N - 1)) ]</span></span>
+<span id="cb34-7"><a href="chapter-3-forest-stand-structure.html#cb34-7" tabindex="-1"></a>morisita_index <span class="ot">&lt;-</span> q <span class="sc">*</span> (<span class="fu">sum</span>(n <span class="sc">*</span> (n <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">/</span> (N <span class="sc">*</span> (N <span class="sc">-</span> <span class="dv">1</span>)))</span>
+<span id="cb34-8"><a href="chapter-3-forest-stand-structure.html#cb34-8" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="chapter-3-forest-stand-structure.html#cb34-9" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb34-10"><a href="chapter-3-forest-stand-structure.html#cb34-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Quadrats (q):&quot;</span>, q, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total Quadrats (q): 25</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="chapter-3-forest-stand-structure.html#cb36-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Copal Trees (N):&quot;</span>, N, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total Copal Trees (N): 34</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="chapter-3-forest-stand-structure.html#cb38-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Morisita Index (Id):&quot;</span>, <span class="fu">round</span>(morisita_index, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Morisita Index (Id): 1.381</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="chapter-3-forest-stand-structure.html#cb40-1" tabindex="-1"></a><span class="cf">if</span>(morisita_index <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb40-2"><a href="chapter-3-forest-stand-structure.html#cb40-2" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Result: The distribution is CLUSTERED.&quot;</span>)</span>
+<span id="cb40-3"><a href="chapter-3-forest-stand-structure.html#cb40-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (morisita_index <span class="sc">&lt;</span> <span class="dv">1</span>) {</span>
+<span id="cb40-4"><a href="chapter-3-forest-stand-structure.html#cb40-4" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Result: The distribution is UNIFORM.&quot;</span>)</span>
+<span id="cb40-5"><a href="chapter-3-forest-stand-structure.html#cb40-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb40-6"><a href="chapter-3-forest-stand-structure.html#cb40-6" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Result: The distribution is RANDOM.&quot;</span>)</span>
+<span id="cb40-7"><a href="chapter-3-forest-stand-structure.html#cb40-7" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## Result: The distribution is CLUSTERED.</code></pre>
+</div>
+<div id="spatial-visualization-of-dbh-and-tree-height" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Spatial Visualization of DBH and Tree Height<a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While mapping species presence is crucial, foresters also need to understand the spatial distribution of biomass and canopy structure. Are the tallest trees clustered in a specific valley? Are the widest trees evenly distributed?</p>
+<p>We can visualize multiple quantitative parameters simultaneously on a single map. Using our spatial object (inventory_sf),we will map the physical location of each tree, scale the size of the point by its DBH (DBH_cm), and apply a color gradient to represent its total height (Height_m).</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="chapter-3-forest-stand-structure.html#cb42-1" tabindex="-1"></a><span class="co"># Ensure Height is numeric (in case it imported as character)</span></span>
+<span id="cb42-2"><a href="chapter-3-forest-stand-structure.html#cb42-2" tabindex="-1"></a>inventory_sf <span class="ot">&lt;-</span> inventory_sf <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="chapter-3-forest-stand-structure.html#cb42-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Height_m =</span> <span class="fu">as.numeric</span>(Height_m)) <span class="sc">%&gt;%</span></span>
+<span id="cb42-4"><a href="chapter-3-forest-stand-structure.html#cb42-4" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Height_m)) <span class="co"># Remove any rows without height data</span></span>
+<span id="cb42-5"><a href="chapter-3-forest-stand-structure.html#cb42-5" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="chapter-3-forest-stand-structure.html#cb42-6" tabindex="-1"></a><span class="co"># Create a multi-variable spatial plot</span></span>
+<span id="cb42-7"><a href="chapter-3-forest-stand-structure.html#cb42-7" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> inventory_sf) <span class="sc">+</span></span>
+<span id="cb42-8"><a href="chapter-3-forest-stand-structure.html#cb42-8" tabindex="-1"></a>  <span class="co"># Map size to DBH, and color to Height</span></span>
+<span id="cb42-9"><a href="chapter-3-forest-stand-structure.html#cb42-9" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">size =</span> DBH_cm, <span class="at">color =</span> Height_m), <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb42-10"><a href="chapter-3-forest-stand-structure.html#cb42-10" tabindex="-1"></a>  <span class="co"># Use a viridis color palette which is colorblind-friendly and intuitive for heights</span></span>
+<span id="cb42-11"><a href="chapter-3-forest-stand-structure.html#cb42-11" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;magma&quot;</span>, <span class="at">name =</span> <span class="st">&quot;Total Height (m)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb42-12"><a href="chapter-3-forest-stand-structure.html#cb42-12" tabindex="-1"></a>  <span class="co"># Scale the size of the points</span></span>
+<span id="cb42-13"><a href="chapter-3-forest-stand-structure.html#cb42-13" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">7</span>), <span class="at">name =</span> <span class="st">&quot;DBH (cm)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb42-14"><a href="chapter-3-forest-stand-structure.html#cb42-14" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb42-15"><a href="chapter-3-forest-stand-structure.html#cb42-15" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Forest Canopy Structure and Biomass Hotspots&quot;</span>,</span>
+<span id="cb42-16"><a href="chapter-3-forest-stand-structure.html#cb42-16" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Darker/Purple points are lower canopy; Brighter/Yellow points are emergent trees&quot;</span>,</span>
+<span id="cb42-17"><a href="chapter-3-forest-stand-structure.html#cb42-17" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Easting&quot;</span>,</span>
+<span id="cb42-18"><a href="chapter-3-forest-stand-structure.html#cb42-18" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Northing&quot;</span></span>
+<span id="cb42-19"><a href="chapter-3-forest-stand-structure.html#cb42-19" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-20"><a href="chapter-3-forest-stand-structure.html#cb42-20" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb42-21"><a href="chapter-3-forest-stand-structure.html#cb42-21" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb42-22"><a href="chapter-3-forest-stand-structure.html#cb42-22" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb42-23"><a href="chapter-3-forest-stand-structure.html#cb42-23" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span></span>
+<span id="cb42-24"><a href="chapter-3-forest-stand-structure.html#cb42-24" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:map-dbh-height"></span>
+<img src="_main_files/figure-html/map-dbh-height-1.png" alt="Spatial distribution of forest structure. Point size represents DBH (cm) and color represents Total Height (m)." width="672" />
+<p class="caption">
+Figure 3.5: Spatial distribution of forest structure. Point size represents DBH (cm) and color represents Total Height (m).
+</p>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>Thomas Eugene Avery and Harold E Burkhart, <em>Forest Measurements</em> (Waveland Press, 2015).<a href="chapter-3-forest-stand-structure.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-2-forest-composition-structure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-4-allometric-relationships-and-statistical-correlation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
