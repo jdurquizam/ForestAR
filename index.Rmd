@@ -15,7 +15,9 @@ description: |
 cover-image: "fig/MPG_Logo_green.png"
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
+url: https://doi.org/10.5281/zenodo.22606690
 ---
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.22606690)
 
 # Preface {-}
 

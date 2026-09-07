@@ -8,6 +8,8 @@ fig:dbh-by-species
 fig:map-structure
 fig:map-species
 fig:map-dbh-height
+tab:calc-biomass-structure
+fig:map-carbon-structure
 fig:dbh-height-correlation
 chapter-1-introduction-to-forest-data-in-r
 setting-up-the-environment
@@ -31,6 +33,9 @@ mapping-forest-structure
 visualizing-species-distribution
 analyzing-spatial-clustering-with-the-morisita-index
 spatial-visualization-of-dbh-and-tree-height
+biomass-and-carbon-as-structural-attributes
+extracting-wood-density-and-calculating-agb
+spatial-distribution-of-carbon
 chapter-4-allometric-relationships-and-statistical-correlation
 allometric-relationships-and-statistical-correlation
 mathematical-models
