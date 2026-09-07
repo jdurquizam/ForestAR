@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Chapter 4: Allometric Relationships and Statistical Correlation | _main.knit</title>
+  <meta name="description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Chapter 4: Allometric Relationships and Statistical Correlation | _main.knit" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/fig/MPG_Logo_green.png" />
+  <meta property="og:description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Chapter 4: Allometric Relationships and Statistical Correlation | _main.knit" />
+  
+  <meta name="twitter:description" content="This short book should help you to get a better understanding of how the forest attributes analysis works, what you might want to consider in order to perform that are applicable for their respective purpose." />
+  <meta name="twitter:image" content="/fig/MPG_Logo_green.png" />
+
+<meta name="author" content="J. David Urquiza-Munoz" />
+
+
+<meta name="date" content="2026-09-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-3-forest-stand-structure.html"/>
+<link rel="next" href="chapter-5-lidar.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About this book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html#j.-david-urquiza-mu%C3%B1oz"><i class="fa fa-check"></i>J. David Urquiza Muñoz</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Introduction to Forest Data in R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#setting-up-the-environment"><i class="fa fa-check"></i><b>1.1</b> Setting up the Environment</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#importing-the-inventory-data"><i class="fa fa-check"></i><b>1.2</b> Importing the Inventory Data</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#data-cleaning-and-standardization"><i class="fa fa-check"></i><b>1.3</b> Data Cleaning and Standardization</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-introduction-to-forest-data-in-r.html"><a href="chapter-1-introduction-to-forest-data-in-r.html#exploring-the-cleaned-data"><i class="fa fa-check"></i><b>1.4</b> Exploring the Cleaned Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: Forest Composition &amp; Structure</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#species-composition"><i class="fa fa-check"></i><b>2.1</b> Species Composition</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#quantifying-biodiversity-diversity-indices"><i class="fa fa-check"></i><b>2.2</b> Quantifying biodiversity: diversity indices</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-forest-composition-structure.html"><a href="chapter-2-forest-composition-structure.html#species-accumulation-curves"><i class="fa fa-check"></i><b>2.3</b> Species Accumulation Curves</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html"><i class="fa fa-check"></i><b>3</b> Chapter 3: Forest Stand Structure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#diameter-at-breast-height-dbh"><i class="fa fa-check"></i><b>3.1</b> Diameter at Breast Height (DBH)</a></li>
+<li class="chapter" data-level="3.2" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#stand-level-metrics-density-and-basal-area-per-hectare"><i class="fa fa-check"></i><b>3.2</b> Stand-Level Metrics: Density and Basal Area (Per Hectare)</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#quantitative-stand-metrics"><i class="fa fa-check"></i><b>3.2.1</b> Quantitative Stand Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#structural-composition-dbh-by-dominant-species"><i class="fa fa-check"></i><b>3.3</b> Structural Composition: DBH by Dominant Species</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#structural-roles-of-dominant-species"><i class="fa fa-check"></i><b>3.3.1</b> Structural Roles of Dominant Species</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#d-spatial-distribution-and-mapping"><i class="fa fa-check"></i><b>3.4</b> 2D Spatial Distribution and Mapping</a></li>
+<li class="chapter" data-level="3.5" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#creating-spatial-data"><i class="fa fa-check"></i><b>3.5</b> Creating Spatial Data</a></li>
+<li class="chapter" data-level="3.6" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#advanced-spatial-structure-point-pattern-analysis-by-species"><i class="fa fa-check"></i><b>3.6</b> Advanced Spatial Structure: Point Pattern Analysis by Species</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#mapping-forest-structure"><i class="fa fa-check"></i><b>3.6.1</b> Mapping Forest Structure</a></li>
+<li class="chapter" data-level="3.6.2" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#visualizing-species-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Visualizing Species Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#analyzing-spatial-clustering-with-the-morisita-index"><i class="fa fa-check"></i><b>3.7</b> Analyzing Spatial Clustering with the Morisita Index</a></li>
+<li class="chapter" data-level="3.8" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>3.8</b> Spatial Visualization of DBH and Tree Height</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html"><i class="fa fa-check"></i><b>4</b> Chapter 4: Allometric Relationships and Statistical Correlation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#allometric-relationships-and-statistical-correlation"><i class="fa fa-check"></i><b>4.1</b> Allometric Relationships and Statistical Correlation</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#mathematical-models"><i class="fa fa-check"></i><b>4.2</b> Mathematical Models</a></li>
+<li class="chapter" data-level="4.3" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#visualizing-the-correlation"><i class="fa fa-check"></i><b>4.3</b> Visualizing the Correlation</a></li>
+<li class="chapter" data-level="4.4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#estimating-missing-heights"><i class="fa fa-check"></i><b>4.4</b> Estimating Missing Heights</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter-5-lidar.html"><a href="chapter-5-lidar.html"><i class="fa fa-check"></i><b>5</b> Chapter 5: LiDAR</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="fig/MPG_Logo_green.png" style="width:2in" /></p>
+<p>Forest Attributes Analysis in R - ForestAR</p></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-4-allometric-relationships-and-statistical-correlation" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Chapter 4: Allometric Relationships and Statistical Correlation<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#chapter-4-allometric-relationships-and-statistical-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>While understanding species composition and spatial distribution is important, foresters also need to model how trees grow. Measuring a tree’s Diameter at Breast Height (DBH) is fast and easy, but measuring total height is time-consuming and prone to error in dense canopies.</p>
+<p>If we can prove a strong mathematical correlation between DBH and Height, we can use DBH to predict heights across the entire forest. In this chapter, we will model this relationship using linear regression and visualize the statistical strength of our model.</p>
+<div id="allometric-relationships-and-statistical-correlation" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Allometric Relationships and Statistical Correlation<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#allometric-relationships-and-statistical-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While understanding species composition and spatial distribution is important, foresters also need to model how trees grow. Establishing a strong mathematical correlation between easy-to-measure variables (like DBH) and hard-to-measure variables (like Total Height or Biomass) is the foundation of forest biometrics.</p>
+<p>In this chapter, we will model the allometric relationship between Diameter at Breast Height (DBH) and Total Height using linear regression, and visualize the statistical strength of our model.</p>
+</div>
+<div id="mathematical-models" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Mathematical Models<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#mathematical-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The simplest relationship is a linear model, where we assume height increases at a constant rate as diameter increases. The equation for a simple linear regression is:</p>
+<p><span class="math display">\[H = \beta_0 + \beta_1 \cdot DBH + \epsilon\]</span></p>
+<p>Where:
+* <span class="math inline">\(H\)</span> is the Total Height.
+* <span class="math inline">\(\beta_0\)</span> is the intercept.
+* <span class="math inline">\(\beta_1\)</span> is the slope of the relationship.
+* <span class="math inline">\(\epsilon\)</span> is the error term.</p>
+<p>However, in nature, trees eventually stop growing taller but continue to grow wider. This creates a curve. To model this using linear regression, foresters often apply a natural logarithm (<span class="math inline">\(\ln\)</span>) transformation to both variables, creating a log-log model:</p>
+<p><span class="math display">\[\ln(H) = \beta_0 + \beta_1 \cdot \ln(DBH) + \epsilon\]</span></p>
+</div>
+<div id="visualizing-the-correlation" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Visualizing the Correlation<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#visualizing-the-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can visualize this relationship and automatically calculate the equation and <span class="math inline">\(p\)</span>-value using the <code>ggpubr</code> package.</p>
+<p>##4.1 Plotting DBH vs. Height</p>
+<p>To create publication-ready correlation plots that include mathematical equations and p-values, we will introduce a new package called ggpubr. It is an extension of ggplot2 designed specifically for adding statistical indicators to charts.</p>
+<p>Note: If you haven’t installed it yet, run install.packages(“ggpubr”) in your R console.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb40-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-2" tabindex="-1"></a><span class="fu">library</span>(ggpubr) <span class="co"># For adding equations and p-values</span></span>
+<span id="cb40-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-3" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-4" tabindex="-1"></a><span class="co"># First, ensure our columns are clean numeric values and remove missing data</span></span>
+<span id="cb40-5"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-5" tabindex="-1"></a>inventory_cor <span class="ot">&lt;-</span> inventory_clean <span class="sc">%&gt;%</span></span>
+<span id="cb40-6"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-6" tabindex="-1"></a>  <span class="co"># Force height and DBH to numeric just in case they imported as text</span></span>
+<span id="cb40-7"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-7" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb40-8"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-8" tabindex="-1"></a>    <span class="at">DBH_cm =</span> <span class="fu">as.numeric</span>(DBH_cm),</span>
+<span id="cb40-9"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-9" tabindex="-1"></a>    <span class="at">Height_m =</span> <span class="fu">as.numeric</span>(Height_m)</span>
+<span id="cb40-10"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb40-11"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(DBH_cm), <span class="sc">!</span><span class="fu">is.na</span>(Height_m))</span>
+<span id="cb40-12"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-12" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-13" tabindex="-1"></a><span class="co"># Create the scatter plot</span></span>
+<span id="cb40-14"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-14" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(inventory_cor, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm, <span class="at">y =</span> Height_m)) <span class="sc">+</span></span>
+<span id="cb40-15"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-15" tabindex="-1"></a>  <span class="co"># Add the raw data points</span></span>
+<span id="cb40-16"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-16" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb40-17"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-17" tabindex="-1"></a>  </span>
+<span id="cb40-18"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-18" tabindex="-1"></a>  <span class="co"># Fit a linear model (lm) and draw the regression line with a confidence interval ribbon</span></span>
+<span id="cb40-19"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-19" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;lightcoral&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb40-20"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-20" tabindex="-1"></a>  </span>
+<span id="cb40-21"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-21" tabindex="-1"></a>  <span class="co"># Add the regression equation to the plot (placed dynamically near the top)</span></span>
+<span id="cb40-22"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-22" tabindex="-1"></a>  <span class="fu">stat_regline_equation</span>(<span class="at">label.y =</span> <span class="fu">max</span>(inventory_cor<span class="sc">$</span>Height_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.95</span>, </span>
+<span id="cb40-23"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-23" tabindex="-1"></a>                        <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb40-24"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-24" tabindex="-1"></a>  </span>
+<span id="cb40-25"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-25" tabindex="-1"></a>  <span class="co"># Add the R-squared and p-value</span></span>
+<span id="cb40-26"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-26" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(<span class="fu">paste</span>(r.label, p.label, <span class="at">sep =</span> <span class="st">&quot;~`,`~&quot;</span>))), </span>
+<span id="cb40-27"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-27" tabindex="-1"></a>           <span class="at">label.y =</span> <span class="fu">max</span>(inventory_cor<span class="sc">$</span>Height_m, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fl">0.88</span>, </span>
+<span id="cb40-28"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-28" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb40-29"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-29" tabindex="-1"></a>  </span>
+<span id="cb40-30"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-30" tabindex="-1"></a>  <span class="co"># Format the labels and theme</span></span>
+<span id="cb40-31"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-31" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb40-32"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-32" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tree Allometry: DBH vs. Total Height&quot;</span>,</span>
+<span id="cb40-33"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-33" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Establishing a predictive linear model for canopy structure&quot;</span>,</span>
+<span id="cb40-34"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-34" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Diameter at Breast Height (cm)&quot;</span>,</span>
+<span id="cb40-35"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-35" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Total Height (m)&quot;</span></span>
+<span id="cb40-36"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-36" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-37"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-37" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb40-38"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-38" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb40-39"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-39" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb40-40"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-40" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb40-41"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-41" tabindex="-1"></a>  )</span>
+<span id="cb40-42"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-42" tabindex="-1"></a></span>
+<span id="cb40-43"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-43" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb40-44"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb40-44" tabindex="-1"></a><span class="fu">print</span>(p)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:dbh-height-correlation"></span>
+<img src="_main_files/figure-html/dbh-height-correlation-1.png" alt="Linear regression model of DBH versus Total Height." width="672" />
+<p class="caption">
+Figure 4.1: Linear regression model of DBH versus Total Height.
+</p>
+</div>
+<p>Interpreting the ResultsWhen analyzing the plot, the statistical outputs generated by ggpubr tell us the viability of our model:</p>
+<p>The Equation (<span class="math inline">\(y = mx + b\)</span>): Tells us the specific mathematical relationship (how much <span class="math inline">\(y\)</span> increases for every unit of <span class="math inline">\(x\)</span>).</p>
+<p>The <span class="math inline">\(R\)</span> value (Correlation Coefficient): Indicates the strength of the relationship. A value closer to 1 means that DBH is an excellent predictor of Height.</p>
+<p>The <span class="math inline">\(p\)</span>-value: Tests the null hypothesis. A <span class="math inline">\(p\)</span>-value of <span class="math inline">\(&lt; 0.05\)</span> indicates that the relationship is statistically significant and not due to random chance.</p>
+</div>
+<div id="estimating-missing-heights" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Estimating Missing Heights<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#estimating-missing-heights" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In dense tropical canopies, measuring the total height of every tree using a laser hypsometer is often impossible. Consequently, field crews usually only measure the diameter (DBH) for all trees and take height subsamples.</p>
+<p>To map canopy structure across our entire plot, we can estimate the missing tree heights using established allometric equations. The BIOMASS package in R provides a seamless way to do this. We will use the regional Weibull allometric model developed by Feldpausch et al. (2012)<span class="citation"><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></span> specifically calibrated for South American (Amazonian) forests.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-1" tabindex="-1"></a><span class="co"># Install the BIOMASS package if you haven&#39;t already: install.packages(&quot;BIOMASS&quot;)</span></span>
+<span id="cb41-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-2" tabindex="-1"></a><span class="fu">library</span>(BIOMASS)</span>
+<span id="cb41-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-3" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-4" tabindex="-1"></a><span class="co"># Estimate height using the Feldpausch et al. (2012) model for South America</span></span>
+<span id="cb41-5"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-5" tabindex="-1"></a><span class="co"># retrieveH returns a list, and we extract the &#39;H&#39; (Height) vector from it</span></span>
+<span id="cb41-6"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-6" tabindex="-1"></a>estimated_heights <span class="ot">&lt;-</span> <span class="fu">retrieveH</span>(<span class="at">D =</span> inventory_sf<span class="sc">$</span>DBH_cm, <span class="at">region =</span> <span class="st">&quot;SAmerica&quot;</span>)</span>
+<span id="cb41-7"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-7" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-8" tabindex="-1"></a><span class="co"># Add the newly estimated heights back into our spatial dataset</span></span>
+<span id="cb41-9"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-9" tabindex="-1"></a>inventory_sf <span class="ot">&lt;-</span> inventory_sf <span class="sc">%&gt;%</span></span>
+<span id="cb41-10"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Height_m_allo =</span> estimated_heights<span class="sc">$</span>H)</span>
+<span id="cb41-11"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-11" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-12" tabindex="-1"></a><span class="co"># Check the summary of our new heights</span></span>
+<span id="cb41-13"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb41-13" tabindex="-1"></a><span class="fu">summary</span>(inventory_sf<span class="sc">$</span>Height_m_allo)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   7.138  12.759  15.414  16.763  19.645  34.440</code></pre>
+<p>Now that every tree has an estimated height based on Amazonian allometry, we can visualize the spatial distribution of canopy structure and biomass hotspots.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p><span class="nocase">TR Feldpausch et al.</span>, <span>“Tree Height Integrated into Pantropical Forest Biomass Estimates,”</span> <em>Biogeosciences</em> 9, no. 8 (2012): 3381–403.<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-3-forest-stand-structure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-5-lidar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
