@@ -1,0 +1,1122 @@
+{
+    "sources": [
+        {
+            "URL": "http://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "xie2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Feldpausch",
+                    "given": "TR"
+                },
+                {
+                    "family": "Lloyd",
+                    "given": "Jon"
+                },
+                {
+                    "family": "Lewis",
+                    "given": "Simon L"
+                },
+                {
+                    "family": "Brienen",
+                    "given": "Roel JW"
+                },
+                {
+                    "family": "Gloor",
+                    "given": "Manuel"
+                },
+                {
+                    "family": "Monteagudo Mendoza",
+                    "given": "A"
+                },
+                {
+                    "family": "Lopez-Gonzalez",
+                    "given": "Gabriela"
+                },
+                {
+                    "family": "Banin",
+                    "given": "Lindsay"
+                },
+                {
+                    "family": "Abu Salim",
+                    "given": "Kamariah"
+                },
+                {
+                    "family": "Affum-Baffoe",
+                    "given": "K"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Biogeosciences",
+            "id": "feldpausch2012",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "3381-3403",
+            "publisher": "Copernicus Publications",
+            "title": "Tree height integrated into pantropical forest biomass estimates",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "author": [
+                {
+                    "family": "Chave",
+                    "given": "Jérôme"
+                },
+                {
+                    "family": "Réjou-Méchain",
+                    "given": "Maxime"
+                },
+                {
+                    "family": "Búrquez",
+                    "given": "Alberto"
+                },
+                {
+                    "family": "Chidumayo",
+                    "given": "Emmanuel"
+                },
+                {
+                    "family": "Colgan",
+                    "given": "Matthew S"
+                },
+                {
+                    "family": "Delitti",
+                    "given": "Welington BC"
+                },
+                {
+                    "family": "Duque",
+                    "given": "Alvaro"
+                },
+                {
+                    "family": "Eid",
+                    "given": "Tron"
+                },
+                {
+                    "family": "Fearnside",
+                    "given": "Philip M"
+                },
+                {
+                    "family": "Goodman",
+                    "given": "Rosa C"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Global change biology",
+            "id": "chave2014",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "3177-3190",
+            "publisher": "Wiley Online Library",
+            "title": "Improved allometric models to estimate the aboveground biomass of tropical trees",
+            "type": "article-journal",
+            "volume": "20"
+        },
+        {
+            "author": [
+                {
+                    "family": "Avery",
+                    "given": "Thomas Eugene"
+                },
+                {
+                    "family": "Burkhart",
+                    "given": "Harold E"
+                }
+            ],
+            "id": "avery2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "publisher": "Waveland Press",
+            "title": "Forest measurements",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Simpson",
+                    "given": "Edward H"
+                }
+            ],
+            "container-title": "nature",
+            "id": "simpson1949",
+            "issue": "4148",
+            "issued": {
+                "date-parts": [
+                    [
+                        1949
+                    ]
+                ]
+            },
+            "page": "688-688",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Measurement of diversity",
+            "type": "article-journal",
+            "volume": "163"
+        },
+        {
+            "author": [
+                {
+                    "family": "Shannon",
+                    "given": "Claude E"
+                }
+            ],
+            "container-title": "The Bell system technical journal",
+            "id": "shannon1948",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1948
+                    ]
+                ]
+            },
+            "page": "379-423",
+            "publisher": "Nokia Bell Labs",
+            "title": "A mathematical theory of communication",
+            "type": "article-journal",
+            "volume": "27"
+        },
+        {
+            "author": [
+                {
+                    "family": "Magurran",
+                    "given": "Anne E"
+                }
+            ],
+            "id": "magurran2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "publisher": "John Wiley & Sons",
+            "title": "Measuring biological diversity",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Roussel",
+                    "given": "Jean-Romain"
+                },
+                {
+                    "family": "Auty",
+                    "given": "David"
+                },
+                {
+                    "family": "Coops",
+                    "given": "Nicholas C."
+                },
+                {
+                    "family": "Tompalski",
+                    "given": "Piotr"
+                },
+                {
+                    "family": "Goodbody",
+                    "given": "Tristan R. H."
+                },
+                {
+                    "family": "Meador",
+                    "given": "Andrew Sánchez"
+                },
+                {
+                    "family": "Bourdon",
+                    "given": "Jean-François"
+                },
+                {
+                    "family": "Boissieu",
+                    "given": "Florian",
+                    "non-dropping-particle": "de"
+                },
+                {
+                    "family": "Achim",
+                    "given": "Alexis"
+                }
+            ],
+            "container-title": "Remote Sensing of Environment",
+            "id": "R-lidR",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "112061",
+            "title": "lidR: An r package for analysis of airborne laser scanning (ALS) data",
+            "title-short": "lidR",
+            "type": "article-journal",
+            "volume": "251"
+        },
+        {
+            "URL": "https://github.com/rspatial/terra",
+            "author": [
+                {
+                    "family": "Hijmans",
+                    "given": "Robert J."
+                },
+                {
+                    "family": "Brown",
+                    "given": "Andrew"
+                },
+                {
+                    "family": "Barbosa",
+                    "given": "A. Márcia"
+                },
+                {
+                    "family": "Cordano",
+                    "given": "Emanuele"
+                },
+                {
+                    "family": "Dyba",
+                    "given": "Krzysztof"
+                }
+            ],
+            "id": "R-terra",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "R package version 1.9-48",
+            "title": "Terra: Spatial data analysis",
+            "title-short": "Terra",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "R-base",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 0.46",
+            "title": "Bookdown: Authoring books and technical documents with r markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://dplyr.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Francois",
+                    "given": "Romain"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Muller",
+                    "given": "Kirill"
+                },
+                {
+                    "family": "Vaughan",
+                    "given": "Davis"
+                }
+            ],
+            "id": "R-dplyr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 1.1.4",
+            "title": "Dplyr: A grammar of data manipulation",
+            "title-short": "Dplyr",
+            "type": "book"
+        },
+        {
+            "URL": "https://forcats.tidyverse.org/",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-forcats",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 1.0.1",
+            "title": "Forcats: Tools for working with categorical variables (factors)",
+            "title-short": "Forcats",
+            "type": "book"
+        },
+        {
+            "URL": "https://ggplot2.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Pedersen",
+                    "given": "Thomas Lin"
+                },
+                {
+                    "family": "Takahashi",
+                    "given": "Kohske"
+                },
+                {
+                    "family": "Wilke",
+                    "given": "Claus"
+                },
+                {
+                    "family": "Woo",
+                    "given": "Kara"
+                },
+                {
+                    "family": "Yutani",
+                    "given": "Hiroaki"
+                },
+                {
+                    "family": "Dunnington",
+                    "given": "Dewey"
+                },
+                {
+                    "family": "Brand",
+                    "given": "Teun",
+                    "non-dropping-particle": "van den"
+                }
+            ],
+            "id": "R-ggplot2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "R package version 4.0.2",
+            "title": "ggplot2: Create elegant data visualisations using the grammar of graphics",
+            "title-short": "ggplot2",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-knitr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 1.51",
+            "title": "Knitr: A general-purpose package for dynamic report generation in r",
+            "title-short": "Knitr",
+            "type": "book"
+        },
+        {
+            "URL": "https://lubridate.tidyverse.org",
+            "author": [
+                {
+                    "family": "Spinu",
+                    "given": "Vitalie"
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-lubridate",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "R package version 1.9.5",
+            "title": "Lubridate: Make dealing with dates a little easier",
+            "title-short": "Lubridate",
+            "type": "book"
+        },
+        {
+            "URL": "https://purrr.tidyverse.org/",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                }
+            ],
+            "id": "R-purrr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "R package version 1.2.1",
+            "title": "Purrr: Functional programming tools",
+            "title-short": "Purrr",
+            "type": "book"
+        },
+        {
+            "URL": "https://readr.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Hester",
+                    "given": "Jim"
+                },
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                }
+            ],
+            "id": "R-readr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "R package version 2.2.0",
+            "title": "Readr: Read rectangular text data",
+            "title-short": "Readr",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/rmarkdown",
+            "author": [
+                {
+                    "family": "Allaire",
+                    "given": "JJ"
+                },
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "McPherson",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Luraschi",
+                    "given": "Javier"
+                },
+                {
+                    "family": "Ushey",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Atkins",
+                    "given": "Aron"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Cheng",
+                    "given": "Joe"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Iannone",
+                    "given": "Richard"
+                }
+            ],
+            "id": "R-rmarkdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 2.30",
+            "title": "Rmarkdown: Dynamic documents for r",
+            "title-short": "Rmarkdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://r-spatial.github.io/sf/",
+            "author": [
+                {
+                    "family": "Pebesma",
+                    "given": "Edzer"
+                }
+            ],
+            "id": "R-sf",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "R package version 1.1-0",
+            "title": "Sf: Simple features for r",
+            "title-short": "Sf",
+            "type": "book"
+        },
+        {
+            "URL": "https://stringr.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-stringr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 1.6.0",
+            "title": "Stringr: Simple, consistent wrappers for common string operations",
+            "title-short": "Stringr",
+            "type": "book"
+        },
+        {
+            "URL": "https://tibble.tidyverse.org/",
+            "author": [
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-tibble",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 3.3.0",
+            "title": "Tibble: Simple data frames",
+            "title-short": "Tibble",
+            "type": "book"
+        },
+        {
+            "URL": "https://tidyr.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Vaughan",
+                    "given": "Davis"
+                },
+                {
+                    "family": "Girlich",
+                    "given": "Maximilian"
+                }
+            ],
+            "id": "R-tidyr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "note": "R package version 1.3.2",
+            "title": "Tidyr: Tidy messy data",
+            "title-short": "Tidyr",
+            "type": "book"
+        },
+        {
+            "URL": "https://tidyverse.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-tidyverse",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 2.0.0",
+            "title": "Tidyverse: Easily install and load the tidyverse",
+            "title-short": "Tidyverse",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-1138700109",
+            "URL": "https://bookdown.org/yihui/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "bookdown2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Bookdown: Authoring books and technical documents with R markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-3-319-24277-4",
+            "URL": "https://ggplot2.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "ggplot22016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag New York",
+            "title": "ggplot2: Elegant graphics for data analysis",
+            "title-short": "ggplot2",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "knitr2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "container-title": "Implementing reproducible computational research",
+            "editor": [
+                {
+                    "family": "Stodden",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "knitr2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1466561595",
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Knitr: A comprehensive tool for reproducible research in R",
+            "title-short": "Knitr",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://www.jstatsoft.org/v40/i03/",
+            "author": [
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "container-title": "Journal of Statistical Software",
+            "id": "lubridate2011",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "1-25",
+            "title": "Dates and times made easy with lubridate",
+            "type": "article-journal",
+            "volume": "40"
+        },
+        {
+            "ISBN": "9781138359338",
+            "URL": "https://bookdown.org/yihui/rmarkdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "rmarkdown2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown: The definitive guide",
+            "title-short": "R markdown",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780367563837",
+            "URL": "https://bookdown.org/yihui/rmarkdown-cookbook",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "Riederer",
+                    "given": "Emily"
+                }
+            ],
+            "id": "rmarkdown2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown cookbook",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1201/9780429459016",
+            "URL": "https://r-spatial.org/book/",
+            "author": [
+                {
+                    "family": "Pebesma",
+                    "given": "Edzer"
+                },
+                {
+                    "family": "Bivand",
+                    "given": "Roger"
+                }
+            ],
+            "id": "sf2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "Chapman and Hall/CRC",
+            "title": "Spatial Data Science: With applications in R",
+            "type": "book"
+        },
+        {
+            "DOI": "10.32614/RJ-2018-009",
+            "URL": "https://doi.org/10.32614/RJ-2018-009",
+            "author": [
+                {
+                    "family": "Pebesma",
+                    "given": "Edzer"
+                }
+            ],
+            "container-title": "The R Journal",
+            "id": "sf2018",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "439-446",
+            "title": "Simple Features for R: Standardized Support for Spatial Vector Data",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "DOI": "10.21105/joss.01686",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Averick",
+                    "given": "Mara"
+                },
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "McGowan",
+                    "given": "Lucy D’Agostino"
+                },
+                {
+                    "family": "Françoi",
+                    "given": "Romain"
+                },
+                {
+                    "family": "Grolemun",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Haye",
+                    "given": "Alex"
+                },
+                {
+                    "family": "Henr",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Heste",
+                    "given": "Jim"
+                },
+                {
+                    "family": "Kuh",
+                    "given": "Max"
+                },
+                {
+                    "family": "Pederse",
+                    "given": "Thomas Lin"
+                },
+                {
+                    "family": "Mille",
+                    "given": "Evan"
+                },
+                {
+                    "family": "Bach",
+                    "given": "Stephan Milton"
+                },
+                {
+                    "family": "Müll",
+                    "given": "Kirill"
+                },
+                {
+                    "given": "Jeroen Oo"
+                },
+                {
+                    "given": "David Robins"
+                },
+                {
+                    "given": "Dana Paige Seid"
+                },
+                {
+                    "given": "Vitalie Spi"
+                },
+                {
+                    "given": "Kohske Takahas"
+                },
+                {
+                    "given": "Davis Vaugh"
+                },
+                {
+                    "given": "Claus Wil"
+                },
+                {
+                    "given": "Kara W"
+                },
+                {
+                    "given": "Hiroaki Yutani"
+                }
+            ],
+            "container-title": "Journal of Open Source Software",
+            "id": "tidyverse2019",
+            "issue": "43",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "1686",
+            "title": "Welcome to the tidyverse",
+            "type": "article-journal",
+            "volume": "4"
+        }
+    ],
+    "project_biblios": [
+        "book.bib",
+        "packages.bib"
+    ]
+}

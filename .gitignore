@@ -1,4 +1,8 @@
-.Rproj.user
-.Rhistory
+
 .RData
+.Rhistory
 .Ruserdata
+*_cache/
+
+.Rproj.user
+*.RDataTmp

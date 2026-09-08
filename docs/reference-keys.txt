@@ -44,5 +44,10 @@ allometric-relationships-and-statistical-correlation
 mathematical-models
 visualizing-the-correlation
 estimating-missing-heights
-chapter-5-lidar
+chapter-5-canopy-gap-dynamics-using-3d-lidar
+point-cloud-import-and-preprocessing
+point-cloud-normalization
+canopy-height-model-chm-generation
+canopy-gap-detection-and-delineation
+vertical-point-density-profile
 references

@@ -23,14 +23,14 @@
 <meta name="author" content="J. David Urquiza-Munoz" />
 
 
-<meta name="date" content="2026-09-07" />
+<meta name="date" content="2026-09-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chapter-5-lidar.html"/>
+<link rel="prev" href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -223,7 +223,16 @@ div.csl-indent {
 <li class="chapter" data-level="4.3" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#visualizing-the-correlation"><i class="fa fa-check"></i><b>4.3</b> Visualizing the Correlation</a></li>
 <li class="chapter" data-level="4.4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#estimating-missing-heights"><i class="fa fa-check"></i><b>4.4</b> Estimating Missing Heights</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chapter-5-lidar.html"><a href="chapter-5-lidar.html"><i class="fa fa-check"></i><b>5</b> Chapter 5: LiDAR</a></li>
+<li class="chapter" data-level="5" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><i class="fa fa-check"></i><b>5</b> Chapter 5: Canopy Gap Dynamics using 3D LiDAR</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#point-cloud-import-and-preprocessing"><i class="fa fa-check"></i><b>5.1</b> Point Cloud Import and Preprocessing</a></li>
+<li class="chapter" data-level="5.2" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#point-cloud-normalization"><i class="fa fa-check"></i><b>5.2</b> Point Cloud Normalization</a></li>
+<li class="chapter" data-level="5.3" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#canopy-height-model-chm-generation"><i class="fa fa-check"></i><b>5.3</b> Canopy Height Model (CHM) Generation</a></li>
+<li class="chapter" data-level="5.4" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#canopy-gap-detection-and-delineation"><i class="fa fa-check"></i><b>5.4</b> Canopy Gap Detection and Delineation</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#vertical-point-density-profile"><i class="fa fa-check"></i><b>5.4.1</b> Vertical Point Density Profile</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
 </ul>
 
@@ -272,7 +281,16 @@ Avery, Thomas Eugene, and Harold E Burkhart. <em>Forest Measurements</em>. Wavel
 <span class="nocase">Feldpausch, TR, Jon Lloyd, Simon L Lewis, et al.</span> <span>“Tree Height Integrated into Pantropical Forest Biomass Estimates.”</span> <em>Biogeosciences</em> 9, no. 8 (2012): 3381–403.
 </div>
 <div class="csl-entry">
+Hijmans, Robert J., Andrew Brown, A. Márcia Barbosa, Emanuele Cordano, and Krzysztof Dyba. <em>Terra: Spatial Data Analysis</em>. 2026. <a href="https://github.com/rspatial/terra">https://github.com/rspatial/terra</a>.
+</div>
+<div class="csl-entry">
 Magurran, Anne E. <em>Measuring Biological Diversity</em>. John Wiley &amp; Sons, 2004.
+</div>
+<div class="csl-entry">
+Pebesma, Edzer. <em>Sf: Simple Features for r</em>. 2026. <a href="https://r-spatial.github.io/sf/">https://r-spatial.github.io/sf/</a>.
+</div>
+<div class="csl-entry">
+<span class="nocase">Roussel, Jean-Romain, David Auty, Nicholas C. Coops, et al.</span> <span>“lidR: An r Package for Analysis of Airborne Laser Scanning (ALS) Data.”</span> <em>Remote Sensing of Environment</em> 251 (2020): 112061.
 </div>
 <div class="csl-entry">
 Shannon, Claude E. <span>“A Mathematical Theory of Communication.”</span> <em>The Bell System Technical Journal</em> 27, no. 3 (1948): 379–423.
@@ -291,12 +309,15 @@ Simpson, Edward H. <span>“Measurement of Diversity.”</span> <em>Nature</em> 
 
 
 
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="chapter-5-lidar.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

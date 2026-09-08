@@ -1,0 +1,3 @@
+"0",""
+"0","# Option 2: 'YlGn' (Natural forest look - uncomment to use)"
+"0","# plot(chm, main = ""UNAP Plot - Pit-Free CHM (0.5m)"", col = hcl.colors(50, ""YlGn"", rev = TRUE))"
