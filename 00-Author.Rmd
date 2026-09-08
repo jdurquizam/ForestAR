@@ -2,44 +2,25 @@
 
 ## J. David Urquiza Muñoz {-}
 
-<div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; margin-top: 20px;">
+<img src="https://www.bgc-jena.mpg.de/~jurquiza/Pictures/David%20Urquiza2.jpg" alt="J. David Urquiza Muñoz" style="float: right; width: 220px; border-radius: 8px; margin-left: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
 
-<div style="flex: 1; min-width: 300px; text-align: justify; line-height: 1.6;">
+**[David Urquiza](https://www.bgc-jena.mpg.de/person/121817/2206)** is a tropical forest ecologist, a researcher at the Max Planck Institute for Biogeochemistry, and an associate professor at the Forestry Science Faculty of the Universidad Nacional de la Amazonía Peruana (UNAP). His research in geospatial ecology and remote sensing focuses on integrating field-based and remotely sensed data to understand spatio-temporal changes in forest attributes across the northwestern Amazon.
 
-<a href="https://www.bgc-jena.mpg.de/person/121817/2206" style="font-weight: bold; color: #0e75b6; text-decoration: none;">David Urquiza</a> is a tropical forest ecologist, a researcher at the Max Planck Institute for Biogeochemistry, and an associate professor at the Forestry Science Faculty of the Universidad Nacional de la Amazonía Peruana (UNAP). His research in geospatial ecology and remote sensing focuses on integrating field-based and remotely sensed data to understand spatio-temporal changes in forest attributes across the northwestern Amazon.
+---
 
-<hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+<img src="fig/MPG_Logo_green.png" alt="Max Planck Logo" style="float: left; height: 55px; margin-right: 15px; margin-bottom: 10px;">
+**Max Planck Institute for Biogeochemistry**<br>
+<span style="color: #555; font-size: 0.9em;">*Department of Biogeochemical Processes*<br>
+Jena 07745, Germany &bull; [jurquiza@bgc-jena.mpg.de](mailto:jurquiza@bgc-jena.mpg.de)</span>
 
-<!-- Max Planck Section -->
-<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-<img src="fig/MPG_Logo_green.png" alt="Max Planck Logo" style="height: 55px; width: auto; flex-shrink: 0;">
-<div>
-<b>Max Planck Institute for Biogeochemistry</b><br>
-<span style="color: #555; font-size: 0.9em;"><i>Department of Biogeochemical Processes</i><br>
-Jena 07745, Germany &bull; <a href="mailto:jurquiza@bgc-jena.mpg.de" style="color: #0e75b6; text-decoration: none;">jurquiza@bgc-jena.mpg.de</a></span>
-</div>
-</div>
+<div style="clear: both; margin-bottom: 20px;"></div>
 
-<!-- UNAP Section -->
-<div style="display: flex; align-items: center; gap: 15px;">
-<img src="fig/unap_logo.jpg" alt="UNAP Logo" style="height: 55px; width: auto; flex-shrink: 0;">
-<div>
-<b>Universidad Nacional de la Amazonía Peruana (UNAP)</b><br>
-<span style="color: #555; font-size: 0.9em;"><i>Facultad de Ciencias Forestales &bull; VETAF Research Group</i><br>
-Iquitos 16600, Peru &bull; <a href="mailto:david.urquiza@unapiquitos.edu.pe" style="color: #0e75b6; text-decoration: none;">david.urquiza@unapiquitos.edu.pe</a></span>
-</div>
-</div>
+<img src="fig/unap_logo.jpg" alt="UNAP Logo" style="float: left; height: 55px; margin-right: 15px; margin-bottom: 10px;">
+**Universidad Nacional de la Amazonía Peruana (UNAP)**<br>
+<span style="color: #555; font-size: 0.9em;">*Facultad de Ciencias Forestales &bull; VETAF Research Group*<br>
+Iquitos 16600, Peru &bull; [david.urquiza@unapiquitos.edu.pe](mailto:david.urquiza@unapiquitos.edu.pe)</span>
 
-</div>
-
-<!-- Profile Picture -->
-<div style="flex-shrink: 0; width: 250px;">
-<img src="https://www.bgc-jena.mpg.de/~jurquiza/Pictures/David%20Urquiza2.jpg" alt="J. David Urquiza Muñoz" style="border-radius: 8px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-</div>
-
-</div>
-
-<br>
+<div style="clear: both; margin-bottom: 40px;"></div>
 
 ### **For more information about the author, visit his personal website:** {-} 
 ### *[https://jdurquizam.github.io/](https://jdurquizam.github.io/)* {-}
