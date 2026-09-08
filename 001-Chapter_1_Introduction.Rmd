@@ -11,7 +11,7 @@ If you prefer to follow along locally by running the scripts yourself, you can d
 * **[Download Complete ForestAR Repository (.zip)](https://github.com/jdurquizam/ForestAR/archive/refs/heads/main.zip)**
 * Or view the source code and development history directly on the [ForestAR GitHub Repository](https://github.com/jdurquizam/ForestAR).
 
-## Setting Your Working Directory {-}
+## Setting Your Working Directory
 
 To ensure your scripts and book renders execute without path errors, follow these file management practices:
 
