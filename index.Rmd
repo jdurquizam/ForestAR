@@ -1,6 +1,6 @@
 ---
 title: |
-    ![](fig/ForestAR_logo.jpg){width=5in } 
+    ![](fig/ForestAR_logo.jpg){width=8in } 
      
     Forest Attributes Analysis in R - ForestAR
 author: "J. David Urquiza-Munoz"
