@@ -4,7 +4,7 @@ title: |
      
     Forest Attributes Analysis in R - ForestAR
 author: "J. David Urquiza-Munoz"
-date: "`r Sys.Date()` <br><br> <a href='https://doi.org/10.5281/zenodo.22606690'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.22606690.svg' alt='DOI' style='vertical-align:middle;'></a>&nbsp;&nbsp;<img src='https://komarev.com/ghpvc/?username=jdurquizam&amp;label=Visits&amp;color=0e75b6&amp;style=flat' alt='Github views' style='vertical-align:middle;'>&nbsp;&nbsp;<img src='https://visitor-badge.laobi.icu/badge?page_id=jdurquizam.forestar.book&amp;color=0e75b6' alt='Live Views' style='vertical-align:middle;'>"
+date: "`r Sys.Date()` <br><br> <a href='https://doi.org/10.5281/zenodo.22606690'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.22606690.svg' alt='DOI' style='vertical-align:middle;'></a>&nbsp;&nbsp;<img src='https://komarev.com/ghpvc/?username=jdurquizam&amp;label=Github views&amp;color=0e75b6&amp;style=flat' alt='Github views' style='vertical-align:middle;'>&nbsp;&nbsp;<img src='https://visitor-badge.laobi.icu/badge?page_id=jdurquizam.forestar.book&amp;color=0e75b6' alt='Live Views' style='vertical-align:middle;'>"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
