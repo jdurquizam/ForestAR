@@ -1,6 +1,6 @@
 # Chapter 5: Canopy Gap Dynamics using 3D LiDAR
 
-## Point Cloud Import and Preprocessing
+## Point cloud import and preprocessing
 
 To analyze canopy gaps—such as those created by windthrow events or localized canopy turnover—we first need to import our raw 3D point cloud. We rely on the `lidR` package [@R-lidR] for point cloud manipulation, `terra` [@R-terra] for raster processing, and `sf` [@R-sf] for managing vector boundaries.
 
