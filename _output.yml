@@ -2,6 +2,7 @@ bookdown::gitbook:
   css: style.css
   includes:
     before_body: translate.html
+    in_header: analytics.html
   config:
     fontsettings:
       theme: sepia
