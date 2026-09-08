@@ -1,8 +1,0 @@
-"0","#| label: setup"
-"0","#| message: false"
-"0","#| warning: false"
-"0",""
-"0","# Install packages if you haven't already: install.packages(c(""tidyverse"", ""sf"", ""knitr""))"
-"0","library(tidyverse)"
-"0","library(sf)"
-"0","library(knitr) # Used for rendering neat tables in our book"
