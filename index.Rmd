@@ -54,4 +54,3 @@ If you use this resource in your research, teaching, or workflow, please cite it
 }
 ```
 
-![](fig/MPG_Logo_green.png){width=2in}
