@@ -222,12 +222,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.6.2" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#visualizing-species-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Visualizing Species Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#analyzing-spatial-clustering-with-the-morisita-index"><i class="fa fa-check"></i><b>3.7</b> Analyzing Spatial Clustering with the Morisita Index</a></li>
-<li class="chapter" data-level="3.8" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>3.8</b> Spatial Visualization of DBH and Tree Height</a></li>
-<li class="chapter" data-level="3.9" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#biomass-and-carbon-as-structural-attributes"><i class="fa fa-check"></i><b>3.9</b> Biomass and Carbon as Structural Attributes</a>
+<li class="chapter" data-level="3.8" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>3.8</b> Spatial Visualization of DBH and tree height</a></li>
+<li class="chapter" data-level="3.9" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#biomass-and-carbon-as-structural-attributes"><i class="fa fa-check"></i><b>3.9</b> Biomass and carbon as structural attributes</a>
 <ul>
 <li class="chapter" data-level="3.9.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#extracting-wood-density-and-calculating-agb"><i class="fa fa-check"></i><b>3.9.1</b> Extracting Wood Density and Calculating AGB</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-distribution-of-carbon"><i class="fa fa-check"></i><b>3.10</b> Spatial Distribution of Carbon</a></li>
+<li class="chapter" data-level="3.10" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-distribution-of-carbon"><i class="fa fa-check"></i><b>3.10</b> Spatial distribution of carbon</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html"><i class="fa fa-check"></i><b>4</b> Chapter 4: Allometric Relationships and Statistical Correlation</a>
 <ul>
@@ -287,7 +287,7 @@ function googleTranslateElementInit() {
 <h1><span class="header-section-number">5</span> Chapter 5: Canopy Gap Dynamics using 3D LiDAR<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#chapter-5-canopy-gap-dynamics-using-3d-lidar" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="point-cloud-import-and-preprocessing" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Point cloud import and preprocessing<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#point-cloud-import-and-preprocessing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To analyze canopy gaps—such as those created by windthrow events or localized canopy turnover—we first need to import our raw 3D point cloud. We rely on the <code>lidR</code> package<span class="citation"><a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a></span> for point cloud manipulation, <code>terra</code><span class="citation"><a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></span> for raster processing, and <code>sf</code><span class="citation"><a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></span> for managing vector boundaries.</p>
+<p>To analyze canopy gaps—such as those created by windthrow events or localized canopy turnover—we first need to import our raw 3D point cloud. We rely on the <code>lidR</code> package<span class="citation"><a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a></span> for point cloud manipulation, <code>terra</code><span class="citation"><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a></span> for raster processing, and <code>sf</code><span class="citation"><a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></span> for managing vector boundaries.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#cb47-1" tabindex="-1"></a><span class="fu">library</span>(lidR)</span>
 <span id="cb47-2"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#cb47-2" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
 <span id="cb47-3"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#cb47-3" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -415,10 +415,10 @@ function googleTranslateElementInit() {
 </div>
 <div class="footnotes">
 <hr />
-<ol start="16">
-<li id="fn16"><p><span class="nocase">Jean-Romain Roussel et al.</span>, <span>“lidR: An r Package for Analysis of Airborne Laser Scanning (ALS) Data,”</span> <em>Remote Sensing of Environment</em> 251 (2020): 112061.<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#fnref16" class="footnote-back">↩︎</a></p></li>
-<li id="fn17"><p>Robert J. Hijmans et al., <em>Terra: Spatial Data Analysis</em> (2026), <a href="https://github.com/rspatial/terra">https://github.com/rspatial/terra</a>.<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p>Edzer Pebesma, <em>Sf: Simple Features for r</em> (2026), <a href="https://r-spatial.github.io/sf/">https://r-spatial.github.io/sf/</a>.<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<ol start="34">
+<li id="fn34"><p><span class="nocase">Jean-Romain Roussel et al.</span>, <span>“lidR: An r Package for Analysis of Airborne Laser Scanning (ALS) Data,”</span> <em>Remote Sensing of Environment</em> 251 (2020): 112061.<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Robert J. Hijmans et al., <em>Terra: Spatial Data Analysis</em> (2026), <a href="https://github.com/rspatial/terra">https://github.com/rspatial/terra</a>.<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>Edzer Pebesma, <em>Sf: Simple Features for r</em> (2026), <a href="https://r-spatial.github.io/sf/">https://r-spatial.github.io/sf/</a>.<a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#fnref36" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

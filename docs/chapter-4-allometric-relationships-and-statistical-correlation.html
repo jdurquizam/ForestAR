@@ -222,12 +222,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.6.2" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#visualizing-species-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Visualizing Species Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#analyzing-spatial-clustering-with-the-morisita-index"><i class="fa fa-check"></i><b>3.7</b> Analyzing Spatial Clustering with the Morisita Index</a></li>
-<li class="chapter" data-level="3.8" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>3.8</b> Spatial Visualization of DBH and Tree Height</a></li>
-<li class="chapter" data-level="3.9" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#biomass-and-carbon-as-structural-attributes"><i class="fa fa-check"></i><b>3.9</b> Biomass and Carbon as Structural Attributes</a>
+<li class="chapter" data-level="3.8" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-visualization-of-dbh-and-tree-height"><i class="fa fa-check"></i><b>3.8</b> Spatial Visualization of DBH and tree height</a></li>
+<li class="chapter" data-level="3.9" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#biomass-and-carbon-as-structural-attributes"><i class="fa fa-check"></i><b>3.9</b> Biomass and carbon as structural attributes</a>
 <ul>
 <li class="chapter" data-level="3.9.1" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#extracting-wood-density-and-calculating-agb"><i class="fa fa-check"></i><b>3.9.1</b> Extracting Wood Density and Calculating AGB</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-distribution-of-carbon"><i class="fa fa-check"></i><b>3.10</b> Spatial Distribution of Carbon</a></li>
+<li class="chapter" data-level="3.10" data-path="chapter-3-forest-stand-structure.html"><a href="chapter-3-forest-stand-structure.html#spatial-distribution-of-carbon"><i class="fa fa-check"></i><b>3.10</b> Spatial distribution of carbon</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="chapter-4-allometric-relationships-and-statistical-correlation.html"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html"><i class="fa fa-check"></i><b>4</b> Chapter 4: Allometric Relationships and Statistical Correlation</a>
 <ul>
@@ -368,7 +368,7 @@ Figure 4.1: Linear regression model of DBH versus Total Height.
 <div id="estimating-missing-heights" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Estimating Missing Heights<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#estimating-missing-heights" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In dense tropical canopies, measuring the total height of every tree using a laser hypsometer is often impossible. Consequently, field crews usually only measure the diameter (DBH) for all trees and take height subsamples.</p>
-<p>To map canopy structure across our entire plot, we can estimate the missing tree heights using established allometric equations. The BIOMASS package in R provides a seamless way to do this. We will use the regional Weibull allometric model developed by Feldpausch et al. (2012)<span class="citation"><a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a></span> specifically calibrated for South American (Amazonian) forests.</p>
+<p>To map canopy structure across our entire plot, we can estimate the missing tree heights using established allometric equations. The BIOMASS package in R provides a seamless way to do this. We will use the regional Weibull allometric model developed by Feldpausch et al. (2012)<span class="citation"><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a></span> specifically calibrated for South American (Amazonian) forests.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb45-1" tabindex="-1"></a><span class="co"># Install the BIOMASS package if you haven&#39;t already: install.packages(&quot;BIOMASS&quot;)</span></span>
 <span id="cb45-2"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb45-2" tabindex="-1"></a><span class="fu">library</span>(BIOMASS)</span>
 <span id="cb45-3"><a href="chapter-4-allometric-relationships-and-statistical-correlation.html#cb45-3" tabindex="-1"></a></span>
@@ -390,8 +390,8 @@ Figure 4.1: Linear regression model of DBH versus Total Height.
 </div>
 <div class="footnotes">
 <hr />
-<ol start="15">
-<li id="fn15"><p><span class="nocase">TR Feldpausch et al.</span>, <span>“Tree Height Integrated into Pantropical Forest Biomass Estimates,”</span> <em>Biogeosciences</em> 9, no. 8 (2012): 3381–403.<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<ol start="33">
+<li id="fn33"><p><span class="nocase">TR Feldpausch et al.</span>, <span>“Tree Height Integrated into Pantropical Forest Biomass Estimates,”</span> <em>Biogeosciences</em> 9, no. 8 (2012): 3381–403.<a href="chapter-4-allometric-relationships-and-statistical-correlation.html#fnref33" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
