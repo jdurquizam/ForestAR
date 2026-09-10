@@ -13,6 +13,7 @@ fig:map-carbon-structure
 fig:dbh-height-correlation
 chapter-1-introduction-to-forest-data-in-r
 download-project-files
+setting-your-working-directory
 using-rstudio-projects
 using-the-here-package
 setting-up-the-environment
@@ -51,3 +52,4 @@ canopy-height-model-chm-generation
 canopy-gap-detection-and-delineation
 vertical-point-density-profile
 references
+d-visualization

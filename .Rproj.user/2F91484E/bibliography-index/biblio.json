@@ -148,6 +148,122 @@
             "volume": "20"
         },
         {
+            "DOI": "10.1890/0012-9658(2001)082[2101:DADOTS]2.0.CO;2",
+            "author": [
+                {
+                    "family": "Pitman",
+                    "given": "Nigel CA"
+                },
+                {
+                    "family": "Terborgh",
+                    "given": "John W"
+                },
+                {
+                    "family": "Silman",
+                    "given": "Miles R"
+                },
+                {
+                    "family": "Nuñez V",
+                    "given": "Percy"
+                },
+                {
+                    "family": "Neill",
+                    "given": "David A"
+                },
+                {
+                    "family": "Cerón",
+                    "given": "Carlos E"
+                },
+                {
+                    "family": "Palacios",
+                    "given": "Walter A"
+                },
+                {
+                    "family": "Aulestia",
+                    "given": "Milton"
+                }
+            ],
+            "container-title": "Ecology",
+            "id": "pitman2001dominance",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "2101-2117",
+            "publisher": "Ecological Society of America",
+            "title": "Dominance and distribution of tree species in upper amazonian terra firme forests",
+            "type": "article-journal",
+            "volume": "82"
+        },
+        {
+            "DOI": "10.1126/science.1243092",
+            "author": [
+                {
+                    "dropping-particle": "ter",
+                    "family": "Steege",
+                    "given": "Hans"
+                },
+                {
+                    "family": "Pitman",
+                    "given": "Nigel CA"
+                },
+                {
+                    "family": "Sabatier",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Baraloto",
+                    "given": "Christopher"
+                },
+                {
+                    "family": "Salomão",
+                    "given": "Rafael P"
+                },
+                {
+                    "family": "Guevara",
+                    "given": "Juan Ernesto"
+                },
+                {
+                    "family": "Phillips",
+                    "given": "Oliver L"
+                },
+                {
+                    "family": "Castilho",
+                    "given": "Carolina V"
+                },
+                {
+                    "family": "Magnusson",
+                    "given": "William E"
+                },
+                {
+                    "family": "Molino",
+                    "given": "Jean-François"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Science",
+            "id": "tersteege2013hyperdominance",
+            "issue": "6156",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "1243092",
+            "publisher": "American Association for the Advancement of Science",
+            "title": "Hyperdominance in the amazonian tree flora",
+            "type": "article-journal",
+            "volume": "342"
+        },
+        {
             "author": [
                 {
                     "family": "Avery",
@@ -326,6 +442,990 @@
             "title": "Terra: Spatial data analysis",
             "title-short": "Terra",
             "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Magurran",
+                    "given": "Anne E"
+                }
+            ],
+            "id": "magurran2004measuring",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "publisher": "Blackwell Science",
+            "publisher-place": "Malden, MA",
+            "title": "Measuring biological diversity",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/BF00115330",
+            "author": [
+                {
+                    "family": "Valencia",
+                    "given": "Renato"
+                },
+                {
+                    "family": "Balslev",
+                    "given": "Henrik"
+                },
+                {
+                    "family": "Paz y Miño",
+                    "given": "Guillermo"
+                }
+            ],
+            "container-title": "Biodiversity & Conservation",
+            "id": "valencia1994high",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "page": "21-28",
+            "publisher": "Springer",
+            "title": "High tree alpha-diversity in amazonian ecuador",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "DOI": "10.1086/282687",
+            "author": [
+                {
+                    "family": "Janzen",
+                    "given": "Daniel H"
+                }
+            ],
+            "container-title": "The American Naturalist",
+            "id": "janzen1970herbivores",
+            "issue": "940",
+            "issued": {
+                "date-parts": [
+                    [
+                        1970
+                    ]
+                ]
+            },
+            "page": "501-528",
+            "publisher": "University of Chicago Press",
+            "title": "Herbivores and the number of tree species in tropical forests",
+            "type": "article-journal",
+            "volume": "104"
+        },
+        {
+            "DOI": "10.1046/j.1461-0248.2001.00230.x",
+            "author": [
+                {
+                    "family": "Gotelli",
+                    "given": "Nicholas J"
+                },
+                {
+                    "family": "Colwell",
+                    "given": "Robert K"
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "gotelli2001quantifying",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "379-391",
+            "publisher": "Wiley Online Library",
+            "title": "Quantifying biodiversity: Procedures and pitfalls in the measurement and comparison of species richness",
+            "title-short": "Quantifying biodiversity",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "DOI": "10.2307/2261477",
+            "author": [
+                {
+                    "family": "Condit",
+                    "given": "Richard"
+                },
+                {
+                    "family": "Hubbell",
+                    "given": "Stephen P"
+                },
+                {
+                    "family": "Lafrankie",
+                    "given": "James V"
+                },
+                {
+                    "family": "Sukumar",
+                    "given": "Raman"
+                },
+                {
+                    "family": "Manokaran",
+                    "given": "N"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Robin B"
+                },
+                {
+                    "family": "Ashton",
+                    "given": "Peter S"
+                }
+            ],
+            "container-title": "Journal of Ecology",
+            "id": "condit1996species",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "page": "549-562",
+            "publisher": "JSTOR",
+            "title": "Species-area and species-individual relationships for tropical trees: A comparison of three 50-ha plots",
+            "title-short": "Species-area and species-individual relationships for tropical trees",
+            "type": "article-journal",
+            "volume": "84"
+        },
+        {
+            "DOI": "10.1126/science.288.5470.1414",
+            "author": [
+                {
+                    "family": "Condit",
+                    "given": "Richard"
+                },
+                {
+                    "family": "Ashton",
+                    "given": "Peter S"
+                },
+                {
+                    "family": "Baker",
+                    "given": "Patrick"
+                },
+                {
+                    "family": "Bunyavejchewin",
+                    "given": "Sarayudh"
+                },
+                {
+                    "family": "Gunatilleke",
+                    "given": "Savitri"
+                },
+                {
+                    "family": "Gunatilleke",
+                    "given": "Nimal"
+                },
+                {
+                    "family": "Hubbell",
+                    "given": "Stephen P"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Robin B"
+                },
+                {
+                    "family": "Itoh",
+                    "given": "Akira"
+                },
+                {
+                    "family": "LaFrankie",
+                    "given": "James V"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Science",
+            "id": "condit2000spatial",
+            "issue": "5470",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "1414-1418",
+            "publisher": "American Association for the Advancement of Science",
+            "title": "Spatial patterns in the distribution of tropical tree species",
+            "type": "article-journal",
+            "volume": "288"
+        },
+        {
+            "author": [
+                {
+                    "family": "Meyer",
+                    "given": "H Arthur"
+                }
+            ],
+            "container-title": "Journal of Forestry",
+            "id": "meyer1952structure",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1952
+                    ]
+                ]
+            },
+            "page": "85-92",
+            "publisher": "Society of American Foresters",
+            "title": "Structure, growth, and drain in balanced uneven-aged forests",
+            "type": "article-journal",
+            "volume": "50"
+        },
+        {
+            "DOI": "10.2307/2937114",
+            "author": [
+                {
+                    "family": "Clark",
+                    "given": "David A"
+                },
+                {
+                    "family": "Clark",
+                    "given": "Deborah B"
+                }
+            ],
+            "container-title": "Ecological Monographs",
+            "id": "clark1992life",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "page": "315-344",
+            "publisher": "Wiley Online Library",
+            "title": "Life history diversity of canopy and emergent trees in a neotropical rain forest",
+            "type": "article-journal",
+            "volume": "62"
+        },
+        {
+            "DOI": "10.1111/geb.12092",
+            "author": [
+                {
+                    "family": "Slik",
+                    "given": "JWF"
+                },
+                {
+                    "family": "Paoli",
+                    "given": "Gary"
+                },
+                {
+                    "family": "McGuire",
+                    "given": "Krista"
+                },
+                {
+                    "family": "Amaral",
+                    "given": "Iêda"
+                },
+                {
+                    "family": "Barroso",
+                    "given": "Jorcely"
+                },
+                {
+                    "family": "Bastian",
+                    "given": "Mercedes"
+                },
+                {
+                    "family": "Blanc",
+                    "given": "Lilian"
+                },
+                {
+                    "family": "Bongers",
+                    "given": "Frans"
+                },
+                {
+                    "family": "Boundja",
+                    "given": "Patrick"
+                },
+                {
+                    "family": "Clark",
+                    "given": "Connie"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Global Ecology and Biogeography",
+            "id": "slik2013large",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "1261-1271",
+            "publisher": "Wiley Online Library",
+            "title": "Large trees drive forest aboveground biomass variation in moist lowland forests across the tropics",
+            "type": "article-journal",
+            "volume": "22"
+        },
+        {
+            "DOI": "10.1111/j.1461-0248.2006.00915.x",
+            "author": [
+                {
+                    "family": "Muller-Landau",
+                    "given": "Helene C"
+                },
+                {
+                    "family": "Condit",
+                    "given": "Richard S"
+                },
+                {
+                    "family": "Chave",
+                    "given": "Jérôme"
+                },
+                {
+                    "family": "Thomas",
+                    "given": "Sean C"
+                },
+                {
+                    "family": "Bohlman",
+                    "given": "Stephanie A"
+                },
+                {
+                    "family": "Bunyavejchewin",
+                    "given": "Sarayudh"
+                },
+                {
+                    "family": "Davies",
+                    "given": "Stuart J"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Robin"
+                },
+                {
+                    "family": "Gunatilleke",
+                    "given": "Savitri"
+                },
+                {
+                    "family": "Gunatilleke",
+                    "given": "Nimal"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "mullerlandau2006comparing",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "589-602",
+            "publisher": "Wiley Online Library",
+            "title": "Comparing tropical forest tree size distributions with the predictions of metabolic ecology and equilibrium models",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.1038/ncomms7857",
+            "author": [
+                {
+                    "family": "Fauset",
+                    "given": "Sophie"
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Michelle O"
+                },
+                {
+                    "family": "Gloor",
+                    "given": "Manuel"
+                },
+                {
+                    "family": "Baker",
+                    "given": "Timothy R"
+                },
+                {
+                    "family": "Monteagudo M",
+                    "given": "Abel"
+                },
+                {
+                    "family": "Brienen",
+                    "given": "Roel JW"
+                },
+                {
+                    "family": "Feldpausch",
+                    "given": "Ted R"
+                },
+                {
+                    "family": "Lopez-Gonzalez",
+                    "given": "Gabriela"
+                },
+                {
+                    "family": "Malhi",
+                    "given": "Yadvinder"
+                },
+                {
+                    "dropping-particle": "ter",
+                    "family": "Steege",
+                    "given": "Hans"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Nature Communications",
+            "id": "fauset2015hyperdominance",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "6857",
+            "publisher": "Nature Publishing Group",
+            "title": "Hyperdominance in amazonian forest carbon cycling",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "DOI": "10.1086/286115",
+            "author": [
+                {
+                    "family": "Condit",
+                    "given": "Richard"
+                },
+                {
+                    "family": "Sukumar",
+                    "given": "Raman"
+                },
+                {
+                    "family": "Hubbell",
+                    "given": "Stephen P"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Robin B"
+                }
+            ],
+            "container-title": "The American Naturalist",
+            "id": "condit1998inferring",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "page": "239-250",
+            "publisher": "The University of Chicago Press",
+            "title": "Inferring population dynamics from size distributions in tropical forest trees",
+            "type": "article-journal",
+            "volume": "151"
+        },
+        {
+            "DOI": "10.1890/0012-9658(2006)87[1289:AOMTST]2.0.CO;2",
+            "author": [
+                {
+                    "family": "Poorter",
+                    "given": "Lourens"
+                },
+                {
+                    "family": "Bongers",
+                    "given": "Frans"
+                },
+                {
+                    "family": "Sterck",
+                    "given": "Frank J"
+                },
+                {
+                    "family": "Wöll",
+                    "given": "H"
+                }
+            ],
+            "container-title": "Ecology",
+            "id": "poorter2006architecture",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "1289-1301",
+            "publisher": "Ecological Society of America",
+            "title": "Architecture of 54 moist-forest tree species: Traits, trade-offs, and functional groups",
+            "title-short": "Architecture of 54 moist-forest tree species",
+            "type": "article-journal",
+            "volume": "87"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wiegand",
+                    "given": "Thorsten"
+                },
+                {
+                    "family": "Moloney",
+                    "given": "Kirk A"
+                }
+            ],
+            "id": "wiegand2014handbook",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "CRC press",
+            "publisher-place": "Boca Raton, FL",
+            "title": "Handbook of spatial point-pattern analysis in ecology",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0036131",
+            "author": [
+                {
+                    "family": "Lutz",
+                    "given": "James A"
+                },
+                {
+                    "family": "Larson",
+                    "given": "Andrew J"
+                },
+                {
+                    "family": "Swanson",
+                    "given": "Mark E"
+                },
+                {
+                    "family": "Freund",
+                    "given": "James A"
+                }
+            ],
+            "container-title": "PLoS ONE",
+            "id": "lutz2012importance",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "e36131",
+            "publisher": "Public Library of Science",
+            "title": "The importance of large-diameter trees to forest structural heterogeneity",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "DOI": "10.1046/j.1365-2745.2003.00757.x",
+            "author": [
+                {
+                    "family": "Chave",
+                    "given": "Jérôme"
+                },
+                {
+                    "family": "Condit",
+                    "given": "Richard"
+                },
+                {
+                    "family": "Lao",
+                    "given": "Suzanne"
+                },
+                {
+                    "family": "Caspersen",
+                    "given": "John P"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Robin B"
+                },
+                {
+                    "family": "Hubbell",
+                    "given": "Stephen P"
+                }
+            ],
+            "container-title": "Journal of Ecology",
+            "id": "chave2003spatial",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "page": "240-252",
+            "publisher": "Wiley Online Library",
+            "title": "Spatial and temporal variation of biomass in a tropical forest: Results from a large census plot in panama",
+            "title-short": "Spatial and temporal variation of biomass in a tropical forest",
+            "type": "article-journal",
+            "volume": "91"
+        },
+        {
+            "DOI": "10.1111/j.1365-2745.2001.00615.x",
+            "author": [
+                {
+                    "family": "Harms",
+                    "given": "Kyle E"
+                },
+                {
+                    "family": "Condit",
+                    "given": "Richard"
+                },
+                {
+                    "family": "Hubbell",
+                    "given": "Stephen P"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Robin B"
+                }
+            ],
+            "container-title": "Journal of Ecology",
+            "id": "harms2001habitat",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "947-959",
+            "publisher": "Wiley Online Library",
+            "title": "Habitat associations of trees and shrubs in a 50-ha neotropical forest plot",
+            "type": "article-journal",
+            "volume": "89"
+        },
+        {
+            "author": [
+                {
+                    "family": "Morisita",
+                    "given": "Masaaki"
+                }
+            ],
+            "container-title": "Memoirs of the Faculty of Science, Kyushu University Series E (Biology)",
+            "id": "morisita1959measuring",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1959
+                    ]
+                ]
+            },
+            "page": "215-235",
+            "publisher": "Kyushu University",
+            "title": "Measuring of the dispersion of individuals and analysis of the distributional patterns",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "Richards",
+                    "given": "Paul Westmacott"
+                }
+            ],
+            "id": "richards1996tropical",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "publisher-place": "Cambridge, UK",
+            "title": "The tropical rain forest: An ecological study",
+            "title-short": "The tropical rain forest",
+            "type": "book"
+        },
+        {
+            "DOI": "10.5194/bg-9-3381-2012",
+            "author": [
+                {
+                    "family": "Feldpausch",
+                    "given": "Ted R"
+                },
+                {
+                    "family": "Lloyd",
+                    "given": "Jon"
+                },
+                {
+                    "family": "Lewis",
+                    "given": "Simon L"
+                },
+                {
+                    "family": "Brienen",
+                    "given": "Roel JW"
+                },
+                {
+                    "family": "Gloor",
+                    "given": "Manuel"
+                },
+                {
+                    "family": "Monteagudo Mendoza",
+                    "given": "Abel"
+                },
+                {
+                    "family": "Lopez-Gonzalez",
+                    "given": "Gabriela"
+                },
+                {
+                    "family": "Banin",
+                    "given": "Lindsay"
+                },
+                {
+                    "family": "Abu Salim",
+                    "given": "Kamariah"
+                },
+                {
+                    "family": "Affum-Baffoe",
+                    "given": "Kofi"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Biogeosciences",
+            "id": "feldpausch2012tree",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "3381-3403",
+            "publisher": "Copernicus GmbH",
+            "title": "Tree height integrated into pantropical forest biomass estimates",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.1111/geb.12168",
+            "author": [
+                {
+                    "family": "Mitchard",
+                    "given": "Edward TA"
+                },
+                {
+                    "family": "Feldpausch",
+                    "given": "Ted R"
+                },
+                {
+                    "family": "Brienen",
+                    "given": "Roel JW"
+                },
+                {
+                    "family": "Lopez-Gonzalez",
+                    "given": "Gabriela"
+                },
+                {
+                    "family": "Cohn",
+                    "given": "AS"
+                },
+                {
+                    "family": "Craigie",
+                    "given": "ID"
+                },
+                {
+                    "family": "Martins",
+                    "given": "Q"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Global Ecology and Biogeography",
+            "id": "mitchard2014markedly",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "935-946",
+            "publisher": "Wiley Online Library",
+            "title": "Markedly divergent estimates of amazon forest carbon density from ground plots and satellites",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0023533",
+            "author": [
+                {
+                    "family": "Martin",
+                    "given": "Adam R"
+                },
+                {
+                    "family": "Thomas",
+                    "given": "Sean C"
+                }
+            ],
+            "container-title": "PLoS ONE",
+            "id": "martin2011wood",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "e23533",
+            "publisher": "Public Library of Science",
+            "title": "A reassessment of carbon content in tropical trees",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "DOI": "10.1111/gcb.12629",
+            "author": [
+                {
+                    "family": "Chave",
+                    "given": "Jérôme"
+                },
+                {
+                    "family": "Réjou-Méchain",
+                    "given": "Maxime"
+                },
+                {
+                    "family": "Búrquez",
+                    "given": "Alberto"
+                },
+                {
+                    "family": "Chidumayo",
+                    "given": "Emmanuel"
+                },
+                {
+                    "family": "Colgan",
+                    "given": "Matthew S"
+                },
+                {
+                    "family": "Delitti",
+                    "given": "Welington BC"
+                },
+                {
+                    "family": "Duque",
+                    "given": "Alvaro"
+                },
+                {
+                    "family": "Eid",
+                    "given": "Tron"
+                },
+                {
+                    "family": "Fearnside",
+                    "given": "Philip M"
+                },
+                {
+                    "family": "Goodman",
+                    "given": "Rosa C"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Global Change Biology",
+            "id": "chave2014improved",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "3177-3190",
+            "publisher": "Wiley Online Library",
+            "title": "Improved allometric models to estimate the aboveground biomass of tropical trees",
+            "type": "article-journal",
+            "volume": "20"
+        },
+        {
+            "DOI": "10.1088/2752-664X/ae6784",
+            "URL": "https://doi.org/10.1088/2752-664X/ae6784",
+            "author": [
+                {
+                    "family": "Urquiza-Muñoz",
+                    "given": "David",
+                    "suffix": "J"
+                },
+                {
+                    "family": "Trumbore",
+                    "given": "Susan"
+                },
+                {
+                    "family": "Negrón-Juárez",
+                    "given": "Robinson I"
+                },
+                {
+                    "family": "Brenning",
+                    "given": "Alexander"
+                },
+                {
+                    "family": "Muñoz",
+                    "given": "Waldemar Alegria"
+                },
+                {
+                    "family": "Espinoza",
+                    "given": "Rodil Tello"
+                },
+                {
+                    "family": "Zumaeta",
+                    "given": "Richer Rios"
+                },
+                {
+                    "family": "Ruiz",
+                    "given": "Jorge Solignac"
+                },
+                {
+                    "family": "Higuchi",
+                    "given": "Niro"
+                },
+                {
+                    "family": "Marra",
+                    "given": "Daniel Magnabosco"
+                }
+            ],
+            "container-title": "Environmental Research: Ecology",
+            "id": "urquizamunoz2026",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026,
+                        5
+                    ]
+                ]
+            },
+            "page": "025004",
+            "publisher": "IOP Publishing",
+            "title": "Tracking amazon forest succession after large-scale windthrow events",
+            "type": "article-journal",
+            "volume": "5"
         },
         {
             "URL": "https://www.R-project.org/",

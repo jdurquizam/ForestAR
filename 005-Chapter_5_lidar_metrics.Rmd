@@ -9,6 +9,7 @@ library(lidR)
 library(terra)
 library(sf)
 library(here)
+library(rgl)
 
 # Define the path and read the LAS file
 las_file <- here("data", "lidar_UNAP.las")
@@ -38,6 +39,24 @@ las_norm <- filter_poi(las_norm, Z >= 0)
 summary(las_norm$Z)
 
 
+```
+## 3D visualization
+
+```{r}
+#| label: lidar-3d-viz
+#| message: false
+#| warning: false
+
+# 1. Spatial Thinning (lidR v4.0+ syntax)
+# We use a 0.5m voxel resolution and keep 1 point per voxel to prevent browser crashes
+las_thinned <- decimate_points(las_norm, random_per_voxel(res = 0.1, n = 1))
+
+# 2. Set up the RGL window and plot
+rgl::open3d(useNULL = TRUE) 
+plot(las_thinned, color = "Z", bg = "white", axis = TRUE, legend = TRUE, clear_artifacts = T)
+
+# 3. Generate the HTML interactive widget
+rglwidget(width = 800, height = 600)
 ```
 
 
