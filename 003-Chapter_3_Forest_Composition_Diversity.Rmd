@@ -274,15 +274,40 @@ ivi_plot_data <- ivi_table %>%
                          "Rel_Dominance" = "Relative Dominance",
                          "Rel_Frequency" = "Relative Frequency"))
 
-# 6. Generate the IVI component plot
+# 6. Generate the IVI component plot with percentage labels
 ggplot(ivi_plot_data, aes(x = reorder(Scientific_Name, IVI), y = Percentage, fill = Metric)) +
   geom_bar(stat = "identity", color = "black", linewidth = 0.2) +
-  coord_flip() + # Horizontal bars are much easier to read for species names
-  scale_fill_manual(values = c("Relative Density" = "#440154", 
-                               "Relative Dominance" = "#21908C", 
-                               "Relative Frequency" = "#FDE725")) +
+  
+  # Add the text labels inside the stacked bars
+  geom_text(
+    aes(
+      label = sprintf("%.1f%%", Percentage), # Formats the number to 1 decimal place with a % sign
+      color = Metric                         # Maps text color to the metric to handle light/dark contrast
+    ),
+    position = position_stack(vjust = 0.5),  # Centers the text inside each stacked section
+    size = 3.5, 
+    fontface = "bold",
+    show.legend = FALSE                      # Hides the text 'a' from the legend
+  ) +
+  
+  coord_flip() + 
+  
+  # Bar fill colors (Colorblind-safe Viridis)
+  scale_fill_manual(values = c(
+    "Relative Density" = "#440154", 
+    "Relative Dominance" = "#21908C", 
+    "Relative Frequency" = "#FDE725"
+  )) +
+  
+  # Text colors to contrast with the bar fills
+  scale_color_manual(values = c(
+    "Relative Density" = "white", 
+    "Relative Dominance" = "white", 
+    "Relative Frequency" = "black"     # Black text on the bright yellow background
+  )) +
+  
   labs(
-    title = "Deconstructing Structural Dominance (Top 10 Species)",
+    title = "Deconstructing structural dominance (Top 10 Species)",
     subtitle = "Components of the Importance Value Index (IVI)",
     x = "Scientific Name",
     y = "Relative Contribution (%)",
@@ -290,7 +315,7 @@ ggplot(ivi_plot_data, aes(x = reorder(Scientific_Name, IVI), y = Percentage, fil
   ) +
   theme_classic() +
   theme(
-    axis.text.y = element_text(face = "italic", size = 11), # Italicize scientific names
+    axis.text.y = element_text(face = "italic", size = 11),
     legend.position = "bottom",
     plot.title = element_text(face = "bold")
   )

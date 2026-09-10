@@ -54,3 +54,6 @@ If you use this resource in your research, teaching, or workflow, please cite it
 }
 ```
 
+## Acknowledgments {-}
+
+The ground inventory data and structural analyses presented in this book were provided by the Forest Attributes Laboratory (Vetaf) at the Universidad Nacional de la Amazonía Peruana (UNAP). This field research was generously supported by CONCYTEC through the project *"Estudio de patrones alométricos en especies forestales de la Amazonía peruana"*. Additionally, the drone LiDAR data collection and subsequent 3D visualizations were funded and supported by the Max Planck Institute.
