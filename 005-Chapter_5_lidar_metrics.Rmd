@@ -49,7 +49,7 @@ summary(las_norm$Z)
 
 # 1. Spatial Thinning (lidR v4.0+ syntax)
 # We use a 0.5m voxel resolution and keep 1 point per voxel to prevent browser crashes
-las_thinned <- decimate_points(las_norm, random_per_voxel(res = 0.1, n = 1))
+las_thinned <- decimate_points(las_norm, random_per_voxel(res = 0.2, n = 1))
 
 # 2. Set up the RGL window and plot
 rgl::open3d(useNULL = TRUE) 
