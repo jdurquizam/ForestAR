@@ -197,6 +197,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-cite-this-book"><i class="fa fa-check"></i>How to Cite this Book</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a>
 <ul>
@@ -662,26 +663,51 @@ The IVI for any given species is expressed as:</p>
 <span id="cb48-11"><a href="chapter-2-forest-composition-structure.html#cb48-11" tabindex="-1"></a>                         <span class="st">&quot;Rel_Dominance&quot;</span> <span class="ot">=</span> <span class="st">&quot;Relative Dominance&quot;</span>,</span>
 <span id="cb48-12"><a href="chapter-2-forest-composition-structure.html#cb48-12" tabindex="-1"></a>                         <span class="st">&quot;Rel_Frequency&quot;</span> <span class="ot">=</span> <span class="st">&quot;Relative Frequency&quot;</span>))</span>
 <span id="cb48-13"><a href="chapter-2-forest-composition-structure.html#cb48-13" tabindex="-1"></a></span>
-<span id="cb48-14"><a href="chapter-2-forest-composition-structure.html#cb48-14" tabindex="-1"></a><span class="co"># 6. Generate the IVI component plot</span></span>
+<span id="cb48-14"><a href="chapter-2-forest-composition-structure.html#cb48-14" tabindex="-1"></a><span class="co"># 6. Generate the IVI component plot with percentage labels</span></span>
 <span id="cb48-15"><a href="chapter-2-forest-composition-structure.html#cb48-15" tabindex="-1"></a><span class="fu">ggplot</span>(ivi_plot_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Scientific_Name, IVI), <span class="at">y =</span> Percentage, <span class="at">fill =</span> Metric)) <span class="sc">+</span></span>
 <span id="cb48-16"><a href="chapter-2-forest-composition-structure.html#cb48-16" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb48-17"><a href="chapter-2-forest-composition-structure.html#cb48-17" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co"># Horizontal bars are much easier to read for species names</span></span>
-<span id="cb48-18"><a href="chapter-2-forest-composition-structure.html#cb48-18" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Relative Density&quot;</span> <span class="ot">=</span> <span class="st">&quot;#440154&quot;</span>, </span>
-<span id="cb48-19"><a href="chapter-2-forest-composition-structure.html#cb48-19" tabindex="-1"></a>                               <span class="st">&quot;Relative Dominance&quot;</span> <span class="ot">=</span> <span class="st">&quot;#21908C&quot;</span>, </span>
-<span id="cb48-20"><a href="chapter-2-forest-composition-structure.html#cb48-20" tabindex="-1"></a>                               <span class="st">&quot;Relative Frequency&quot;</span> <span class="ot">=</span> <span class="st">&quot;#FDE725&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb48-21"><a href="chapter-2-forest-composition-structure.html#cb48-21" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb48-22"><a href="chapter-2-forest-composition-structure.html#cb48-22" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Deconstructing Structural Dominance (Top 10 Species)&quot;</span>,</span>
-<span id="cb48-23"><a href="chapter-2-forest-composition-structure.html#cb48-23" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Components of the Importance Value Index (IVI)&quot;</span>,</span>
-<span id="cb48-24"><a href="chapter-2-forest-composition-structure.html#cb48-24" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Scientific Name&quot;</span>,</span>
-<span id="cb48-25"><a href="chapter-2-forest-composition-structure.html#cb48-25" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Relative Contribution (%)&quot;</span>,</span>
-<span id="cb48-26"><a href="chapter-2-forest-composition-structure.html#cb48-26" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;IVI Component&quot;</span></span>
-<span id="cb48-27"><a href="chapter-2-forest-composition-structure.html#cb48-27" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb48-28"><a href="chapter-2-forest-composition-structure.html#cb48-28" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb48-29"><a href="chapter-2-forest-composition-structure.html#cb48-29" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb48-30"><a href="chapter-2-forest-composition-structure.html#cb48-30" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;italic&quot;</span>, <span class="at">size =</span> <span class="dv">11</span>), <span class="co"># Italicize scientific names</span></span>
-<span id="cb48-31"><a href="chapter-2-forest-composition-structure.html#cb48-31" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
-<span id="cb48-32"><a href="chapter-2-forest-composition-structure.html#cb48-32" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb48-33"><a href="chapter-2-forest-composition-structure.html#cb48-33" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb48-17"><a href="chapter-2-forest-composition-structure.html#cb48-17" tabindex="-1"></a>  </span>
+<span id="cb48-18"><a href="chapter-2-forest-composition-structure.html#cb48-18" tabindex="-1"></a>  <span class="co"># Add the text labels inside the stacked bars</span></span>
+<span id="cb48-19"><a href="chapter-2-forest-composition-structure.html#cb48-19" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb48-20"><a href="chapter-2-forest-composition-structure.html#cb48-20" tabindex="-1"></a>    <span class="fu">aes</span>(</span>
+<span id="cb48-21"><a href="chapter-2-forest-composition-structure.html#cb48-21" tabindex="-1"></a>      <span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.1f%%&quot;</span>, Percentage), <span class="co"># Formats the number to 1 decimal place with a % sign</span></span>
+<span id="cb48-22"><a href="chapter-2-forest-composition-structure.html#cb48-22" tabindex="-1"></a>      <span class="at">color =</span> Metric                         <span class="co"># Maps text color to the metric to handle light/dark contrast</span></span>
+<span id="cb48-23"><a href="chapter-2-forest-composition-structure.html#cb48-23" tabindex="-1"></a>    ),</span>
+<span id="cb48-24"><a href="chapter-2-forest-composition-structure.html#cb48-24" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),  <span class="co"># Centers the text inside each stacked section</span></span>
+<span id="cb48-25"><a href="chapter-2-forest-composition-structure.html#cb48-25" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">3.5</span>, </span>
+<span id="cb48-26"><a href="chapter-2-forest-composition-structure.html#cb48-26" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>,</span>
+<span id="cb48-27"><a href="chapter-2-forest-composition-structure.html#cb48-27" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>                      <span class="co"># Hides the text &#39;a&#39; from the legend</span></span>
+<span id="cb48-28"><a href="chapter-2-forest-composition-structure.html#cb48-28" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb48-29"><a href="chapter-2-forest-composition-structure.html#cb48-29" tabindex="-1"></a>  </span>
+<span id="cb48-30"><a href="chapter-2-forest-composition-structure.html#cb48-30" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
+<span id="cb48-31"><a href="chapter-2-forest-composition-structure.html#cb48-31" tabindex="-1"></a>  </span>
+<span id="cb48-32"><a href="chapter-2-forest-composition-structure.html#cb48-32" tabindex="-1"></a>  <span class="co"># Bar fill colors (Colorblind-safe Viridis)</span></span>
+<span id="cb48-33"><a href="chapter-2-forest-composition-structure.html#cb48-33" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb48-34"><a href="chapter-2-forest-composition-structure.html#cb48-34" tabindex="-1"></a>    <span class="st">&quot;Relative Density&quot;</span> <span class="ot">=</span> <span class="st">&quot;#440154&quot;</span>, </span>
+<span id="cb48-35"><a href="chapter-2-forest-composition-structure.html#cb48-35" tabindex="-1"></a>    <span class="st">&quot;Relative Dominance&quot;</span> <span class="ot">=</span> <span class="st">&quot;#21908C&quot;</span>, </span>
+<span id="cb48-36"><a href="chapter-2-forest-composition-structure.html#cb48-36" tabindex="-1"></a>    <span class="st">&quot;Relative Frequency&quot;</span> <span class="ot">=</span> <span class="st">&quot;#FDE725&quot;</span></span>
+<span id="cb48-37"><a href="chapter-2-forest-composition-structure.html#cb48-37" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb48-38"><a href="chapter-2-forest-composition-structure.html#cb48-38" tabindex="-1"></a>  </span>
+<span id="cb48-39"><a href="chapter-2-forest-composition-structure.html#cb48-39" tabindex="-1"></a>  <span class="co"># Text colors to contrast with the bar fills</span></span>
+<span id="cb48-40"><a href="chapter-2-forest-composition-structure.html#cb48-40" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb48-41"><a href="chapter-2-forest-composition-structure.html#cb48-41" tabindex="-1"></a>    <span class="st">&quot;Relative Density&quot;</span> <span class="ot">=</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb48-42"><a href="chapter-2-forest-composition-structure.html#cb48-42" tabindex="-1"></a>    <span class="st">&quot;Relative Dominance&quot;</span> <span class="ot">=</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb48-43"><a href="chapter-2-forest-composition-structure.html#cb48-43" tabindex="-1"></a>    <span class="st">&quot;Relative Frequency&quot;</span> <span class="ot">=</span> <span class="st">&quot;black&quot;</span>     <span class="co"># Black text on the bright yellow background</span></span>
+<span id="cb48-44"><a href="chapter-2-forest-composition-structure.html#cb48-44" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb48-45"><a href="chapter-2-forest-composition-structure.html#cb48-45" tabindex="-1"></a>  </span>
+<span id="cb48-46"><a href="chapter-2-forest-composition-structure.html#cb48-46" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb48-47"><a href="chapter-2-forest-composition-structure.html#cb48-47" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Deconstructing structural dominance (Top 10 Species)&quot;</span>,</span>
+<span id="cb48-48"><a href="chapter-2-forest-composition-structure.html#cb48-48" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Components of the Importance Value Index (IVI)&quot;</span>,</span>
+<span id="cb48-49"><a href="chapter-2-forest-composition-structure.html#cb48-49" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Scientific Name&quot;</span>,</span>
+<span id="cb48-50"><a href="chapter-2-forest-composition-structure.html#cb48-50" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Relative Contribution (%)&quot;</span>,</span>
+<span id="cb48-51"><a href="chapter-2-forest-composition-structure.html#cb48-51" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;IVI Component&quot;</span></span>
+<span id="cb48-52"><a href="chapter-2-forest-composition-structure.html#cb48-52" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb48-53"><a href="chapter-2-forest-composition-structure.html#cb48-53" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb48-54"><a href="chapter-2-forest-composition-structure.html#cb48-54" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb48-55"><a href="chapter-2-forest-composition-structure.html#cb48-55" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;italic&quot;</span>, <span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb48-56"><a href="chapter-2-forest-composition-structure.html#cb48-56" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb48-57"><a href="chapter-2-forest-composition-structure.html#cb48-57" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb48-58"><a href="chapter-2-forest-composition-structure.html#cb48-58" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="_main_files/figure-html/calculate-ivi-1.png" alt="" width="768" />
 *<strong>Interpretation of the Importance Value Index (IVI)</strong></p>
 <p>*<strong>Visual and tabular observations</strong>
