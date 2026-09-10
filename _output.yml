@@ -3,7 +3,8 @@ bookdown::gitbook:
   includes:
     before_body: translate.html
     in_header: analytics.html
-    after_body: footer.html
+    #after_body: footer.html
+    after_body: comments.html
   config:
     fontsettings:
       theme: sepia
