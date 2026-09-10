@@ -23,7 +23,7 @@
 <meta name="author" content="J. David Urquiza-Munoz" />
 
 
-<meta name="date" content="2026-09-09" />
+<meta name="date" content="2026-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,28 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/rglWebGL-binding-1.3.36/rglWebGL.js"></script>
+<link href="libs/rglwidgetClass-1.3.36/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-1.3.36/rglClass.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/utils.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/buffer.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/subscenes.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/shaders.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/shadersrc.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/textures.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/projection.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/mouse.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/init.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/pieces.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/draw.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/controls.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/selection.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/rglTimer.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/pretty.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/axes.src.js"></script>
+<script src="libs/rglwidgetClass-1.3.36/animation.src.js"></script>
+<script src="libs/CanvasMatrix4-1.3.36/CanvasMatrix.src.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMG5FF37YL"></script>
 <script>
@@ -240,10 +262,11 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.1" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#point-cloud-import-and-preprocessing"><i class="fa fa-check"></i><b>5.1</b> Point cloud import and preprocessing</a></li>
 <li class="chapter" data-level="5.2" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#point-cloud-normalization"><i class="fa fa-check"></i><b>5.2</b> Point Cloud Normalization</a></li>
-<li class="chapter" data-level="5.3" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#canopy-height-model-chm-generation"><i class="fa fa-check"></i><b>5.3</b> Canopy Height Model (CHM) Generation</a></li>
-<li class="chapter" data-level="5.4" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#canopy-gap-detection-and-delineation"><i class="fa fa-check"></i><b>5.4</b> Canopy Gap Detection and Delineation</a>
+<li class="chapter" data-level="5.3" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#d-visualization"><i class="fa fa-check"></i><b>5.3</b> 3D visualization</a></li>
+<li class="chapter" data-level="5.4" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#canopy-height-model-chm-generation"><i class="fa fa-check"></i><b>5.4</b> Canopy Height Model (CHM) Generation</a></li>
+<li class="chapter" data-level="5.5" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#canopy-gap-detection-and-delineation"><i class="fa fa-check"></i><b>5.5</b> Canopy Gap Detection and Delineation</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#vertical-point-density-profile"><i class="fa fa-check"></i><b>5.4.1</b> Vertical Point Density Profile</a></li>
+<li class="chapter" data-level="5.5.1" data-path="chapter-5-canopy-gap-dynamics-using-3d-lidar.html"><a href="chapter-5-canopy-gap-dynamics-using-3d-lidar.html#vertical-point-density-profile"><i class="fa fa-check"></i><b>5.5.1</b> Vertical Point Density Profile</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
@@ -287,7 +310,7 @@ function googleTranslateElementInit() {
 <h1 class="title"><p><img src="fig/ForestAR_logo.jpg" style="width:8in" /></p>
 <p>Forest Attributes Analysis in R - ForestAR</p></h1>
 <p class="author"><em>J. David Urquiza-Munoz</em></p>
-<p class="date"><em>2026-09-09 <br><br> <a href='https://doi.org/10.5281/zenodo.22606690'><img src='https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22606690-0e75b6.png' alt='DOI' style='vertical-align:middle; height:28px;'></a>  <img src='https://komarev.com/ghpvc/?username=jdurquizam&amp;label=Github views&amp;color=0e75b6&amp;style=flat' alt='Github views' style='vertical-align:middle; height:28px;'>  <img src='https://visitor-badge.laobi.icu/badge?page_id=jdurquizam.forestar.book&amp;color=0e75b6' alt='Live Views' style='vertical-align:middle; height:28px;'></em></p>
+<p class="date"><em>2026-09-10 <br><br> <a href='https://doi.org/10.5281/zenodo.22606690'><img src='https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22606690-0e75b6.png' alt='DOI' style='vertical-align:middle; height:28px;'></a>  <img src='https://komarev.com/ghpvc/?username=jdurquizam&amp;label=Github views&amp;color=0e75b6&amp;style=flat' alt='Github views' style='vertical-align:middle; height:28px;'>  <img src='https://visitor-badge.laobi.icu/badge?page_id=jdurquizam.forestar.book&amp;color=0e75b6' alt='Live Views' style='vertical-align:middle; height:28px;'></em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
