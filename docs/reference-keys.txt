@@ -1,7 +1,4 @@
 tab:preview-data
-fig:species-composition
-fig:species-accumulation
-fig:species-accumulation-subplot
 fig:dbh-distribution
 tab:stand-metrics
 fig:dbh-by-species
@@ -10,6 +7,10 @@ fig:map-species
 fig:map-dbh-height
 tab:calc-biomass-structure
 fig:map-carbon-structure
+fig:species-composition
+fig:species-accumulation
+fig:species-accumulation-subplot
+tab:calculate-ivi
 fig:dbh-height-correlation
 chapter-1-introduction-to-forest-data-in-r
 download-project-files
@@ -20,10 +21,6 @@ setting-up-the-environment
 importing-the-inventory-data
 data-cleaning-and-standardization
 exploring-the-cleaned-data
-chapter-2-forest-composition-structure
-species-composition
-quantifying-biodiversity-diversity-indices
-species-accumulation-curves
 chapter-3-forest-stand-structure
 diameter-at-breast-height-dbh
 stand-level-metrics-density-and-basal-area-per-hectare
@@ -40,6 +37,11 @@ spatial-visualization-of-dbh-and-tree-height
 biomass-and-carbon-as-structural-attributes
 extracting-wood-density-and-calculating-agb
 spatial-distribution-of-carbon
+chapter-2-forest-composition-structure
+species-composition
+quantifying-biodiversity-diversity-indices
+species-accumulation-curves
+synthesis-of-structure-and-composition-the-importance-value-index-ivi
 chapter-4-allometric-relationships-and-statistical-correlation
 allometric-relationships-and-statistical-correlation
 mathematical-models

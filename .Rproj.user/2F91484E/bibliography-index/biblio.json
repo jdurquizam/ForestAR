@@ -1428,6 +1428,34 @@
             "volume": "5"
         },
         {
+            "DOI": "10.2307/1931725",
+            "author": [
+                {
+                    "family": "Curtis",
+                    "given": "John T"
+                },
+                {
+                    "family": "McIntosh",
+                    "given": "Robert P"
+                }
+            ],
+            "container-title": "Ecology",
+            "id": "curtis1951upland",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1951
+                    ]
+                ]
+            },
+            "page": "476-496",
+            "publisher": "Ecological Society of America",
+            "title": "An upland forest continuum in the prairie-forest border region of wisconsin",
+            "type": "article-journal",
+            "volume": "32"
+        },
+        {
             "URL": "https://www.R-project.org/",
             "author": [
                 {

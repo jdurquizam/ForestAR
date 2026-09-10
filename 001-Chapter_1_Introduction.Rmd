@@ -27,7 +27,7 @@ For robust file referencing across different operating systems, use the `here` p
 library(here)
 
 # Automatically finds your project root and builds the correct path
-data_path <- here("data", "forest_inventory.csv")
+data_path <- here("data", "inventory.csv")
 inventory <- read.csv(data_path)
 
 ```
