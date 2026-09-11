@@ -22,5 +22,5 @@ Iquitos 16600, Peru &bull; [david.urquiza@unapiquitos.edu.pe](mailto:david.urqui
 
 <div style="clear: both; margin-bottom: 40px;"></div>
 
-### **For more information about the author, visit his personal website:** {-} 
-### *[https://jdurquizam.github.io/](https://jdurquizam.github.io/)* {-}
+**For more information about the author, visit his personal website:** 
+ ***[https://jdurquizam.github.io/](https://jdurquizam.github.io/)***

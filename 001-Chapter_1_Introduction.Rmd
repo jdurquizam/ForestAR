@@ -4,7 +4,7 @@ Welcome to the foundation of our forestry visualization journey. Before we can g
 
 In this chapter, we will set up our R environment, import our raw forest inventory data, and perform basic cleaning to ensure it is ready for spatial and statistical analysis.
 
-### Download Project Files
+## Download Project Files
 
 If you prefer to follow along locally by running the scripts yourself, you can download the complete project directory:
 
@@ -19,7 +19,7 @@ To ensure your scripts and book renders execute without path errors, follow thes
 * **The Root Folder:** Opening your project via the `.Rproj` file automatically defines your working directory as the main project folder. You never need to use `setwd()` manually.
 * **Relative Paths:** Always reference data and scripts relative to the project root (e.g., `data/inventory.csv` instead of absolute paths like `C:/Users/Name/Documents/...`).
 
-### Using the `here` Package
+#### Using the `here` Package
 For robust file referencing across different operating systems, use the `here` package to build file paths dynamically:
 
 ```{r}
