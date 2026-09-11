@@ -1,4 +1,4 @@
-# Chapter 2: Forest Composition & Structure
+# Chapter 3: Forest Composition & Structure
 
 With our inventory data cleaned and standardized, we can now explore the ecological characteristics of our forest stand. Two of the most fundamental questions in any forest inventory are: What species are growing here? and How big are they?
 

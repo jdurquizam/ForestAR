@@ -1,5 +1,5 @@
 
-# Chapter 3: Forest Stand Structure
+# Chapter 2: Forest Stand Structure
 
 
 ## Diameter at Breast Height (DBH)
