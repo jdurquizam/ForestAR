@@ -8,7 +8,7 @@ In this chapter, we will set up our R environment, import our raw forest invento
 
 If you prefer to follow along locally by running the scripts yourself, you can download the complete project directory:
 
-* **[Download Complete ForestAR Repository (.zip)](https://github.com/jdurquizam/ForestAR/archive/refs/heads/main.zip)**
+* **[Download data ForestAR Repository (.zip)](https://drive.google.com/uc?export=download&id=1vooh7E8VjK5fkkNAaadZod_XXU3Hinht)**
 * Or view the source code and development history directly on the [ForestAR GitHub Repository](https://github.com/jdurquizam/ForestAR).
 
 ## Setting Your Working Directory
